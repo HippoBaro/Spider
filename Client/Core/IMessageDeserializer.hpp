@@ -1,0 +1,12 @@
+//
+// Created by etiennep on 11/8/16.
+//
+
+#ifndef SPIDER_CLIENT_IMESSAGEDESERIALIZER_HPP
+#define SPIDER_CLIENT_IMESSAGEDESERIALIZER_HPP
+
+class IMessageDeserializer {
+public:
+};
+
+#endif //SPIDER_CLIENT_IMESSAGEDESERIALIZER_HPP

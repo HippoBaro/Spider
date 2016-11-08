@@ -7,6 +7,7 @@
 
 #include <memory>
 #include "ISpiderNetworkManager.hpp"
+#include "../Includes/ZeroMQ/zmq.hpp"
 
 class ISpiderServer {
 public:

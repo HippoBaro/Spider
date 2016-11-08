@@ -4,15 +4,19 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderEventListener.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderNetworkManager.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderBusinessManager.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interfaces/External/ISpiderSocket.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interfaces/External/ISpiderSocketPoller.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderBusinessModule.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderBusinessManager.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderEventManager.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderEventEmitter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderServer.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderServer.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Includes/ZeroMQ/zmq_addon.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Includes/ZeroMQ/zmq.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BusinessManager/SpiderBusinessManager.hpp" isTestSource="false" />

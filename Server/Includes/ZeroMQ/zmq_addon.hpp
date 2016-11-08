@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016 VOCA AS / Harald Nøkland
+    Copyright (c) 2016 VOCA AS / Harald Nï¿½kland
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to
@@ -23,19 +23,17 @@
 #ifndef __ZMQ_ADDON_HPP_INCLUDED__
 #define __ZMQ_ADDON_HPP_INCLUDED__
 
-#include <zmq.hpp>
 #include <deque>
 #include <iomanip>
 #include <sstream>
+#include "zmq.hpp"
 
 namespace zmq {
-
-#ifdef ZMQ_HAS_RVALUE_REFS
 
 /*
     This class handles multipart messaging. It is the C++ equivalent of zmsg.h,
     which is part of CZMQ (the high-level C binding). Furthermore, it is a major
-    improvement compared to zmsg.hpp, which is part of the examples in the ØMQ
+    improvement compared to zmsg.hpp, which is part of the examples in the ï¿½MQ
     Guide. Unnecessary copying is avoided by using move semantics to efficiently
     add/remove parts.
 */
@@ -486,8 +484,6 @@ private:
     multipart_t(const multipart_t& other) ZMQ_DELETED_FUNCTION;
     void operator=(const multipart_t& other) ZMQ_DELETED_FUNCTION;
 };
-
-#endif
 
 }
 

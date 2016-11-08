@@ -28,7 +28,8 @@ private :
             {
                 auto token = rpl.substr(0, 16);
                 auto payload = rpl.substr(16, rpl.size() - 16);
-                //onMessage->function()(token, std::string(payload)); //todo deserialize payload
+                T data(payload);
+                (*onMessage)(token, data); //todo deserialize payload
             }
         }
     }

@@ -17,6 +17,8 @@ private:
     std::shared_ptr<zmq::socket_t> _socketPUB;
     std::shared_ptr<zmq::socket_t> _socketSUB;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wmissing-noreturn"
     static void RunReceive(zmq::socket_t *socketSub, zmq::socket_t *socketPub) {
         while (true) {
             zmq::message_t msg;
@@ -24,6 +26,7 @@ private:
             socketPub->send(msg);
         }
     }
+#pragma clang diagnostic pop
 
 public:
     SpiderEventManager() {

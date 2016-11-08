@@ -5,8 +5,6 @@
 #ifndef SPIDER_SERVER_ISPIDERNETWORKMANAGER_HPP
 #define SPIDER_SERVER_ISPIDERNETWORKMANAGER_HPP
 
-#include "../Includes/ZeroMQ/zmq.hpp"
-
 class ISpiderNetworkManager {
 public:
     virtual void Run() = 0;

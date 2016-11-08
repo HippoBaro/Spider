@@ -1,0 +1,12 @@
+//
+// Created by etiennep on 11/8/16.
+//
+
+#ifndef SPIDER_CLIENT_ISPIDERNETWORKMANAGER_HPP
+#define SPIDER_CLIENT_ISPIDERNETWORKMANAGER_HPP
+
+class ISpiderNetworkManager {
+public:
+};
+
+#endif //SPIDER_CLIENT_ISPIDERNETWORKMANAGER_HPP

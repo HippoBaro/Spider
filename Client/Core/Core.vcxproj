@@ -18,6 +18,24 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommandHandler.hpp" />
+    <ClInclude Include="ICommandHandler.hpp" />
+    <ClInclude Include="IKeyLogger.hpp" />
+    <ClInclude Include="IMessageDeserializer.hpp" />
+    <ClInclude Include="ISecurityAgent.hpp" />
+    <ClInclude Include="ISpiderDeamon.hpp" />
+    <ClInclude Include="ISpiderNetworkManager.hpp" />
+    <ClInclude Include="IWindowsContextAgent.hpp" />
+    <ClInclude Include="IWindowsKeyListener.hpp" />
+    <ClInclude Include="KeyLogger.hpp" />
+    <ClInclude Include="MessageDeserializer.hpp" />
+    <ClInclude Include="SecurityAgent.hpp" />
+    <ClInclude Include="SpiderDeamon.hpp" />
+    <ClInclude Include="SpiderNetworkManager.hpp" />
+    <ClInclude Include="WindowsContextAgent.hpp" />
+    <ClInclude Include="WindowsKeyListener.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E89031C0-04C3-4568-AC24-CE8510B72BA1}</ProjectGuid>
     <RootNamespace>Core</RootNamespace>
@@ -109,9 +127,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

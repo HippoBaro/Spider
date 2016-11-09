@@ -29,7 +29,8 @@ public:
 
     /// Sends \payload via the connected socket.
     /// \param payload The message payload to send.
-    virtual void Send(const std::string &payload) = 0;
+    /// \param clientId The id of the client, if needed by your implementation.
+    virtual void Send(const std::string &clientId, const std::string &payload) = 0;
 
     /// Should block until a message can be received.
     /// \return message from socket

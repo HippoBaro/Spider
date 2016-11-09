@@ -12,6 +12,8 @@
 #include "../SpiderEventManager/SpiderEventListener.hpp"
 #include "../SpiderSocket/ZeroMQ/ZeroMQSocket.hpp"
 #include "../SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp"
+#include "../ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h"
+#include "../Serialization/SpiderDeserializer.hpp"
 
 class SpiderNetworkManager : public ISpiderNetworkManager {
 private:
@@ -22,24 +24,33 @@ private:
     std::shared_ptr<zmq::socket_t> _commanderSocket;
 
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
-    std::unique_ptr<ISpiderEventListener> _eventListener = std::unique_ptr<ISpiderEventListener>(new SpiderEventListener());
+    std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
 
     std::map<std::string, std::unique_ptr<ISpiderSocket>> _socketPool;
 
 private:
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
-    static void RunReceive(ISpiderSocket *socket, std::map<std::string, std::unique_ptr<ISpiderSocket>> *pool, ISpiderEventEmitter *eventEmitter) {
+
+    void RunReceive() {
         std::unique_ptr<ISpiderSocketPoller> poller = std::unique_ptr<ISpiderSocketPoller>(new ZeroMQSocketPoller());
         while (true) {
             std::vector<ISpiderSocket *> sockets;
-            for(std::map<std::string, std::unique_ptr<ISpiderSocket>>::iterator it = pool->begin(); it != pool->end(); ++it ) {
+            for(std::map<std::string, std::unique_ptr<ISpiderSocket>>::iterator it = _socketPool.begin(); it != _socketPool.end(); ++it ) {
                 sockets.push_back(it->second.get());
             }
-            auto msg = poller->ReceivePoller(socket, sockets);
-            auto payload = std::get<0>(msg) + ":" + std::get<1>(msg);
-            eventEmitter->Emit("OutputSTDIN", payload);
-            //std::cout << "Message from ID : " <<  << " Payload is : " << std::get<1>(msg) << std::endl;
+            auto msg = poller->ReceivePoller(_socket.get(), sockets);
+
+            SpiderEnveloppe envelope;
+            try {
+                // Code that could throw an exception
+                envelope = SpiderDeserializer::GetEnvelopeFromMessage(std::get<1>(msg));
+            }
+            catch (const std::runtime_error& e) {
+                std::cout << "Error : " << e.what() << std::endl;
+                continue;
+            }
+            _eventEmitter->RouteToModules(envelope); //Dispatch message to inner communication service.
         }
     }
 #pragma clang diagnostic pop
@@ -59,10 +70,18 @@ public:
         _socket->Bind("tcp://*:5432");
         _commanderSocket->bind("tcp://*:9876");
 
-        _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(RunReceive, _socket.get(), &_socketPool, _eventEmitter.get()));
+        _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
+        _eventListener->RegisterNoUnpack("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
+            std::string enveloppe_data;
+            enveloppe.SerializeToString(&enveloppe_data);
+            _socket->Send(enveloppe.clientid(), enveloppe_data);
+        });
     }
 
-    void SendMessage(std::string id, std::string data) {
+    void SendMessage(SpiderEnveloppe &enveloppe) override final {
+        std::string enveloppe_data;
+        enveloppe.SerializeToString(&enveloppe_data);
+        _socket->Send(enveloppe.clientid(), enveloppe_data);
     }
 };
 

@@ -10,18 +10,23 @@
 #include "../Interfaces/ISpiderBusinessModule.hpp"
 #include "../Interfaces/ISpiderEventListener.hpp"
 #include "../SpiderEventManager/SpiderEventListener.hpp"
+#include "../ProtoEnvelopes/Proto/test.pb.h"
+#include "../Serialization/SpiderSerializer.hpp"
 
 class OutputSTDOUTModule : public ISpiderBusinessModule {
-    std::unique_ptr<ISpiderEventListener> _eventListener = std::unique_ptr<ISpiderEventListener>(new SpiderEventListener());
-
+    std::unique_ptr<ISpiderEventListener<testPayload>> _eventListener = std::unique_ptr<ISpiderEventListener<testPayload>>(new SpiderEventListener<testPayload>());
+    std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
 private:
-    static void Output(std::string id, std::string payload){
-        std::cout << "Message from ID : " << id << " Payload is : " << payload << std::endl;
-    }
 
 public:
     OutputSTDOUTModule() {
-        _eventListener->Start("OutputSTDIN", Output);
+        _eventListener->Register("testPayload", [&](std::string clientId, testPayload &payload) {
+            std::cout << "Message from ID : " << clientId << " Payload is : " << payload.content() << std::endl;
+            auto enveloppe = SpiderSerializer::CreateResponseFromPayload(clientId, payload);
+            std::string enveloppe_data;
+            enveloppe.SerializeToString(&enveloppe_data);
+            _eventEmitter->Emit("SpiderNetworkManager", enveloppe);
+        });
     }
 };
 

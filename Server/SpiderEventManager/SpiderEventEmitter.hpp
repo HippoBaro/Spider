@@ -20,11 +20,16 @@ public:
         _socketPUB->connect("inproc://EventListener");
     }
 
-    void Emit(std::string id, std::string message) override final {
+    void Emit(std::string destinator, SpiderEnveloppe &payload) override final {
         zmq::multipart_t msg;
-        msg.addstr(id);
-        msg.addstr(message);
+        msg.addstr(destinator);
+        std::string temp = payload.SerializeAsString();
+        msg.addstr(temp);
         msg.send(*_socketPUB);
+    }
+
+    void RouteToModules(SpiderEnveloppe &payload) override final {
+        Emit(payload.payloadtype(), payload);
     }
 };
 

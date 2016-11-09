@@ -28,10 +28,11 @@ public:
         return "ZeroMQ";
     }
 
-    virtual void Send(const std::string &payload) override final {
-        zmq::message_t msg (payload.size());
-        memcpy(msg.data(), payload.c_str(), (size_t)payload.size());
-        _socket->send(msg);
+    virtual void Send(const std::string &clientId, const std::string &payload) override final {
+        zmq::multipart_t rep;
+        rep.addstr(clientId);
+        rep.addstr(payload);
+        rep.send(*_socket, 0);
     }
 
     virtual std::string &Receive() override final {

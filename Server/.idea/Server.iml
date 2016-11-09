@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Includes/ZeroMQ/zmq_addon.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Includes/ZeroMQ/zmq.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BusinessModules/OutputSTDOUTModule.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BusinessManager/SpiderBusinessManager.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderEventManager/SpiderEventEmitter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderEventManager/SpiderEventManager.hpp" isTestSource="false" />

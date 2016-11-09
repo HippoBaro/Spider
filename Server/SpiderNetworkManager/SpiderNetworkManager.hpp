@@ -22,14 +22,14 @@ private:
     std::shared_ptr<zmq::socket_t> _commanderSocket;
 
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
-    std::unique_ptr<ISpiderEventListener> _eventListener = std::unique_ptr<ISpiderEventListener>(new SpiderEventListener<std::string>());
+    std::unique_ptr<ISpiderEventListener> _eventListener = std::unique_ptr<ISpiderEventListener>(new SpiderEventListener());
 
     std::map<std::string, std::unique_ptr<ISpiderSocket>> _socketPool;
 
 private:
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
-    static void RunReceive(ISpiderSocket *socket, std::map<std::string, std::unique_ptr<ISpiderSocket>> *pool) {
+    static void RunReceive(ISpiderSocket *socket, std::map<std::string, std::unique_ptr<ISpiderSocket>> *pool, ISpiderEventEmitter *eventEmitter) {
         std::unique_ptr<ISpiderSocketPoller> poller = std::unique_ptr<ISpiderSocketPoller>(new ZeroMQSocketPoller());
         while (true) {
             std::vector<ISpiderSocket *> sockets;
@@ -37,7 +37,9 @@ private:
                 sockets.push_back(it->second.get());
             }
             auto msg = poller->ReceivePoller(socket, sockets);
-            std::cout << "Message from ID : " << std::get<0>(msg) << " Payload is : " << std::get<1>(msg) << std::endl;
+            auto payload = std::get<0>(msg) + ":" + std::get<1>(msg);
+            eventEmitter->Emit("OutputSTDIN", payload);
+            //std::cout << "Message from ID : " <<  << " Payload is : " << std::get<1>(msg) << std::endl;
         }
     }
 #pragma clang diagnostic pop
@@ -57,7 +59,7 @@ public:
         _socket->Bind("tcp://*:5432");
         _commanderSocket->bind("tcp://*:9876");
 
-        _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(RunReceive, _socket.get(), &_socketPool));
+        _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(RunReceive, _socket.get(), &_socketPool, _eventEmitter.get()));
     }
 
     void SendMessage(std::string id, std::string data) {

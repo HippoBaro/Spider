@@ -7,6 +7,7 @@
 
 class ISpiderEventEmitter {
 public:
+    virtual void Emit(std::string id, std::string message) = 0;
 };
 
 #endif //SPIDER_SERVER_ISPIDEREVENTEMITTER_HPP

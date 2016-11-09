@@ -9,6 +9,8 @@
 #include <functional>
 
 class ISpiderEventListener {
+public:
+    virtual void Start(const std::string typeName, std::function<void(std::string, std::string)> onMessage) = 0;
 };
 
 #endif //SPIDER_SERVER_ISPIDEREVENTLISTENER_HPP

@@ -1,5 +1,3 @@
 ﻿  Main.cpp
-c:\users\etpas\source\repos\spider\client\core\keyboard.hpp(21): warning C4244: 'argument' : conversion de 'DWORD' en 'BYTE', perte possible de données
-c:\users\etpas\source\repos\spider\client\core\keyboard.hpp(25): warning C4244: 'argument' : conversion de 'DWORD' en 'BYTE', perte possible de données
   Core.vcxproj -> C:\Users\etpas\Source\Repos\Spider\Client\Core\Debug\Core.exe
   Core.vcxproj -> C:\Users\etpas\Source\Repos\Spider\Client\Core\Debug\Core.pdb (Partial PDB)

@@ -7,6 +7,8 @@
 
 class IWindowsKeyListener {
 public:
+	virtual void Run() = 0;
+	virtual std::string Flush() = 0;
 };
 
 #endif //SPIDER_CLIENT_IWINDOWSKEYLISTENER_HPP

@@ -19,22 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CommandHandler.hpp" />
-    <ClInclude Include="ICommandHandler.hpp" />
-    <ClInclude Include="IKeyLogger.hpp" />
-    <ClInclude Include="IMessageDeserializer.hpp" />
+    <ClInclude Include="ProcessInformation.hpp" />
+    <ClInclude Include="SpiderCommandHandler.hpp" />
+    <ClInclude Include="ISpiderCommandHandler.hpp" />
+    <ClInclude Include="ISpiderKeyLogger.hpp" />
+    <ClInclude Include="ISpiderMessageDeserializer.hpp" />
     <ClInclude Include="ISecurityAgent.hpp" />
     <ClInclude Include="ISpiderDeamon.hpp" />
     <ClInclude Include="ISpiderNetworkManager.hpp" />
     <ClInclude Include="IWindowsContextAgent.hpp" />
     <ClInclude Include="IWindowsKeyListener.hpp" />
-    <ClInclude Include="KeyLogger.hpp" />
-    <ClInclude Include="MessageDeserializer.hpp" />
+    <ClInclude Include="SpiderKeyLogger.hpp" />
+    <ClInclude Include="SpiderMessageDeserializer.hpp" />
     <ClInclude Include="SecurityAgent.hpp" />
     <ClInclude Include="SpiderDeamon.hpp" />
     <ClInclude Include="SpiderNetworkManager.hpp" />
     <ClInclude Include="WindowsContextAgent.hpp" />
     <ClInclude Include="WindowsKeyListener.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E89031C0-04C3-4568-AC24-CE8510B72BA1}</ProjectGuid>

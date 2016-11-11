@@ -27,29 +27,11 @@
     <ClInclude Include="SecurityAgent.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="MessageDeserializer.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyLogger.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="WindowsKeyListener.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="WindowsContextAgent.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandHandler.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ICommandHandler.hpp">
-      <Filter>Fichiers d%27en-tête\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="IKeyLogger.hpp">
-      <Filter>Fichiers d%27en-tête\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="IMessageDeserializer.hpp">
-      <Filter>Fichiers d%27en-tête\Interface</Filter>
     </ClInclude>
     <ClInclude Include="ISecurityAgent.hpp">
       <Filter>Fichiers d%27en-tête\Interface</Filter>
@@ -66,5 +48,31 @@
     <ClInclude Include="IWindowsKeyListener.hpp">
       <Filter>Fichiers d%27en-tête\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="ISpiderMessageDeserializer.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderMessageDeserializer.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderCommandHandler.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderCommandHandler.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderKeyLogger.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderKeyLogger.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessInformation.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

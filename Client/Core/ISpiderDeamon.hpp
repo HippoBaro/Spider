@@ -5,6 +5,8 @@
 #ifndef SPIDER_CLIENT_ISPIDERDEAMON_HPP
 #define SPIDER_CLIENT_ISPIDERDEAMON_HPP
 
+#include <memory>
+
 class ISpiderDeamon {
 public:
 };

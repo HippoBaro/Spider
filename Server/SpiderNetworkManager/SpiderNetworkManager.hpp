@@ -77,12 +77,6 @@ public:
             _socket->Send(enveloppe.clientid(), enveloppe_data);
         });
     }
-
-    void SendMessage(SpiderEnveloppe &enveloppe) override final {
-        std::string enveloppe_data;
-        enveloppe.SerializeToString(&enveloppe_data);
-        _socket->Send(enveloppe.clientid(), enveloppe_data);
-    }
 };
 
 #endif //SPIDER_SERVER_SPIDERNETWORKMANAGER_HPP

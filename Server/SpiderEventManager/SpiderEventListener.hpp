@@ -5,7 +5,6 @@
 #ifndef SPIDER_SERVER_SPIDEREVENTLISTENER_HPP
 #define SPIDER_SERVER_SPIDEREVENTLISTENER_HPP
 
-#include <zmq.h>
 #include <thread>
 #include "../Interfaces/ISpiderEventListener.hpp"
 #include "../Interfaces/ISpiderServer.hpp"

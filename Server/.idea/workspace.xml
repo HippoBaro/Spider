@@ -13,29 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c748ba33-2dc5-445a-a344-9ccbfe3f96b3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proto/SpiderEnveloppe.proto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proto/SpiderResponse.proto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proto/test.proto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.cc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/test.pb.cc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/test.pb.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Serialization/SpiderDeserializer.hpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Serialization/SpiderSerializer.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Server.iml" afterPath="$PROJECT_DIR$/.idea/Server.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" afterPath="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Interfaces/External/ISpiderSocket.hpp" afterPath="$PROJECT_DIR$/Interfaces/External/ISpiderSocket.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Interfaces/ISpiderEventEmitter.hpp" afterPath="$PROJECT_DIR$/Interfaces/ISpiderEventEmitter.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Interfaces/ISpiderEventListener.hpp" afterPath="$PROJECT_DIR$/Interfaces/ISpiderEventListener.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Interfaces/ISpiderNetworkManager.hpp" afterPath="$PROJECT_DIR$/Interfaces/ISpiderNetworkManager.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpiderEventManager/SpiderEventEmitter.hpp" afterPath="$PROJECT_DIR$/SpiderEventManager/SpiderEventEmitter.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpiderEventManager/SpiderEventListener.hpp" afterPath="$PROJECT_DIR$/SpiderEventManager/SpiderEventListener.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp" afterPath="$PROJECT_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" afterPath="$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpiderServer.hpp" afterPath="$PROJECT_DIR$/SpiderServer.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,76 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OutputSTDOUTModule.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="e#133#161#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpiderNetworkManager.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZeroMQSocketPoller.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZeroMQSocket.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpiderEventEmitter.hpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventEmitter.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpiderEventListener.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventListener.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-              <folding>
-                <element signature="e#137#153#0" expanded="true" />
-                <element signature="e#330#346#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpiderSerializer.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Serialization/SpiderSerializer.hpp">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -133,9 +50,71 @@
       <file leaf-file-name="SpiderEventManager.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventManager.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-27">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="72">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="53" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderServer.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpiderServer.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderEventEmitter.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventEmitter.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderDeserializer.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Serialization/SpiderDeserializer.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderSerializer.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Serialization/SpiderSerializer.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderEnveloppe.pb.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderEnveloppe.pb.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+              <folding>
+                <element signature="e#153#184#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,19 +122,22 @@
       <file leaf-file-name="ISpiderNetworkManager.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderNetworkManager.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ISpiderEventListener.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderEventListener.hpp">
+      <file leaf-file-name="SpiderEventListener.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventListener.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="18">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding>
+                <element signature="e#137#154#0" expanded="true" />
+                <element signature="e#313#329#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,12 +157,10 @@
         <option value="$PROJECT_DIR$/SpiderNetworkManager/SpiderNetworkManager.cpp" />
         <option value="$PROJECT_DIR$/Interfaces/ISpiderEventManager.hpp" />
         <option value="$PROJECT_DIR$/Interfaces/ISpiderBusinessManager.hpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Interfaces/ISpiderServer.hpp" />
         <option value="$PROJECT_DIR$/Interfaces/External/ISpiderSocketPoller.hpp" />
         <option value="$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp" />
         <option value="$PROJECT_DIR$/Includes/ZeroMQ/zmq_addon.hpp" />
-        <option value="$PROJECT_DIR$/SpiderServer.hpp" />
         <option value="$PROJECT_DIR$/BusinessModules/OutputSTDINModule.hpp" />
         <option value="$PROJECT_DIR$/SpiderEventManager/SpiderEventManager.hpp" />
         <option value="$PROJECT_DIR$/BusinessManager/SpiderBusinessManager.hpp" />
@@ -190,20 +170,22 @@
         <option value="$PROJECT_DIR$/Proto/test.proto" />
         <option value="$PROJECT_DIR$/Serialization/SpiderDeserializer.hpp" />
         <option value="$PROJECT_DIR$/Proto/SpiderResponse.proto" />
-        <option value="$PROJECT_DIR$/Interfaces/ISpiderEventEmitter.hpp" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/test.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.h" />
-        <option value="$PROJECT_DIR$/Interfaces/ISpiderNetworkManager.hpp" />
         <option value="$PROJECT_DIR$/Interfaces/External/ISpiderSocket.hpp" />
         <option value="$PROJECT_DIR$/SpiderEventManager/SpiderEventEmitter.hpp" />
         <option value="$PROJECT_DIR$/Interfaces/ISpiderEventListener.hpp" />
         <option value="$PROJECT_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp" />
-        <option value="$PROJECT_DIR$/SpiderEventManager/SpiderEventListener.hpp" />
         <option value="$PROJECT_DIR$/Serialization/SpiderSerializer.hpp" />
         <option value="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" />
         <option value="$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" />
+        <option value="$PROJECT_DIR$/Interfaces/ISpiderEventEmitter.hpp" />
+        <option value="$PROJECT_DIR$/SpiderEventManager/SpiderEventListener.hpp" />
+        <option value="$PROJECT_DIR$/Interfaces/ISpiderNetworkManager.hpp" />
+        <option value="$PROJECT_DIR$/SpiderServer.hpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -232,8 +214,8 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
@@ -267,84 +249,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SpiderSocket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ZeroMQ" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpiderNetworkManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpiderEventManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Serialization" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProtoEnvelopes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Proto" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -360,6 +264,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZeroMQ" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,7 +488,7 @@
       <workItem from="1478540350317" duration="431000" />
       <workItem from="1478540798956" duration="6058000" />
       <workItem from="1478548455107" duration="20018000" />
-      <workItem from="1478629322051" duration="38653000" />
+      <workItem from="1478629322051" duration="45421000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1478540508771</created>
@@ -596,11 +518,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478651403806</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Server ready to rock">
+      <created>1478734245697</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1478734245697</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65160000" />
+    <option name="totallyTimeSpent" value="71928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1176" extended-state="6" />
@@ -642,7 +571,8 @@
     <MESSAGE value="Internal socket kinda sorted out" />
     <MESSAGE value="Socket abstraction implemented" />
     <MESSAGE value="Internal communication working via EventListener and EventEmitter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Internal communication working via EventListener and EventEmitter" />
+    <MESSAGE value="Server ready to rock" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server ready to rock" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -699,8 +629,8 @@
         <state relative-caret-position="450">
           <caret line="25" column="86" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="86" />
           <folding>
-            <element signature="e#137#153#0" expanded="true" />
-            <element signature="e#330#346#0" expanded="true" />
+            <element signature="e#137#154#0" expanded="true" />
+            <element signature="e#313#329#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,14 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderEventManager.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/5/bits/shared_ptr_base.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -798,16 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderServer.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#125#142#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/5/ext/new_allocator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
@@ -816,47 +728,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/External/ISpiderSocketPoller.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding>
-            <element signature="e#137#154#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderBusinessModule.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Includes/ZeroMQ/zmq_addon.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpiderServer.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding>
-            <element signature="e#123#162#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -872,14 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="84" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -916,47 +784,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Serialization/SpiderDeserializer.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proto/SpiderEnveloppe.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderEventEmitter.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#137#172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proto/SpiderResponse.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding>
-            <marker date="1478727326222" expanded="true" signature="2009:2582" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,58 +828,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/External/ISpiderSocket.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/5/functional">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="1530" column="0" selection-start-line="1530" selection-start-column="0" selection-end-line="1530" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderEventListener.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventManager.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderNetworkManager.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Serialization/SpiderSerializer.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1057,42 +841,186 @@
         <state relative-caret-position="486">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#133#161#0" expanded="true" />
+            <element signature="e#133#161#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp">
+    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderServer.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state relative-caret-position="162">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+        <state relative-caret-position="90">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/External/ISpiderSocket.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/External/ISpiderSocketPoller.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proto/SpiderEnveloppe.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="38" />
+          <folding>
+            <element signature="e#123#177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Includes/ZeroMQ/zmq_addon.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#135#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderEventEmitter.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="e#137#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderEventListener.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderEventManager.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventManager.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="53" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventListener.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="18">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
-            <element signature="e#137#153#0" expanded="true" />
-            <element signature="e#330#346#0" expanded="true" />
+            <element signature="e#137#154#0" expanded="true" />
+            <element signature="e#313#329#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpiderEventManager/SpiderEventEmitter.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Serialization/SpiderDeserializer.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Serialization/SpiderSerializer.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="e#153#184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/ISpiderNetworkManager.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpiderServer.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
         </state>
       </provider>

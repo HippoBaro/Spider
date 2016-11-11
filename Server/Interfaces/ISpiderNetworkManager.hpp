@@ -10,7 +10,6 @@
 class ISpiderNetworkManager {
 public:
     virtual void Run() = 0;
-    virtual void SendMessage(SpiderEnveloppe &enveloppe) = 0;
 };
 
 #endif //SPIDER_SERVER_ISPIDERNETWORKMANAGER_HPP

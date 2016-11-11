@@ -8,10 +8,8 @@
 #include <Windows.h>
 #include <vector>
 #include <iostream>
-#include "IWindowsKeyListener.hpp"
-
 #include <string>
-
+#include "IWindowsKeyListener.hpp"
 
 HHOOK hhkLowLevelKybd;
 
@@ -53,9 +51,9 @@ private:
 
 			if (!printable) {
 
-				if (str == "CAPSLOCK")
+				if (str == "VERR.MAJ")
 					capslock = !capslock;
-				else if (str == "SHIFT")
+				else if (str == "MAJ")
 					shift = true;
 				if (str == "ENTER") {
 					str = "\n";

@@ -7,6 +7,7 @@
 
 class ISpiderKeyLogger {
 public:
+	virtual void Run() = 0;
 };
 
 #endif //SPIDER_CLIENT_ISPIDERKEYLOGGER_HPP

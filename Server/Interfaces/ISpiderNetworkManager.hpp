@@ -5,12 +5,11 @@
 #ifndef SPIDER_SERVER_ISPIDERNETWORKMANAGER_HPP
 #define SPIDER_SERVER_ISPIDERNETWORKMANAGER_HPP
 
-#include "../Includes/ZeroMQ/zmq.hpp"
+#include "../ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h"
 
 class ISpiderNetworkManager {
 public:
     virtual void Run() = 0;
-    virtual void SendMessage(std::string id, std::string data) = 0;
 };
 
 #endif //SPIDER_SERVER_ISPIDERNETWORKMANAGER_HPP

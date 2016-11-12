@@ -3,7 +3,7 @@ project(.)
 
 include_directories(
         /usr/local/lib
-        lib/tclap-1.2.1/include/tclap
+        include/tclap
         protobufMessages
 )
 

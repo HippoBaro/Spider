@@ -26,6 +26,7 @@
       <sourceFolder url="file://$MODULE_DIR$/SpiderEventManager/SpiderEventListener.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Serialization/SpiderSerializer.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Serialization/SpiderDeserializer.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/test.pb.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc" isTestSource="false" />

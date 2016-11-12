@@ -208,13 +208,13 @@ class SpiderKeyLoggingPayload : public ::google::protobuf::Message /* @@protoc_i
 
   // accessors -------------------------------------------------------
 
-  // optional string PlaintextKeylog = 1;
+  // optional bytes PlaintextKeylog = 1;
   void clear_plaintextkeylog();
   static const int kPlaintextKeylogFieldNumber = 1;
   const ::std::string& plaintextkeylog() const;
   void set_plaintextkeylog(const ::std::string& value);
   void set_plaintextkeylog(const char* value);
-  void set_plaintextkeylog(const char* value, size_t size);
+  void set_plaintextkeylog(const void* value, size_t size);
   ::std::string* mutable_plaintextkeylog();
   ::std::string* release_plaintextkeylog();
   void set_allocated_plaintextkeylog(::std::string* plaintextkeylog);
@@ -347,7 +347,7 @@ inline const SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload* SpiderKeyLo
 
 // SpiderKeyLoggingPayload
 
-// optional string PlaintextKeylog = 1;
+// optional bytes PlaintextKeylog = 1;
 inline void SpiderKeyLoggingPayload::clear_plaintextkeylog() {
   plaintextkeylog_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -365,7 +365,7 @@ inline void SpiderKeyLoggingPayload::set_plaintextkeylog(const char* value) {
   plaintextkeylog_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderKeyLoggingPayload.PlaintextKeylog)
 }
-inline void SpiderKeyLoggingPayload::set_plaintextkeylog(const char* value, size_t size) {
+inline void SpiderKeyLoggingPayload::set_plaintextkeylog(const void* value, size_t size) {
   
   plaintextkeylog_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

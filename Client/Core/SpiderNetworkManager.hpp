@@ -9,11 +9,7 @@
 #include <ostream>
 #include <iostream>
 #include <memory>
-#include <map>
-#include <vector>
 #include <thread>
-#include "zmq.hpp"
-#include "ISpiderDeamon.hpp"
 #include "ISpiderSocket.hpp"
 #include "ISpiderSocketPoller.hpp"
 #include "ZeroMQSocketPoller.hpp"
@@ -21,38 +17,30 @@
 #include "SpiderEventEmitter.hpp"
 #include "ISpiderEventListener.hpp"
 #include "SpiderEventListener.hpp"
-#include "SpiderSerializer.hpp"
+#include "SpiderDeserialization.hpp"
 
 class SpiderNetworkManager : public ISpiderNetworkManager {
 private:
 	std::unique_ptr<std::thread> _networkMenagerThread;
-	std::unique_ptr<std::thread> _networkMenagerCommanderThread;
 
 	std::shared_ptr<ISpiderSocket> _socket;
-	std::shared_ptr<zmq::socket_t> _commanderSocket;
 
-	std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
-	std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
-
-	std::map<std::string, std::unique_ptr<ISpiderSocket>> _socketPool;
+	std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(std::make_unique<SpiderEventEmitter>());
+	std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(std::make_unique<SpiderEventListener<SpiderEnveloppe>>());
 
 private:
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 
 	void RunReceive() {
-		std::unique_ptr<ISpiderSocketPoller> poller = std::unique_ptr<ISpiderSocketPoller>(new ZeroMQSocketPoller());
+		std::unique_ptr<ISpiderSocketPoller> poller = std::unique_ptr<ISpiderSocketPoller>(std::make_unique<ZeroMQSocketPoller>());
 		while (true) {
-			std::vector<ISpiderSocket *> sockets;
-			for (std::map<std::string, std::unique_ptr<ISpiderSocket>>::iterator it = _socketPool.begin(); it != _socketPool.end(); ++it) {
-				sockets.push_back(it->second.get());
-			}
-			auto msg = poller->ReceivePoller(_socket.get(), sockets);
+			auto msg = _socket->Receive();
 
 			SpiderEnveloppe envelope;
 			try {
 				// Code that could throw an exception
-				envelope = SpiderDeserializer::GetEnvelopeFromMessage(std::get<1>(msg));
+				envelope = SpiderDeserializer::GetEnvelopeFromMessage(msg);
 			}
 			catch (const std::runtime_error& e) {
 				std::cout << "Error : " << e.what() << std::endl;
@@ -65,24 +53,28 @@ private:
 
 public:
 	SpiderNetworkManager() {
-		_socket = std::shared_ptr<ISpiderSocket>(new ZeroMQSocket());
-		_commanderSocket = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderDeamon::Context, ZMQ_REP));
+		_socket = std::static_pointer_cast<ISpiderSocket>(std::make_shared<ZeroMQSocket>());
 	}
-
 	virtual ~SpiderNetworkManager() {
 		_socket->Disconnect();
-		_commanderSocket->close();
 	}
 
 	void Run() override final {
-		_socket->Bind("tcp://*:5432");
-		_commanderSocket->bind("tcp://*:9876");
+		_socket->Connect("tcp://spider.northeurope.cloudapp.azure.com:5432");
 
-		_networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
+		_networkMenagerThread = std::make_unique<std::thread>(std::bind(&SpiderNetworkManager::RunReceive, this));
 		_eventListener->RegisterNoUnpack("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
 			std::string enveloppe_data;
+			enveloppe.set_clientid("Wph2eyRK6ftjkNUP");
 			enveloppe.SerializeToString(&enveloppe_data);
-			_socket->Send(enveloppe.clientid(), enveloppe_data);
+			try {
+				// Code that could throw an exception
+				_socket->Send(enveloppe.clientid(), enveloppe_data);
+			}
+			catch (const std::exception &e) {
+				std::cout << "Error : " << e.what() << std::endl;
+			}
+			
 		});
 	}
 };

@@ -9,7 +9,7 @@ class SpiderEventListener : public ISpiderEventListener<TPayload> {
 private:
 	std::function<void(std::string clientId, TPayload &)> _onMessage;
 	std::unique_ptr<std::thread> _eventListenerThread;
-	std::shared_ptr<zmq::socket_t> _socketSUB = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderDeamon::Context, ZMQ_SUB));
+	std::shared_ptr<zmq::socket_t> _socketSUB = std::make_shared<zmq::socket_t>(*ISpiderDeamon::Context, ZMQ_SUB);
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
@@ -33,13 +33,13 @@ public:
 	virtual void Register(std::string payloadType, std::function<void(std::string clientId, TPayload &)> onMessage) override final {
 		_socketSUB->setsockopt(ZMQ_SUBSCRIBE, payloadType.c_str(), payloadType.size());
 		_onMessage = onMessage;
-		_eventListenerThread = std::unique_ptr<std::thread>(new std::thread(RunReceive, _socketSUB.get(), &_onMessage, true));
+		_eventListenerThread = std::make_unique<std::thread>(RunReceive, _socketSUB.get(), &_onMessage, true);
 	}
 
 	virtual void RegisterNoUnpack(std::string payloadType, std::function<void(std::string clientId, TPayload &)> onMessage) override final {
 		_socketSUB->setsockopt(ZMQ_SUBSCRIBE, payloadType.c_str(), payloadType.size());
 		_onMessage = onMessage;
-		_eventListenerThread = std::unique_ptr<std::thread>(new std::thread(RunReceive, _socketSUB.get(), &_onMessage, false));
+		_eventListenerThread = std::make_unique<std::thread>(RunReceive, _socketSUB.get(), &_onMessage, false);
 	}
 
 	SpiderEventListener() {

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Proto/SpiderEnveloppe.proto";
+
+message SpiderResponse {
+    SpiderEnveloppe enveloppe = 1;
+}

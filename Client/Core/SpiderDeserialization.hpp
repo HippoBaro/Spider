@@ -1,25 +1,20 @@
-#ifndef SPIDER_SERVER_SPIDERSERIALIZER_HPP
-#define SPIDER_SERVER_SPIDERSERIALIZER_HPP
+#ifndef SPIDER_SERVER_DESERIALIZER_HPP
+#define SPIDER_SERVER_DESERIALIZER_HPP
 
 #include <string>
 #include "SpiderEnveloppe.pb.h"
 
-class SpiderSerializer {
+class SpiderDeserializer {
 public:
-	static SpiderEnveloppe CreateFromPayload(std::string destinatorClientId, google::protobuf::Message &payload) {
-		SpiderEnveloppe enveloppe;
-		enveloppe.set_clientid(destinatorClientId);
-		std::string test = payload.GetTypeName();
-		enveloppe.set_payloadtype(test);
-		enveloppe.mutable_payload()->PackFrom(payload);
-
-		return enveloppe;
-	}
-
-	static SpiderEnveloppe CreateResponseFromPayload(std::string destinatorClientId, google::protobuf::Message &payload) {
-		auto innerPayload = CreateFromPayload(destinatorClientId, payload);
-		return CreateFromPayload(destinatorClientId, innerPayload);
+	static SpiderEnveloppe GetEnvelopeFromMessage(const std::string message) {
+		SpiderEnveloppe envelope;
+		if (envelope.ParseFromString(message)) {
+			if (envelope.clientid().size() == 16 && !envelope.payloadtype().empty())
+				return envelope;
+		}
+		throw std::runtime_error("L'enveloppe n'est pas du bon format ou ne respecte pas le protocole.");
 	}
 };
 
-#endif
+#endif //SPIDER_SERVER_DESERIALIZER_HPP
+

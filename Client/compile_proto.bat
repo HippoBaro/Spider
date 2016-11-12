@@ -1,0 +1,1 @@
+.\ProtobufBins\bin\protoc -I=.\Core\ --cpp_out=.\Core\ .\Core\Proto\*.proto

@@ -12,7 +12,7 @@ public:
 	std::unique_ptr<zmq::socket_t> _socket;
 
 	ZeroMQSocket() : ISpiderSocket() {
-		_socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderDeamon::Context, ZMQ_ROUTER));
+		_socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderDeamon::Context, ZMQ_DEALER));
 	}
 
 	virtual std::string &GetSocketID() override {
@@ -29,7 +29,7 @@ public:
 
 	virtual void Send(const std::string &clientId, const std::string &payload) override final {
 		zmq::multipart_t rep;
-		rep.addstr(clientId);
+		_socket->setsockopt(ZMQ_IDENTITY, clientId.c_str(), 16);
 		rep.addstr(payload);
 		rep.send(*_socket, 0);
 	}

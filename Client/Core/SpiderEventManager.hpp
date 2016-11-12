@@ -34,8 +34,8 @@ private:
 
 public:
 	SpiderEventManager() {
-		_socketPUB = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderDeamon::Context, ZMQ_PUB));
-		_socketSUB = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderDeamon::Context, ZMQ_SUB));
+		_socketPUB = std::make_shared<zmq::socket_t>(*ISpiderDeamon::Context, ZMQ_PUB);
+		_socketSUB = std::make_shared<zmq::socket_t>(*ISpiderDeamon::Context, ZMQ_SUB);
 	}
 
 public:
@@ -44,7 +44,7 @@ public:
 		_socketSUB->bind("inproc://EventListener");
 		_socketSUB->setsockopt(ZMQ_SUBSCRIBE, "", 0);
 
-		_eventManagerThread = std::unique_ptr<std::thread>(new std::thread(RunReceive, _socketSUB.get(), _socketPUB.get()));
+		_eventManagerThread = std::make_unique<std::thread>(RunReceive, _socketSUB.get(), _socketPUB.get());
 	}
 };
 

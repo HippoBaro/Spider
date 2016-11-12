@@ -2,14 +2,13 @@
 #define SPIDER_SERVER_SPIDEREVENTEMITTER_HPP
 
 #include <thread>
-#include <iostream>
 #include "zmq_addon.hpp"
 #include "ISpiderEventEmitter.hpp"
 #include <memory>
 #include "ISpiderDeamon.hpp"
 
 class SpiderEventEmitter : public ISpiderEventEmitter {
-	std::shared_ptr<zmq::socket_t> _socketPUB = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderDeamon::Context, ZMQ_PUB));
+	std::shared_ptr<zmq::socket_t> _socketPUB = std::make_shared<zmq::socket_t>(*ISpiderDeamon::Context, ZMQ_PUB);
 
 public:
 	SpiderEventEmitter() {

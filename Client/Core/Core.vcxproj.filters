@@ -34,6 +34,9 @@
     <Filter Include="Fichiers sources\Proto">
       <UniqueIdentifier>{83cc9ae7-9c6b-468d-b332-4e4e3d245e2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Proto">
+      <UniqueIdentifier>{d0ff0133-cd24-4983-92ae-891162818c61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpiderDeamon.hpp">
@@ -46,9 +49,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="MessageDeserializer.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyLogger.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="WindowsKeyListener.hpp">
@@ -129,14 +129,29 @@
     <ClInclude Include="SpiderDeserialization.hpp">
       <Filter>Fichiers d%27en-tête\Serialization</Filter>
     </ClInclude>
+    <ClInclude Include="test.pb.h">
+      <Filter>Fichiers d%27en-tête\Proto</Filter>
+    </ClInclude>
     <ClInclude Include="SpiderEnveloppe.pb.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Proto</Filter>
     </ClInclude>
     <ClInclude Include="SpiderResponse.pb.h">
+      <Filter>Fichiers d%27en-tête\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderKeyLogger.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="test.pb.h">
+    <ClInclude Include="ISpiderCommandHandler.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderContextChangedEvent.pb.h">
+      <Filter>Fichiers d%27en-tête\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderKeyLogger.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderKeyLoggingPayload.pb.h">
+      <Filter>Fichiers d%27en-tête\Proto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +165,12 @@
       <Filter>Fichiers sources\Proto</Filter>
     </ClCompile>
     <ClCompile Include="test.pb.cc">
+      <Filter>Fichiers sources\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="SpiderContextChangedEvent.pb.cc">
+      <Filter>Fichiers sources\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="SpiderKeyLoggingPayload.pb.cc">
       <Filter>Fichiers sources\Proto</Filter>
     </ClCompile>
   </ItemGroup>

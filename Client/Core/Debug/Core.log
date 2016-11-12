@@ -1,5 +1,15 @@
-﻿  Main.cpp
-c:\users\etpas\source\repos\spider\client\core\keyboard.hpp(21): warning C4244: 'argument' : conversion de 'DWORD' en 'BYTE', perte possible de données
-c:\users\etpas\source\repos\spider\client\core\keyboard.hpp(25): warning C4244: 'argument' : conversion de 'DWORD' en 'BYTE', perte possible de données
-  Core.vcxproj -> C:\Users\etpas\Source\Repos\Spider\Client\Core\Debug\Core.exe
-  Core.vcxproj -> C:\Users\etpas\Source\Repos\Spider\Client\Core\Debug\Core.pdb (Partial PDB)
+﻿  main.cpp
+c:\users\etpas\source\repos\spider\client\core\zmq.hpp(155): warning C4244: 'argument' : conversion de '__int64' en 'long', perte possible de données
+c:\users\etpas\source\repos\spider\client\core\zmq.hpp(160): warning C4244: 'argument' : conversion de '__int64' en 'long', perte possible de données
+c:\users\etpas\source\repos\spider\client\core\spidereventlistener.hpp(14): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidereventlistener.hpp(15): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidereventlistener.hpp(30): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidernetworkmanager.hpp(40): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidernetworkmanager.hpp(41): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidernetworkmanager.hpp(64): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidereventmanager.hpp(17): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidereventmanager.hpp(18): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\spidereventmanager.hpp(33): warning C4068: pragma inconnu
+c:\users\etpas\source\repos\spider\client\core\zeromqsocket.hpp(27): warning C4172: retourne l'adresse d'une variable locale ou  temporaire
+c:\users\etpas\source\repos\spider\client\core\zeromqsocket.hpp(41): warning C4172: retourne l'adresse d'une variable locale ou : ret temporaire
+libprotobuf.lib(generated_message_util.cc.obj) : fatal error LNK1112: type d'ordinateur module 'x64' en conflit avec le type d'ordinateur cible 'X86'

@@ -6,6 +6,8 @@
 #define SPIDER_CLIENT_ISPIDERDEAMON_HPP
 #include "zmq.hpp"
 
+#include <memory>
+
 class ISpiderDeamon {
 public:
 	static zmq::context_t *Context;

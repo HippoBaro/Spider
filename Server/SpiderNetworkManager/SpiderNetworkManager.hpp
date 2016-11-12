@@ -40,7 +40,6 @@ private:
                 sockets.push_back(it->second.get());
             }
             auto msg = poller->ReceivePoller(_socket.get(), sockets);
-            std::cout << "DEBUG : Received message from network."<< std::endl;
 
             SpiderEnveloppe envelope;
             try {

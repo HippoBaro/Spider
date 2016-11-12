@@ -1,0 +1,7 @@
+package spider;
+
+message CmdPacket {
+  required string TargetUUID = 1;
+  required string Name = 2;
+  optional string Argument = 3;
+}

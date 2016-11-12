@@ -1,0 +1,13 @@
+package spider;
+
+message RequestPacket {
+  enum MethodID {
+    LIST = 0;
+    GET = 1;
+    SEND = 2;
+  }
+  required MethodID Method = 1;
+  optional string TargetUUID = 2;
+  optional int32 Limit = 3;
+  optional string Command = 4;
+}

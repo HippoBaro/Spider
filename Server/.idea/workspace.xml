@@ -13,12 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c748ba33-2dc5-445a-a344-9ccbfe3f96b3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proto/SpiderKeyloggingPayload.proto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.cc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Server.iml" afterPath="$PROJECT_DIR$/.idea/Server.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" afterPath="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" afterPath="$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" />
     </list>
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,33 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpiderResponse.pb.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#733#767#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.pb.cc" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/test.pb.cc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutputSTDOUTModule.hpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OutputSTDOUTModule.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="92" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="92" />
+            <state relative-caret-position="306">
+              <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
               <folding>
                 <element signature="e#133#161#0" expanded="true" />
               </folding>
@@ -92,11 +67,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SpiderKeyloggingPayload.proto" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proto/SpiderKeyloggingPayload.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="36">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -107,7 +92,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-              <folding />
+              <folding>
+                <marker date="1478908842585" expanded="true" signature="3426:4255" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +104,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-              <folding />
+              <folding>
+                <marker date="1478908828129" expanded="true" signature="996:1997" ph="{...}" />
+                <marker date="1478908828129" expanded="true" signature="4713:4842" ph="{...}" />
+                <marker date="1478908828129" expanded="true" signature="7036:7113" ph="{...}" />
+                <marker date="1478908828129" expanded="true" signature="7174:7275" ph="{...}" />
+                <marker date="1478908828129" expanded="true" signature="10729:11891" ph="{...}" />
+                <marker date="1478908828129" expanded="true" signature="12043:13334" ph="{...}" />
+                <marker date="1478908828129" expanded="true" signature="15988:16132" ph="{...}" />
+                <marker date="1478908828129" expanded="true" signature="16250:16305" ph="{...}" />
+                <marker date="1478908828129" expanded="false" signature="16905:22191" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,13 +178,13 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp" />
         <option value="$PROJECT_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" />
-        <option value="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" />
         <option value="$PROJECT_DIR$/Proto/SpiderKeyloggingPayload.proto" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.h" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/test.pb.cc" />
+        <option value="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" />
       </list>
     </option>
   </component>
@@ -554,7 +551,7 @@
       <workItem from="1478540350317" duration="431000" />
       <workItem from="1478540798956" duration="6058000" />
       <workItem from="1478548455107" duration="20018000" />
-      <workItem from="1478629322051" duration="51065000" />
+      <workItem from="1478629322051" duration="51527000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1478540508771</created>
@@ -605,11 +602,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478861741186</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added keylogging payload proto">
+      <created>1478908892677</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1478908892677</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77572000" />
+    <option name="totallyTimeSpent" value="78034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1176" extended-state="6" />
@@ -653,7 +657,8 @@
     <MESSAGE value="Internal communication working via EventListener and EventEmitter" />
     <MESSAGE value="Server ready to rock" />
     <MESSAGE value="Fixed wrong override." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed wrong override." />
+    <MESSAGE value="Added keylogging payload proto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added keylogging payload proto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -682,8 +687,7 @@
         <state relative-caret-position="450">
           <caret line="25" column="86" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="86" />
           <folding>
-            <element signature="e#137#154#0" expanded="true" />
-            <element signature="e#313#329#0" expanded="true" />
+            <element signature="e#313#329#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,14 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/google/protobuf/any.pb.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -874,7 +870,7 @@
         <state relative-caret-position="378">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#135#195#0" expanded="true" />
+            <element signature="e#135#195#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -884,7 +880,7 @@
         <state relative-caret-position="72">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="46" />
           <folding>
-            <element signature="e#137#172#0" expanded="true" />
+            <element signature="e#137#172#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -966,8 +962,7 @@
         <state relative-caret-position="378">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#137#154#0" expanded="true" />
-            <element signature="e#313#329#0" expanded="true" />
+            <element signature="e#313#329#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -977,7 +972,7 @@
         <state relative-caret-position="396">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
-            <element signature="e#123#177#0" expanded="true" />
+            <element signature="e#123#177#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1030,24 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="92" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="92" />
-          <folding>
-            <element signature="e#133#161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proto/SpiderKeyloggingPayload.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1060,7 +1037,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1478908828129" expanded="true" signature="996:1997" ph="{...}" />
+            <marker date="1478908828129" expanded="true" signature="4713:4842" ph="{...}" />
+            <marker date="1478908828129" expanded="true" signature="7036:7113" ph="{...}" />
+            <marker date="1478908828129" expanded="true" signature="7174:7275" ph="{...}" />
+            <marker date="1478908828129" expanded="true" signature="10729:11891" ph="{...}" />
+            <marker date="1478908828129" expanded="true" signature="12043:13334" ph="{...}" />
+            <marker date="1478908828129" expanded="true" signature="15988:16132" ph="{...}" />
+            <marker date="1478908828129" expanded="true" signature="16250:16305" ph="{...}" />
+            <marker date="1478908828129" expanded="false" signature="16905:22191" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1068,6 +1055,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding>
+            <marker date="1478908842585" expanded="true" signature="3426:4255" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/test.pb.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1080,21 +1085,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.h">
+    <entry file="file://$PROJECT_DIR$/Proto/SpiderKeyloggingPayload.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#733#767#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/test.pb.cc">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        <state relative-caret-position="519">
+          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+          <folding>
+            <element signature="e#133#161#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

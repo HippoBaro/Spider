@@ -117,7 +117,7 @@ void protobuf_AddDesc_Proto_2fSpiderKeyloggingPayload_2eproto_impl() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n#Proto/SpiderKeyloggingPayload.proto\"\310\001"
     "\n\027SpiderKeyLoggingPayload\022\027\n\017PlaintextKe"
-    "ylog\030\001 \001(\t\022H\n\007Context\030\002 \001(\01327.SpiderKeyL"
+    "ylog\030\001 \001(\014\022H\n\007Context\030\002 \001(\01327.SpiderKeyL"
     "oggingPayload.SpiderKeyLoggingContextPay"
     "load\032J\n\036SpiderKeyLoggingContextPayload\022\023"
     "\n\013ProcessName\030\001 \001(\t\022\023\n\013WindowsName\030\002 \001(\t"
@@ -528,15 +528,11 @@ bool SpiderKeyLoggingPayload::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string PlaintextKeylog = 1;
+      // optional bytes PlaintextKeylog = 1;
       case 1: {
         if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_plaintextkeylog()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->plaintextkeylog().data(), this->plaintextkeylog().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "SpiderKeyLoggingPayload.PlaintextKeylog"));
         } else {
           goto handle_unusual;
         }
@@ -581,13 +577,9 @@ failure:
 void SpiderKeyLoggingPayload::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:SpiderKeyLoggingPayload)
-  // optional string PlaintextKeylog = 1;
+  // optional bytes PlaintextKeylog = 1;
   if (this->plaintextkeylog().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plaintextkeylog().data(), this->plaintextkeylog().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderKeyLoggingPayload.PlaintextKeylog");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       1, this->plaintextkeylog(), output);
   }
 
@@ -604,14 +596,10 @@ void SpiderKeyLoggingPayload::SerializeWithCachedSizes(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:SpiderKeyLoggingPayload)
-  // optional string PlaintextKeylog = 1;
+  // optional bytes PlaintextKeylog = 1;
   if (this->plaintextkeylog().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plaintextkeylog().data(), this->plaintextkeylog().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderKeyLoggingPayload.PlaintextKeylog");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         1, this->plaintextkeylog(), target);
   }
 
@@ -630,10 +618,10 @@ size_t SpiderKeyLoggingPayload::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:SpiderKeyLoggingPayload)
   size_t total_size = 0;
 
-  // optional string PlaintextKeylog = 1;
+  // optional bytes PlaintextKeylog = 1;
   if (this->plaintextkeylog().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->plaintextkeylog());
   }
 
@@ -822,7 +810,7 @@ inline const SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload* SpiderKeyLo
 
 // SpiderKeyLoggingPayload
 
-// optional string PlaintextKeylog = 1;
+// optional bytes PlaintextKeylog = 1;
 void SpiderKeyLoggingPayload::clear_plaintextkeylog() {
   plaintextkeylog_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -840,7 +828,7 @@ void SpiderKeyLoggingPayload::set_plaintextkeylog(const char* value) {
   plaintextkeylog_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderKeyLoggingPayload.PlaintextKeylog)
 }
-void SpiderKeyLoggingPayload::set_plaintextkeylog(const char* value, size_t size) {
+void SpiderKeyLoggingPayload::set_plaintextkeylog(const void* value, size_t size) {
   
   plaintextkeylog_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

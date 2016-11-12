@@ -12,6 +12,7 @@
 #include "../SpiderEventManager/SpiderEventListener.hpp"
 #include "../ProtoEnvelopes/Proto/test.pb.h"
 #include "../Serialization/SpiderSerializer.hpp"
+#include "../SpiderEventManager/SpiderEventEmitter.hpp"
 
 class OutputSTDOUTModule : public ISpiderBusinessModule {
     std::unique_ptr<ISpiderEventListener<testPayload>> _eventListener = std::unique_ptr<ISpiderEventListener<testPayload>>(new SpiderEventListener<testPayload>());
@@ -23,8 +24,6 @@ public:
         _eventListener->Register("testPayload", [&](std::string clientId, testPayload &payload) {
             std::cout << "Message from ID : " << clientId << " Payload is : " << payload.content() << std::endl;
             auto enveloppe = SpiderSerializer::CreateResponseFromPayload(clientId, payload);
-            std::string enveloppe_data;
-            enveloppe.SerializeToString(&enveloppe_data);
             _eventEmitter->Emit("SpiderNetworkManager", enveloppe);
         });
     }

@@ -120,7 +120,7 @@ void protobuf_AddDesc_Proto_2fSpiderKeyloggingPayload_2eproto_impl() {
     "ylog\030\001 \001(\014\022H\n\007Context\030\002 \001(\01327.SpiderKeyL"
     "oggingPayload.SpiderKeyLoggingContextPay"
     "load\032J\n\036SpiderKeyLoggingContextPayload\022\023"
-    "\n\013ProcessName\030\001 \001(\t\022\023\n\013WindowsName\030\002 \001(\t"
+    "\n\013ProcessName\030\001 \001(\014\022\023\n\013WindowsName\030\002 \001(\014"
     "b\006proto3", 248);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Proto/SpiderKeyloggingPayload.proto", &protobuf_RegisterTypes);
@@ -231,15 +231,11 @@ bool SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::MergePartialFromCod
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string ProcessName = 1;
+      // optional bytes ProcessName = 1;
       case 1: {
         if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_processname()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->processname().data(), this->processname().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.ProcessName"));
         } else {
           goto handle_unusual;
         }
@@ -247,16 +243,12 @@ bool SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::MergePartialFromCod
         break;
       }
 
-      // optional string WindowsName = 2;
+      // optional bytes WindowsName = 2;
       case 2: {
         if (tag == 18) {
          parse_WindowsName:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_windowsname()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->windowsname().data(), this->windowsname().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.WindowsName"));
         } else {
           goto handle_unusual;
         }
@@ -288,23 +280,15 @@ failure:
 void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload)
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   if (this->processname().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->processname().data(), this->processname().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.ProcessName");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       1, this->processname(), output);
   }
 
-  // optional string WindowsName = 2;
+  // optional bytes WindowsName = 2;
   if (this->windowsname().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->windowsname().data(), this->windowsname().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.WindowsName");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       2, this->windowsname(), output);
   }
 
@@ -315,25 +299,17 @@ void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::SerializeWithCached
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload)
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   if (this->processname().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->processname().data(), this->processname().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.ProcessName");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         1, this->processname(), target);
   }
 
-  // optional string WindowsName = 2;
+  // optional bytes WindowsName = 2;
   if (this->windowsname().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->windowsname().data(), this->windowsname().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.WindowsName");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         2, this->windowsname(), target);
   }
 
@@ -345,17 +321,17 @@ size_t SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::ByteSizeLong() co
 // @@protoc_insertion_point(message_byte_size_start:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload)
   size_t total_size = 0;
 
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   if (this->processname().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->processname());
   }
 
-  // optional string WindowsName = 2;
+  // optional bytes WindowsName = 2;
   if (this->windowsname().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->windowsname());
   }
 
@@ -715,7 +691,7 @@ void SpiderKeyLoggingPayload::InternalSwap(SpiderKeyLoggingPayload* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload
 
-// optional string ProcessName = 1;
+// optional bytes ProcessName = 1;
 void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::clear_processname() {
   processname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -733,7 +709,7 @@ void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_processname(con
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.ProcessName)
 }
-void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_processname(const char* value, size_t size) {
+void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_processname(const void* value, size_t size) {
   
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -759,7 +735,7 @@ void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_allocated_proce
   // @@protoc_insertion_point(field_set_allocated:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.ProcessName)
 }
 
-// optional string WindowsName = 2;
+// optional bytes WindowsName = 2;
 void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::clear_windowsname() {
   windowsname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -777,7 +753,7 @@ void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_windowsname(con
   windowsname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.WindowsName)
 }
-void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_windowsname(const char* value, size_t size) {
+void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_windowsname(const void* value, size_t size) {
   
   windowsname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

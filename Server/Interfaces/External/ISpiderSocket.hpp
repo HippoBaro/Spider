@@ -25,7 +25,7 @@ public:
 
     /// Return an arbitrary named implementation identity.
     /// \return
-    virtual const std::string &GetSocketImplementationIdentity() = 0;
+    virtual const std::string GetSocketImplementationIdentity() = 0;
 
     /// Sends \payload via the connected socket.
     /// \param payload The message payload to send.
@@ -34,7 +34,7 @@ public:
 
     /// Should block until a message can be received.
     /// \return message from socket
-    virtual std::string &Receive() = 0;
+    virtual std::string Receive() = 0;
 
     /// Connect the socket to the \address using the specified protocol.
     /// \param address Ex:"tcp://127.0.0.1:5432"

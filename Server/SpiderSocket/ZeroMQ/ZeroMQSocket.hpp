@@ -5,7 +5,6 @@
 #ifndef SPIDER_SERVER_ZEROMQSOCKET_HPP
 #define SPIDER_SERVER_ZEROMQSOCKET_HPP
 
-#include "../../Interfaces/External/ISpiderSocket.hpp"
 #include "../../Includes/ZeroMQ/zmq.hpp"
 #include <zmq.h>
 
@@ -15,8 +14,6 @@ public:
 
     ZeroMQSocket() : ISpiderSocket() {
         _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_ROUTER));
-        _socket->setsockopt(ZMQ_CURVE_SERVER, 1);
-        _socket->setsockopt(ZMQ_CURVE_SECRETKEY, "JTKVSB%%)wK0E.X)V>+}o?pNmC{O&4W4b!Ni{Lh6");
         _socket->setsockopt(ZMQ_ROUTER_HANDOVER, 1); //configure handover. New connection will take precedence over old ones in cas of collision.
         _socket->setsockopt(ZMQ_ROUTER_MANDATORY, 1); //Enforces client authentication to ensure that we can route message to correct pairs.
     }
@@ -29,7 +26,7 @@ public:
         ISpiderSocket::SetSocketID(id);
     }
 
-    const std::string &GetSocketImplementationIdentity() override {
+    const std::string GetSocketImplementationIdentity() override {
         return "ZeroMQ";
     }
 
@@ -46,7 +43,7 @@ public:
 
     }
 
-    virtual std::string &Receive() override final {
+    virtual std::string Receive() override final {
         zmq::message_t msg;
         _socket->recv(&msg);
         std::string ret = std::string(static_cast<char*>(msg.data()), msg.size());

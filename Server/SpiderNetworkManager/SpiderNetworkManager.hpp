@@ -10,12 +10,12 @@
 #include "../Interfaces/ISpiderNetworkManager.hpp"
 #include "../SpiderEventManager/SpiderEventEmitter.hpp"
 #include "../SpiderEventManager/SpiderEventListener.hpp"
-#include "../SpiderSocket/ZeroMQ/ZeroMQSocket.hpp"
 #include "../SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp"
 #include "../ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h"
 #include "../Serialization/SpiderDeserializer.hpp"
 #include "../Interfaces/ISpiderCryptographicAgent.hpp"
 #include "RSACryptographicAgent.hpp"
+#include "../SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp"
 
 class SpiderNetworkManager : public ISpiderNetworkManager {
 private:
@@ -26,7 +26,6 @@ private:
     std::shared_ptr<zmq::socket_t> _commanderSocket;
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
     std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
-    std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListenerNoEncrypt = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
 
     std::map<std::string, std::unique_ptr<ISpiderSocket>> _socketPool;
 
@@ -77,7 +76,7 @@ private:
 
 public:
     SpiderNetworkManager() {
-        _socket = std::shared_ptr<ISpiderSocket>(new ZeroMQSocket());
+        _socket = std::shared_ptr<ISpiderSocket>(new ZeroMQSecureSocket<Server>("JTKVSB%%)wK0E.X)V>+}o?pNmC{O&4W4b!Ni{Lh6"));
         _commanderSocket = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_REP));
     }
 
@@ -92,11 +91,6 @@ public:
 
         _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
         _eventListener->RegisterNoUnpack("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
-            std::string enveloppe_data;
-            enveloppe.SerializeToString(&enveloppe_data);
-            _socket->Send(enveloppe.clientid(), enveloppe_data);
-        });
-        _eventListenerNoEncrypt->RegisterNoUnpack("NoEncryption:SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
             std::string enveloppe_data;
             enveloppe.SerializeToString(&enveloppe_data);
             _socket->Send(enveloppe.clientid(), enveloppe_data);

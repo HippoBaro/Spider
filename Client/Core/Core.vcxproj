@@ -56,6 +56,7 @@
     <ClInclude Include="SpiderEventManager.hpp" />
     <ClInclude Include="SpiderKeyLogger.hpp" />
     <ClInclude Include="SpiderKeyLoggingPayload.pb.h" />
+    <ClInclude Include="SpiderMouseEvent.pb.h" />
     <ClInclude Include="SpiderNetworkManager.hpp" />
     <ClInclude Include="SpiderResponse.pb.h" />
     <ClInclude Include="SpiderSerializer.hpp" />
@@ -74,6 +75,7 @@
     <ClCompile Include="SpiderContextChangedEvent.pb.cc" />
     <ClCompile Include="SpiderEnveloppe.pb.cc" />
     <ClCompile Include="SpiderKeyLoggingPayload.pb.cc" />
+    <ClCompile Include="SpiderMouseEvent.pb.cc" />
     <ClCompile Include="SpiderResponse.pb.cc" />
     <ClCompile Include="test.pb.cc" />
   </ItemGroup>

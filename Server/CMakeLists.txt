@@ -40,4 +40,4 @@ set(SOURCE_FILES
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/ProtoEnvelopes)
 
 add_executable(Spider_Server ${SOURCE_FILES})
-target_link_libraries(Spider_Server pthread zmq protobuf crypto ssl)
+target_link_libraries(Spider_Server pthread zmq protobuf)

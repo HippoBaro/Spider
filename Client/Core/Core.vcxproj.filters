@@ -138,12 +138,6 @@
     <ClInclude Include="SpiderResponse.pb.h">
       <Filter>Fichiers d%27en-tête\Proto</Filter>
     </ClInclude>
-    <ClInclude Include="ISpiderKeyLogger.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ISpiderCommandHandler.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="SpiderContextChangedEvent.pb.h">
       <Filter>Fichiers d%27en-tête\Proto</Filter>
     </ClInclude>
@@ -152,6 +146,18 @@
     </ClInclude>
     <ClInclude Include="SpiderKeyLoggingPayload.pb.h">
       <Filter>Fichiers d%27en-tête\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsMouseListener.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="IWindowsMouseListener.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderKeyLogger.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ISpiderCommandHandler.hpp">
+      <Filter>Fichiers d%27en-tête\Interface</Filter>
     </ClInclude>
     <ClInclude Include="ZeroMQSecureSocket.hpp">
       <Filter>Fichiers d%27en-tête\SpiderSocket\ZeroMQ</Filter>

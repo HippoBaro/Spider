@@ -44,6 +44,7 @@
     <ClInclude Include="ISpiderSocketPoller.hpp" />
     <ClInclude Include="IWindowsContextAgent.hpp" />
     <ClInclude Include="IWindowsKeyListener.hpp" />
+    <ClInclude Include="IWindowsMouseListener.hpp" />
     <ClInclude Include="MessageDeserializer.hpp" />
     <ClInclude Include="SecurityAgent.hpp" />
     <ClInclude Include="SpiderContextChangedEvent.pb.h" />
@@ -62,6 +63,7 @@
     <ClInclude Include="WindowsContextAgent.hpp" />
     <ClInclude Include="WindowsKeyListener.hpp" />
     <ClInclude Include="ZeroMQSecureSocket.hpp" />
+    <ClInclude Include="WindowsMouseListener.hpp" />
     <ClInclude Include="ZeroMQSocket.hpp" />
     <ClInclude Include="ZeroMQSocketPoller.hpp" />
     <ClInclude Include="zmq.hpp" />

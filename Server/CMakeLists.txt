@@ -35,7 +35,7 @@ set(SOURCE_FILES
 
         BusinessModules/OutputSTDOUTModule.hpp
 
-        ${proto_SRC} Serialization/SpiderDeserializer.hpp Serialization/SpiderSerializer.hpp Interfaces/ISpiderCryptographicAgent.hpp Enums/Cryptography.hpp SpiderNetworkManager/RSACryptographicAgent.hpp BusinessModules/AuthenticationModule.hpp SpiderNetworkManager/AESCryptographicAgent.hpp Interfaces/External/ISpiderSecureSocket.hpp SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp Enums/SecureSocketType.hpp)
+        ${proto_SRC} Serialization/SpiderDeserializer.hpp Serialization/SpiderSerializer.hpp Interfaces/ISpiderCryptographicAgent.hpp Enums/Cryptography.hpp SpiderNetworkManager/RSACryptographicAgent.hpp SpiderNetworkManager/AESCryptographicAgent.hpp SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp Enums/SecureSocketType.hpp)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/ProtoEnvelopes)
 

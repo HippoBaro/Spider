@@ -14,20 +14,19 @@ class ZeroMQSecureSocket : public ZeroMQSocket { };
 template <>
 class ZeroMQSecureSocket<Server> : public ZeroMQSocket {
 public:
-    ZeroMQSecureSocket(std::string serverSecretKey) : ZeroMQSocket() {
+    ZeroMQSecureSocket(const std::string &serverSecretKey) : ZeroMQSocket() {
         _socket->setsockopt(ZMQ_CURVE_SERVER, 1);
-        _socket->setsockopt(ZMQ_CURVE_SECRETKEY, serverSecretKey);
+        _socket->setsockopt(ZMQ_CURVE_SECRETKEY, strdup(serverSecretKey.c_str()), serverSecretKey.size());
     }
 };
 
 template <>
 class ZeroMQSecureSocket<Client> : public ZeroMQSocket {
 public:
-    ZeroMQSecureSocket(std::string serverKey, std::string publicKey, std::string clientSecretKey) : ZeroMQSocket() {
-        _socket->setsockopt(ZMQ_CURVE_SERVERKEY, serverKey);
-        _socket->setsockopt(ZMQ_CURVE_PUBLICKEY, publicKey);
-        _socket->setsockopt(ZMQ_CURVE_SECRETKEY, clientSecretKey);
+    ZeroMQSecureSocket(const std::string &serverKey, const std::string &publicKey, const std::string &clientSecretKey) : ZeroMQSocket() {
+        _socket->setsockopt(ZMQ_CURVE_SERVERKEY, strdup(serverKey.c_str()), serverKey.size());
+        _socket->setsockopt(ZMQ_CURVE_PUBLICKEY, strdup(publicKey.c_str()), publicKey.size());
+        _socket->setsockopt(ZMQ_CURVE_SECRETKEY, strdup(clientSecretKey.c_str()), clientSecretKey.size());
     }
 };
-
 #endif //SPIDER_SERVER_ZEROMQSOCKET_HPP

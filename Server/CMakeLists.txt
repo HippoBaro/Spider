@@ -35,9 +35,9 @@ set(SOURCE_FILES
 
         BusinessModules/OutputSTDOUTModule.hpp
 
-        ${proto_SRC} Serialization/SpiderDeserializer.hpp Serialization/SpiderSerializer.hpp)
+        ${proto_SRC} Serialization/SpiderDeserializer.hpp Serialization/SpiderSerializer.hpp Interfaces/ISpiderCryptographicAgent.hpp Enums/Cryptography.hpp SpiderNetworkManager/RSACryptographicAgent.hpp BusinessModules/AuthenticationModule.hpp SpiderNetworkManager/AESCryptographicAgent.hpp)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/ProtoEnvelopes)
 
 add_executable(Spider_Server ${SOURCE_FILES})
-target_link_libraries(Spider_Server pthread zmq protobuf)
+target_link_libraries(Spider_Server pthread zmq protobuf crypto ssl)

@@ -10,12 +10,13 @@
 #include "../Interfaces/ISpiderBusinessModule.hpp"
 #include "../Interfaces/ISpiderEventListener.hpp"
 #include "../SpiderEventManager/SpiderEventListener.hpp"
-#include "../Serialization/SpiderSerializer.hpp"
 #include "../SpiderEventManager/SpiderEventEmitter.hpp"
 #include "../ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.h"
+#include "../ProtoEnvelopes/Proto/test.pb.h"
 
 class OutputSTDOUTModule : public ISpiderBusinessModule {
     std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>>(new SpiderEventListener<SpiderKeyLoggingPayload>());
+    std::unique_ptr<ISpiderEventListener<testPayload>> _eventTestListener = std::unique_ptr<ISpiderEventListener<testPayload>>(new SpiderEventListener<testPayload>());
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
 private:
 
@@ -28,6 +29,10 @@ public:
             if (payload.plaintextkeylog() != "")
                 std::cout << "==> " << payload.plaintextkeylog() << std::endl;
             std::cout << "---------------------------------------------------" << std::endl;
+        });
+
+        _eventTestListener->Register("testPayload", [&](std::string clientId, testPayload &payload){
+            std::cout << "testPayload : " << payload.content() << std::endl;
         });
     }
 };

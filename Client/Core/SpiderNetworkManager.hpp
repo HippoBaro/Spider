@@ -18,6 +18,7 @@
 #include "ISpiderEventListener.hpp"
 #include "SpiderEventListener.hpp"
 #include "SpiderDeserialization.hpp"
+#include "ZeroMQSecureSocket.hpp"
 
 class SpiderNetworkManager : public ISpiderNetworkManager {
 private:
@@ -53,12 +54,12 @@ private:
 
 public:
 	SpiderNetworkManager() {
-		_socket = std::static_pointer_cast<ISpiderSocket>(std::make_shared<ZeroMQSocket>());
+		_socket = std::static_pointer_cast<ISpiderSocket>(std::make_shared<ZeroMQSecureSocket<Client>>("rq:rM>}U?@Lns47E1%kR.o@n%FcmmsL/@{H8]yf7", "Yne@$w-vo<fVvi]a<NY6T1ed:M$fCG*[IaLV{hID", "D:)Q[IlAW!ahhC2ac:9*A}h:p?([4%wOTJ%JR%cs"));
 	}
 	virtual ~SpiderNetworkManager() {
 		_socket->Disconnect();
 	}
-
+	
 	void Run() override final {
 		_socket->Connect("tcp://spider.northeurope.cloudapp.azure.com:5432");
 

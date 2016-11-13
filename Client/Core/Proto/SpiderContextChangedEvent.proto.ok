@@ -1,6 +1,6 @@
 syntax = "proto3";
 
 message SpiderContextChangedEvent {
-    string ProcessName = 1;
-    string WindowTitle = 2;
+    bytes ProcessName = 1;
+    bytes WindowTitle = 2;
 }

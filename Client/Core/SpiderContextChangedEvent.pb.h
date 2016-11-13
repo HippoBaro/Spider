@@ -102,24 +102,24 @@ class SpiderContextChangedEvent : public ::google::protobuf::Message /* @@protoc
 
   // accessors -------------------------------------------------------
 
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   void clear_processname();
   static const int kProcessNameFieldNumber = 1;
   const ::std::string& processname() const;
   void set_processname(const ::std::string& value);
   void set_processname(const char* value);
-  void set_processname(const char* value, size_t size);
+  void set_processname(const void* value, size_t size);
   ::std::string* mutable_processname();
   ::std::string* release_processname();
   void set_allocated_processname(::std::string* processname);
 
-  // optional string WindowTitle = 2;
+  // optional bytes WindowTitle = 2;
   void clear_windowtitle();
   static const int kWindowTitleFieldNumber = 2;
   const ::std::string& windowtitle() const;
   void set_windowtitle(const ::std::string& value);
   void set_windowtitle(const char* value);
-  void set_windowtitle(const char* value, size_t size);
+  void set_windowtitle(const void* value, size_t size);
   ::std::string* mutable_windowtitle();
   ::std::string* release_windowtitle();
   void set_allocated_windowtitle(::std::string* windowtitle);
@@ -148,7 +148,7 @@ extern ::google::protobuf::internal::ExplicitlyConstructed<SpiderContextChangedE
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
 // SpiderContextChangedEvent
 
-// optional string ProcessName = 1;
+// optional bytes ProcessName = 1;
 inline void SpiderContextChangedEvent::clear_processname() {
   processname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -166,7 +166,7 @@ inline void SpiderContextChangedEvent::set_processname(const char* value) {
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderContextChangedEvent.ProcessName)
 }
-inline void SpiderContextChangedEvent::set_processname(const char* value, size_t size) {
+inline void SpiderContextChangedEvent::set_processname(const void* value, size_t size) {
   
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -192,7 +192,7 @@ inline void SpiderContextChangedEvent::set_allocated_processname(::std::string* 
   // @@protoc_insertion_point(field_set_allocated:SpiderContextChangedEvent.ProcessName)
 }
 
-// optional string WindowTitle = 2;
+// optional bytes WindowTitle = 2;
 inline void SpiderContextChangedEvent::clear_windowtitle() {
   windowtitle_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -210,7 +210,7 @@ inline void SpiderContextChangedEvent::set_windowtitle(const char* value) {
   windowtitle_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderContextChangedEvent.WindowTitle)
 }
-inline void SpiderContextChangedEvent::set_windowtitle(const char* value, size_t size) {
+inline void SpiderContextChangedEvent::set_windowtitle(const void* value, size_t size) {
   
   windowtitle_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

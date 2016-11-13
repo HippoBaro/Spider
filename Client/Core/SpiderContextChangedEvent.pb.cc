@@ -92,7 +92,7 @@ void protobuf_AddDesc_Proto_2fSpiderContextChangedEvent_2eproto_impl() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n%Proto/SpiderContextChangedEvent.proto\""
     "E\n\031SpiderContextChangedEvent\022\023\n\013ProcessN"
-    "ame\030\001 \001(\t\022\023\n\013WindowTitle\030\002 \001(\tb\006proto3", 118);
+    "ame\030\001 \001(\014\022\023\n\013WindowTitle\030\002 \001(\014b\006proto3", 118);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Proto/SpiderContextChangedEvent.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Proto_2fSpiderContextChangedEvent_2eproto);
@@ -202,15 +202,11 @@ bool SpiderContextChangedEvent::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string ProcessName = 1;
+      // optional bytes ProcessName = 1;
       case 1: {
         if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_processname()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->processname().data(), this->processname().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "SpiderContextChangedEvent.ProcessName"));
         } else {
           goto handle_unusual;
         }
@@ -218,16 +214,12 @@ bool SpiderContextChangedEvent::MergePartialFromCodedStream(
         break;
       }
 
-      // optional string WindowTitle = 2;
+      // optional bytes WindowTitle = 2;
       case 2: {
         if (tag == 18) {
          parse_WindowTitle:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_windowtitle()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->windowtitle().data(), this->windowtitle().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "SpiderContextChangedEvent.WindowTitle"));
         } else {
           goto handle_unusual;
         }
@@ -259,23 +251,15 @@ failure:
 void SpiderContextChangedEvent::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:SpiderContextChangedEvent)
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   if (this->processname().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->processname().data(), this->processname().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderContextChangedEvent.ProcessName");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       1, this->processname(), output);
   }
 
-  // optional string WindowTitle = 2;
+  // optional bytes WindowTitle = 2;
   if (this->windowtitle().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->windowtitle().data(), this->windowtitle().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderContextChangedEvent.WindowTitle");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       2, this->windowtitle(), output);
   }
 
@@ -286,25 +270,17 @@ void SpiderContextChangedEvent::SerializeWithCachedSizes(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:SpiderContextChangedEvent)
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   if (this->processname().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->processname().data(), this->processname().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderContextChangedEvent.ProcessName");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         1, this->processname(), target);
   }
 
-  // optional string WindowTitle = 2;
+  // optional bytes WindowTitle = 2;
   if (this->windowtitle().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->windowtitle().data(), this->windowtitle().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "SpiderContextChangedEvent.WindowTitle");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         2, this->windowtitle(), target);
   }
 
@@ -316,17 +292,17 @@ size_t SpiderContextChangedEvent::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:SpiderContextChangedEvent)
   size_t total_size = 0;
 
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   if (this->processname().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->processname());
   }
 
-  // optional string WindowTitle = 2;
+  // optional bytes WindowTitle = 2;
   if (this->windowtitle().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->windowtitle());
   }
 
@@ -414,7 +390,7 @@ void SpiderContextChangedEvent::InternalSwap(SpiderContextChangedEvent* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SpiderContextChangedEvent
 
-// optional string ProcessName = 1;
+// optional bytes ProcessName = 1;
 void SpiderContextChangedEvent::clear_processname() {
   processname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -432,7 +408,7 @@ void SpiderContextChangedEvent::set_processname(const char* value) {
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderContextChangedEvent.ProcessName)
 }
-void SpiderContextChangedEvent::set_processname(const char* value, size_t size) {
+void SpiderContextChangedEvent::set_processname(const void* value, size_t size) {
   
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -458,7 +434,7 @@ void SpiderContextChangedEvent::set_allocated_processname(::std::string* process
   // @@protoc_insertion_point(field_set_allocated:SpiderContextChangedEvent.ProcessName)
 }
 
-// optional string WindowTitle = 2;
+// optional bytes WindowTitle = 2;
 void SpiderContextChangedEvent::clear_windowtitle() {
   windowtitle_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -476,7 +452,7 @@ void SpiderContextChangedEvent::set_windowtitle(const char* value) {
   windowtitle_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderContextChangedEvent.WindowTitle)
 }
-void SpiderContextChangedEvent::set_windowtitle(const char* value, size_t size) {
+void SpiderContextChangedEvent::set_windowtitle(const void* value, size_t size) {
   
   windowtitle_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

@@ -61,6 +61,7 @@
     <ClInclude Include="test.pb.h" />
     <ClInclude Include="WindowsContextAgent.hpp" />
     <ClInclude Include="WindowsKeyListener.hpp" />
+    <ClInclude Include="ZeroMQSecureSocket.hpp" />
     <ClInclude Include="ZeroMQSocket.hpp" />
     <ClInclude Include="ZeroMQSocketPoller.hpp" />
     <ClInclude Include="zmq.hpp" />
@@ -174,10 +175,11 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Program Files\protobuf\cmake\build\release;C:\Program Files\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;Psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/VERBOSE:LIB %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq-v120-mt-4_0_4.dll" "$(OutDir)"</Command>
+      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -192,10 +194,11 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Program Files\protobuf\cmake\build\release;C:\Program Files\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;Psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/VERBOSE:LIB %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq-v120-mt-4_0_4.dll" "$(OutDir)"</Command>
+      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -214,10 +217,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Program Files\protobuf\cmake\build\release;C:\Program Files\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;Psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/VERBOSE:LIB %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq-v120-mt-4_0_4.dll" "$(OutDir)"</Command>
+      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MAIN|Win32'">
@@ -236,10 +240,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Program Files\protobuf\cmake\build\release;C:\Program Files\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;Psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/VERBOSE:LIB %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq-v120-mt-4_0_4.dll" "$(OutDir)"</Command>
+      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -258,10 +263,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Program Files\protobuf\cmake\build\release;C:\Program Files\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;Psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/VERBOSE:LIB %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq-v120-mt-4_0_4.dll" "$(OutDir)"</Command>
+      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MAIN|x64'">
@@ -280,10 +286,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Program Files\protobuf\cmake\build\release;C:\Program Files\ZeroMQ 4.0.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobuf.lib;libzmq-v120-mt-4_0_4.lib;Psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/VERBOSE:LIB %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq-v120-mt-4_0_4.dll" "$(OutDir)"</Command>
+      <Command>copy /Y "C:\Program Files\ZeroMQ 4.0.4\bin\libzmq.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

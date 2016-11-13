@@ -153,6 +153,9 @@
     <ClInclude Include="SpiderKeyLoggingPayload.pb.h">
       <Filter>Fichiers d%27en-tête\Proto</Filter>
     </ClInclude>
+    <ClInclude Include="ZeroMQSecureSocket.hpp">
+      <Filter>Fichiers d%27en-tête\SpiderSocket\ZeroMQ</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

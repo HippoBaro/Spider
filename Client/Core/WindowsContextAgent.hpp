@@ -43,7 +43,7 @@ public:
 		char tmp[0xFF] = { 0 };
 		GetWindowThreadProcessId(hwnd, &processId);
 		HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, processId);
-		GetModuleBaseName(hProcess, NULL, tmp, 0xFF);
+		GetModuleBaseName(hProcess, nullptr, tmp, 0xFF);
 		std::string processName = std::string(tmp);
 		GetWindowText(hwnd, tmp, 0xFF);
 		std::string windowTitle = std::string(tmp);

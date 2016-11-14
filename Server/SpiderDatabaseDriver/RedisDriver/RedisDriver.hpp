@@ -41,7 +41,9 @@ public:
 
     virtual void PushElement(const std::string &key, const std::string &element) override {
         int64_t count = 0;
-        if(!_client->lpushx(*_db, key, element, count))
+        VALUES vVal;
+        vVal.push_back(element);
+        if(!_client->lpush(*_db, key, vVal, count))
             throw std::runtime_error(_db->GetErrInfo());
     }
 

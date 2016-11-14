@@ -13,11 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c748ba33-2dc5-445a-a344-9ccbfe3f96b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Server.iml" afterPath="$PROJECT_DIR$/.idea/Server.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BusinessManager/SpiderBusinessManager.hpp" afterPath="$PROJECT_DIR$/BusinessManager/SpiderBusinessManager.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp" afterPath="$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp" afterPath="$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp" />
     </list>
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,14 +47,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoreToDBModule.hpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StoreToDBModule.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+            <state relative-caret-position="381">
+              <caret line="34" column="86" selection-start-line="34" selection-start-column="86" selection-end-line="34" selection-end-column="86" />
               <folding>
                 <element signature="e#129#157#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedisDriver.hpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,7 +187,6 @@
         <option value="$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp" />
         <option value="/usr/local/include/xredis/xRedisClient.h" />
         <option value="$PROJECT_DIR$/Interfaces/ISpiderDatabaseDriver.hpp" />
-        <option value="$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp" />
         <option value="$PROJECT_DIR$/SpiderDatabaseDriver/SpiderKeyValueStoreTypedDriver.hpp" />
         <option value="$PROJECT_DIR$/Interfaces/Event/ISpiderEventEmitter.hpp" />
         <option value="$PROJECT_DIR$/SpiderDatabaseDriver/SpiderTypedRepositoryDriver.hpp" />
@@ -188,6 +195,7 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/BusinessManager/SpiderBusinessManager.hpp" />
         <option value="$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp" />
+        <option value="$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp" />
       </list>
     </option>
   </component>
@@ -619,7 +627,7 @@
       <workItem from="1478548455107" duration="20018000" />
       <workItem from="1478629322051" duration="55450000" />
       <workItem from="1478969510205" duration="88000" />
-      <workItem from="1478969725254" duration="41934000" />
+      <workItem from="1478969725254" duration="42042000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1478540508771</created>
@@ -768,11 +776,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479084980182</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed wrong Redis config">
+      <created>1479085912719</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1479085912719</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123979000" />
+    <option name="totallyTimeSpent" value="124087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1176" extended-state="6" />
@@ -780,12 +795,12 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24905661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33605814" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33605814" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32152587" sideWeight="0.5018868" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328792" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32152587" sideWeight="0.49811321" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32152587" sideWeight="0.49811321" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -828,7 +843,8 @@
     <MESSAGE value="Cleaned code and fixed UTF8 bug server-side." />
     <MESSAGE value="Added mouse event to stdout" />
     <MESSAGE value="Server should now store stuff in redis :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server should now store stuff in redis :)" />
+    <MESSAGE value="Fixed wrong Redis config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed wrong Redis config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1252,21 +1268,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+        <state relative-caret-position="381">
+          <caret line="34" column="86" selection-start-line="34" selection-start-column="86" selection-end-line="34" selection-end-column="86" />
           <folding>
             <element signature="e#129#157#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

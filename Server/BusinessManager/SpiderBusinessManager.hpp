@@ -9,11 +9,13 @@
 #include "../Interfaces/ISpiderBusinessManager.hpp"
 #include "../Interfaces/ISpiderBusinessModule.hpp"
 #include "../BusinessModules/OutputSTDOUTModule.hpp"
+#include "../BusinessModules/StoreToDBModule.hpp"
 
 class SpiderBusinessManager : public ISpiderBusinessManager {
 public:
     virtual void ReadConfiguration() override {
         _modules.push_back(std::unique_ptr<ISpiderBusinessModule>(new OutputSTDOUTModule()));
+        _modules.push_back(std::unique_ptr<ISpiderBusinessModule>(new StoreToDBModule()));
     }
 
     SpiderBusinessManager() {

@@ -103,24 +103,24 @@ class SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload : public ::google::
 
   // accessors -------------------------------------------------------
 
-  // optional string ProcessName = 1;
+  // optional bytes ProcessName = 1;
   void clear_processname();
   static const int kProcessNameFieldNumber = 1;
   const ::std::string& processname() const;
   void set_processname(const ::std::string& value);
   void set_processname(const char* value);
-  void set_processname(const char* value, size_t size);
+  void set_processname(const void* value, size_t size);
   ::std::string* mutable_processname();
   ::std::string* release_processname();
   void set_allocated_processname(::std::string* processname);
 
-  // optional string WindowsName = 2;
+  // optional bytes WindowsName = 2;
   void clear_windowsname();
   static const int kWindowsNameFieldNumber = 2;
   const ::std::string& windowsname() const;
   void set_windowsname(const ::std::string& value);
   void set_windowsname(const char* value);
-  void set_windowsname(const char* value, size_t size);
+  void set_windowsname(const void* value, size_t size);
   ::std::string* mutable_windowsname();
   ::std::string* release_windowsname();
   void set_allocated_windowsname(::std::string* windowsname);
@@ -252,7 +252,7 @@ extern ::google::protobuf::internal::ExplicitlyConstructed<SpiderKeyLoggingPaylo
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
 // SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload
 
-// optional string ProcessName = 1;
+// optional bytes ProcessName = 1;
 inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::clear_processname() {
   processname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -270,7 +270,7 @@ inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_processn
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.ProcessName)
 }
-inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_processname(const char* value, size_t size) {
+inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_processname(const void* value, size_t size) {
   
   processname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -296,7 +296,7 @@ inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_allocate
   // @@protoc_insertion_point(field_set_allocated:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.ProcessName)
 }
 
-// optional string WindowsName = 2;
+// optional bytes WindowsName = 2;
 inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::clear_windowsname() {
   windowsname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -314,7 +314,7 @@ inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_windowsn
   windowsname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderKeyLoggingPayload.SpiderKeyLoggingContextPayload.WindowsName)
 }
-inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_windowsname(const char* value, size_t size) {
+inline void SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload::set_windowsname(const void* value, size_t size) {
   
   windowsname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

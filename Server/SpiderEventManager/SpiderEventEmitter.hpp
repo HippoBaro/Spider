@@ -7,7 +7,7 @@
 
 #include <thread>
 #include <iostream>
-#include "../Interfaces/ISpiderEventEmitter.hpp"
+#include "../Interfaces/Event/ISpiderEventEmitter.hpp"
 #include "../Includes/ZeroMQ/zmq.hpp"
 #include "../Interfaces/ISpiderServer.hpp"
 #include "../Includes/ZeroMQ/zmq_addon.hpp"

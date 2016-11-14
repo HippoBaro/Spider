@@ -31,32 +31,17 @@ private:
 
 private:
 
-    bool hasEnding (std::string const &fullString, std::string const &ending) {
-        if (fullString.length() >= ending.length()) {
-            return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
-        } else {
-            return false;
-        }
-    }
-
     void HandleMessage(std::string clientId, std::string message) {
         SpiderEnveloppe envelope;
-
-        if (!hasEnding(clientId, "authorisation")) {
-           //todo decrypt AES
-        }
-
         try {
             envelope = SpiderDeserializer::GetEnvelopeFromMessage(message);
+            _eventEmitter->RouteToModules(envelope); //Dispatch message to inner communication service.
         }
         catch (const std::runtime_error& e) {
             std::cout << "Error : " << e.what() << std::endl;
             return;
         }
-        if (!hasEnding(clientId, "authorisation"))
-            _eventEmitter->RouteToModules(envelope); //Dispatch message to inner communication service.
-        else
-            _eventEmitter->Emit("SpiderAuthenticationPayload", envelope);
+
     }
 
 #pragma clang diagnostic push

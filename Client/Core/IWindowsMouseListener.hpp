@@ -8,8 +8,7 @@
 class IWindowsMouseListener {
 public:
 	virtual void Run() = 0;
-	virtual std::string Flush() = 0;
-	virtual void PushMouselog(std::string &keylog) = 0;
+	virtual void OnMouseEvent(int button, long x, long y) = 0;
 };
 
 #endif //SPIDER_CLIENT_IWINDOWSMOUSELISTENER_HPP

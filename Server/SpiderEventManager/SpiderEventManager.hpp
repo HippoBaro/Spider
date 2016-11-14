@@ -6,7 +6,7 @@
 #define SPIDER_SERVER_SPIDEREVENTMANAGER_HPP
 
 #include <thread>
-#include "../Interfaces/ISpiderEventManager.hpp"
+#include "../Interfaces/Event/ISpiderEventManager.hpp"
 #include "../Includes/ZeroMQ/zmq.hpp"
 #include "../Interfaces/ISpiderServer.hpp"
 

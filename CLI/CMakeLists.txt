@@ -13,6 +13,7 @@ set(SOURCE_FILES
         main.cpp
         userInput.cpp
         zmq.hpp
+        Command.hpp
         protobufMessages/CmdPacket.pb.cc
         )
 

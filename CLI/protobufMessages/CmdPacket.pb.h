@@ -23,6 +23,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -33,18 +34,39 @@ void  protobuf_AddDesc_CmdPacket_2eproto();
 void protobuf_AssignDesc_CmdPacket_2eproto();
 void protobuf_ShutdownFile_CmdPacket_2eproto();
 
-class CmdPacket;
+class RequestPacket;
+class RequestPacket_CmdPacket;
 
+enum RequestPacket_MethodID {
+  RequestPacket_MethodID_LIST = 0,
+  RequestPacket_MethodID_GET = 1,
+  RequestPacket_MethodID_SEND = 2
+};
+bool RequestPacket_MethodID_IsValid(int value);
+const RequestPacket_MethodID RequestPacket_MethodID_MethodID_MIN = RequestPacket_MethodID_LIST;
+const RequestPacket_MethodID RequestPacket_MethodID_MethodID_MAX = RequestPacket_MethodID_SEND;
+const int RequestPacket_MethodID_MethodID_ARRAYSIZE = RequestPacket_MethodID_MethodID_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* RequestPacket_MethodID_descriptor();
+inline const ::std::string& RequestPacket_MethodID_Name(RequestPacket_MethodID value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    RequestPacket_MethodID_descriptor(), value);
+}
+inline bool RequestPacket_MethodID_Parse(
+    const ::std::string& name, RequestPacket_MethodID* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<RequestPacket_MethodID>(
+    RequestPacket_MethodID_descriptor(), name, value);
+}
 // ===================================================================
 
-class CmdPacket : public ::google::protobuf::Message {
+class RequestPacket_CmdPacket : public ::google::protobuf::Message {
  public:
-  CmdPacket();
-  virtual ~CmdPacket();
+  RequestPacket_CmdPacket();
+  virtual ~RequestPacket_CmdPacket();
 
-  CmdPacket(const CmdPacket& from);
+  RequestPacket_CmdPacket(const RequestPacket_CmdPacket& from);
 
-  inline CmdPacket& operator=(const CmdPacket& from) {
+  inline RequestPacket_CmdPacket& operator=(const RequestPacket_CmdPacket& from) {
     CopyFrom(from);
     return *this;
   }
@@ -58,17 +80,17 @@ class CmdPacket : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CmdPacket& default_instance();
+  static const RequestPacket_CmdPacket& default_instance();
 
-  void Swap(CmdPacket* other);
+  void Swap(RequestPacket_CmdPacket* other);
 
   // implements Message ----------------------------------------------
 
-  CmdPacket* New() const;
+  RequestPacket_CmdPacket* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CmdPacket& from);
-  void MergeFrom(const CmdPacket& from);
+  void CopyFrom(const RequestPacket_CmdPacket& from);
+  void MergeFrom(const RequestPacket_CmdPacket& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -127,7 +149,7 @@ class CmdPacket : public ::google::protobuf::Message {
   inline ::std::string* release_argument();
   inline void set_allocated_argument(::std::string* argument);
 
-  // @@protoc_insertion_point(class_scope:spider.CmdPacket)
+  // @@protoc_insertion_point(class_scope:spider.RequestPacket.CmdPacket)
  private:
   inline void set_has_targetuuid();
   inline void clear_has_targetuuid();
@@ -150,63 +172,209 @@ class CmdPacket : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_CmdPacket_2eproto();
 
   void InitAsDefaultInstance();
-  static CmdPacket* default_instance_;
+  static RequestPacket_CmdPacket* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class RequestPacket : public ::google::protobuf::Message {
+ public:
+  RequestPacket();
+  virtual ~RequestPacket();
+
+  RequestPacket(const RequestPacket& from);
+
+  inline RequestPacket& operator=(const RequestPacket& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RequestPacket& default_instance();
+
+  void Swap(RequestPacket* other);
+
+  // implements Message ----------------------------------------------
+
+  RequestPacket* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const RequestPacket& from);
+  void MergeFrom(const RequestPacket& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef RequestPacket_CmdPacket CmdPacket;
+
+  typedef RequestPacket_MethodID MethodID;
+  static const MethodID LIST = RequestPacket_MethodID_LIST;
+  static const MethodID GET = RequestPacket_MethodID_GET;
+  static const MethodID SEND = RequestPacket_MethodID_SEND;
+  static inline bool MethodID_IsValid(int value) {
+    return RequestPacket_MethodID_IsValid(value);
+  }
+  static const MethodID MethodID_MIN =
+    RequestPacket_MethodID_MethodID_MIN;
+  static const MethodID MethodID_MAX =
+    RequestPacket_MethodID_MethodID_MAX;
+  static const int MethodID_ARRAYSIZE =
+    RequestPacket_MethodID_MethodID_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  MethodID_descriptor() {
+    return RequestPacket_MethodID_descriptor();
+  }
+  static inline const ::std::string& MethodID_Name(MethodID value) {
+    return RequestPacket_MethodID_Name(value);
+  }
+  static inline bool MethodID_Parse(const ::std::string& name,
+      MethodID* value) {
+    return RequestPacket_MethodID_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // required .spider.RequestPacket.MethodID Method = 1;
+  inline bool has_method() const;
+  inline void clear_method();
+  static const int kMethodFieldNumber = 1;
+  inline ::spider::RequestPacket_MethodID method() const;
+  inline void set_method(::spider::RequestPacket_MethodID value);
+
+  // optional int32 Limit = 2;
+  inline bool has_limit() const;
+  inline void clear_limit();
+  static const int kLimitFieldNumber = 2;
+  inline ::google::protobuf::int32 limit() const;
+  inline void set_limit(::google::protobuf::int32 value);
+
+  // optional string clientUUID = 3;
+  inline bool has_clientuuid() const;
+  inline void clear_clientuuid();
+  static const int kClientUUIDFieldNumber = 3;
+  inline const ::std::string& clientuuid() const;
+  inline void set_clientuuid(const ::std::string& value);
+  inline void set_clientuuid(const char* value);
+  inline void set_clientuuid(const char* value, size_t size);
+  inline ::std::string* mutable_clientuuid();
+  inline ::std::string* release_clientuuid();
+  inline void set_allocated_clientuuid(::std::string* clientuuid);
+
+  // optional .spider.RequestPacket.CmdPacket Command = 4;
+  inline bool has_command() const;
+  inline void clear_command();
+  static const int kCommandFieldNumber = 4;
+  inline const ::spider::RequestPacket_CmdPacket& command() const;
+  inline ::spider::RequestPacket_CmdPacket* mutable_command();
+  inline ::spider::RequestPacket_CmdPacket* release_command();
+  inline void set_allocated_command(::spider::RequestPacket_CmdPacket* command);
+
+  // @@protoc_insertion_point(class_scope:spider.RequestPacket)
+ private:
+  inline void set_has_method();
+  inline void clear_has_method();
+  inline void set_has_limit();
+  inline void clear_has_limit();
+  inline void set_has_clientuuid();
+  inline void clear_has_clientuuid();
+  inline void set_has_command();
+  inline void clear_has_command();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  int method_;
+  ::google::protobuf::int32 limit_;
+  ::std::string* clientuuid_;
+  ::spider::RequestPacket_CmdPacket* command_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
+
+  friend void  protobuf_AddDesc_CmdPacket_2eproto();
+  friend void protobuf_AssignDesc_CmdPacket_2eproto();
+  friend void protobuf_ShutdownFile_CmdPacket_2eproto();
+
+  void InitAsDefaultInstance();
+  static RequestPacket* default_instance_;
 };
 // ===================================================================
 
 
 // ===================================================================
 
-// CmdPacket
+// RequestPacket_CmdPacket
 
 // required string TargetUUID = 1;
-inline bool CmdPacket::has_targetuuid() const {
+inline bool RequestPacket_CmdPacket::has_targetuuid() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CmdPacket::set_has_targetuuid() {
+inline void RequestPacket_CmdPacket::set_has_targetuuid() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CmdPacket::clear_has_targetuuid() {
+inline void RequestPacket_CmdPacket::clear_has_targetuuid() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CmdPacket::clear_targetuuid() {
+inline void RequestPacket_CmdPacket::clear_targetuuid() {
   if (targetuuid_ != &::google::protobuf::internal::kEmptyString) {
     targetuuid_->clear();
   }
   clear_has_targetuuid();
 }
-inline const ::std::string& CmdPacket::targetuuid() const {
+inline const ::std::string& RequestPacket_CmdPacket::targetuuid() const {
   return *targetuuid_;
 }
-inline void CmdPacket::set_targetuuid(const ::std::string& value) {
+inline void RequestPacket_CmdPacket::set_targetuuid(const ::std::string& value) {
   set_has_targetuuid();
   if (targetuuid_ == &::google::protobuf::internal::kEmptyString) {
     targetuuid_ = new ::std::string;
   }
   targetuuid_->assign(value);
 }
-inline void CmdPacket::set_targetuuid(const char* value) {
+inline void RequestPacket_CmdPacket::set_targetuuid(const char* value) {
   set_has_targetuuid();
   if (targetuuid_ == &::google::protobuf::internal::kEmptyString) {
     targetuuid_ = new ::std::string;
   }
   targetuuid_->assign(value);
 }
-inline void CmdPacket::set_targetuuid(const char* value, size_t size) {
+inline void RequestPacket_CmdPacket::set_targetuuid(const char* value, size_t size) {
   set_has_targetuuid();
   if (targetuuid_ == &::google::protobuf::internal::kEmptyString) {
     targetuuid_ = new ::std::string;
   }
   targetuuid_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* CmdPacket::mutable_targetuuid() {
+inline ::std::string* RequestPacket_CmdPacket::mutable_targetuuid() {
   set_has_targetuuid();
   if (targetuuid_ == &::google::protobuf::internal::kEmptyString) {
     targetuuid_ = new ::std::string;
   }
   return targetuuid_;
 }
-inline ::std::string* CmdPacket::release_targetuuid() {
+inline ::std::string* RequestPacket_CmdPacket::release_targetuuid() {
   clear_has_targetuuid();
   if (targetuuid_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -216,7 +384,7 @@ inline ::std::string* CmdPacket::release_targetuuid() {
     return temp;
   }
 }
-inline void CmdPacket::set_allocated_targetuuid(::std::string* targetuuid) {
+inline void RequestPacket_CmdPacket::set_allocated_targetuuid(::std::string* targetuuid) {
   if (targetuuid_ != &::google::protobuf::internal::kEmptyString) {
     delete targetuuid_;
   }
@@ -230,53 +398,53 @@ inline void CmdPacket::set_allocated_targetuuid(::std::string* targetuuid) {
 }
 
 // required string Name = 2;
-inline bool CmdPacket::has_name() const {
+inline bool RequestPacket_CmdPacket::has_name() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void CmdPacket::set_has_name() {
+inline void RequestPacket_CmdPacket::set_has_name() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void CmdPacket::clear_has_name() {
+inline void RequestPacket_CmdPacket::clear_has_name() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void CmdPacket::clear_name() {
+inline void RequestPacket_CmdPacket::clear_name() {
   if (name_ != &::google::protobuf::internal::kEmptyString) {
     name_->clear();
   }
   clear_has_name();
 }
-inline const ::std::string& CmdPacket::name() const {
+inline const ::std::string& RequestPacket_CmdPacket::name() const {
   return *name_;
 }
-inline void CmdPacket::set_name(const ::std::string& value) {
+inline void RequestPacket_CmdPacket::set_name(const ::std::string& value) {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   name_->assign(value);
 }
-inline void CmdPacket::set_name(const char* value) {
+inline void RequestPacket_CmdPacket::set_name(const char* value) {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   name_->assign(value);
 }
-inline void CmdPacket::set_name(const char* value, size_t size) {
+inline void RequestPacket_CmdPacket::set_name(const char* value, size_t size) {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   name_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* CmdPacket::mutable_name() {
+inline ::std::string* RequestPacket_CmdPacket::mutable_name() {
   set_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     name_ = new ::std::string;
   }
   return name_;
 }
-inline ::std::string* CmdPacket::release_name() {
+inline ::std::string* RequestPacket_CmdPacket::release_name() {
   clear_has_name();
   if (name_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -286,7 +454,7 @@ inline ::std::string* CmdPacket::release_name() {
     return temp;
   }
 }
-inline void CmdPacket::set_allocated_name(::std::string* name) {
+inline void RequestPacket_CmdPacket::set_allocated_name(::std::string* name) {
   if (name_ != &::google::protobuf::internal::kEmptyString) {
     delete name_;
   }
@@ -300,53 +468,53 @@ inline void CmdPacket::set_allocated_name(::std::string* name) {
 }
 
 // optional string Argument = 3;
-inline bool CmdPacket::has_argument() const {
+inline bool RequestPacket_CmdPacket::has_argument() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void CmdPacket::set_has_argument() {
+inline void RequestPacket_CmdPacket::set_has_argument() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void CmdPacket::clear_has_argument() {
+inline void RequestPacket_CmdPacket::clear_has_argument() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void CmdPacket::clear_argument() {
+inline void RequestPacket_CmdPacket::clear_argument() {
   if (argument_ != &::google::protobuf::internal::kEmptyString) {
     argument_->clear();
   }
   clear_has_argument();
 }
-inline const ::std::string& CmdPacket::argument() const {
+inline const ::std::string& RequestPacket_CmdPacket::argument() const {
   return *argument_;
 }
-inline void CmdPacket::set_argument(const ::std::string& value) {
+inline void RequestPacket_CmdPacket::set_argument(const ::std::string& value) {
   set_has_argument();
   if (argument_ == &::google::protobuf::internal::kEmptyString) {
     argument_ = new ::std::string;
   }
   argument_->assign(value);
 }
-inline void CmdPacket::set_argument(const char* value) {
+inline void RequestPacket_CmdPacket::set_argument(const char* value) {
   set_has_argument();
   if (argument_ == &::google::protobuf::internal::kEmptyString) {
     argument_ = new ::std::string;
   }
   argument_->assign(value);
 }
-inline void CmdPacket::set_argument(const char* value, size_t size) {
+inline void RequestPacket_CmdPacket::set_argument(const char* value, size_t size) {
   set_has_argument();
   if (argument_ == &::google::protobuf::internal::kEmptyString) {
     argument_ = new ::std::string;
   }
   argument_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* CmdPacket::mutable_argument() {
+inline ::std::string* RequestPacket_CmdPacket::mutable_argument() {
   set_has_argument();
   if (argument_ == &::google::protobuf::internal::kEmptyString) {
     argument_ = new ::std::string;
   }
   return argument_;
 }
-inline ::std::string* CmdPacket::release_argument() {
+inline ::std::string* RequestPacket_CmdPacket::release_argument() {
   clear_has_argument();
   if (argument_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -356,7 +524,7 @@ inline ::std::string* CmdPacket::release_argument() {
     return temp;
   }
 }
-inline void CmdPacket::set_allocated_argument(::std::string* argument) {
+inline void RequestPacket_CmdPacket::set_allocated_argument(::std::string* argument) {
   if (argument_ != &::google::protobuf::internal::kEmptyString) {
     delete argument_;
   }
@@ -369,6 +537,163 @@ inline void CmdPacket::set_allocated_argument(::std::string* argument) {
   }
 }
 
+// -------------------------------------------------------------------
+
+// RequestPacket
+
+// required .spider.RequestPacket.MethodID Method = 1;
+inline bool RequestPacket::has_method() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void RequestPacket::set_has_method() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void RequestPacket::clear_has_method() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void RequestPacket::clear_method() {
+  method_ = 0;
+  clear_has_method();
+}
+inline ::spider::RequestPacket_MethodID RequestPacket::method() const {
+  return static_cast< ::spider::RequestPacket_MethodID >(method_);
+}
+inline void RequestPacket::set_method(::spider::RequestPacket_MethodID value) {
+  assert(::spider::RequestPacket_MethodID_IsValid(value));
+  set_has_method();
+  method_ = value;
+}
+
+// optional int32 Limit = 2;
+inline bool RequestPacket::has_limit() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void RequestPacket::set_has_limit() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void RequestPacket::clear_has_limit() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void RequestPacket::clear_limit() {
+  limit_ = 0;
+  clear_has_limit();
+}
+inline ::google::protobuf::int32 RequestPacket::limit() const {
+  return limit_;
+}
+inline void RequestPacket::set_limit(::google::protobuf::int32 value) {
+  set_has_limit();
+  limit_ = value;
+}
+
+// optional string clientUUID = 3;
+inline bool RequestPacket::has_clientuuid() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void RequestPacket::set_has_clientuuid() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void RequestPacket::clear_has_clientuuid() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void RequestPacket::clear_clientuuid() {
+  if (clientuuid_ != &::google::protobuf::internal::kEmptyString) {
+    clientuuid_->clear();
+  }
+  clear_has_clientuuid();
+}
+inline const ::std::string& RequestPacket::clientuuid() const {
+  return *clientuuid_;
+}
+inline void RequestPacket::set_clientuuid(const ::std::string& value) {
+  set_has_clientuuid();
+  if (clientuuid_ == &::google::protobuf::internal::kEmptyString) {
+    clientuuid_ = new ::std::string;
+  }
+  clientuuid_->assign(value);
+}
+inline void RequestPacket::set_clientuuid(const char* value) {
+  set_has_clientuuid();
+  if (clientuuid_ == &::google::protobuf::internal::kEmptyString) {
+    clientuuid_ = new ::std::string;
+  }
+  clientuuid_->assign(value);
+}
+inline void RequestPacket::set_clientuuid(const char* value, size_t size) {
+  set_has_clientuuid();
+  if (clientuuid_ == &::google::protobuf::internal::kEmptyString) {
+    clientuuid_ = new ::std::string;
+  }
+  clientuuid_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* RequestPacket::mutable_clientuuid() {
+  set_has_clientuuid();
+  if (clientuuid_ == &::google::protobuf::internal::kEmptyString) {
+    clientuuid_ = new ::std::string;
+  }
+  return clientuuid_;
+}
+inline ::std::string* RequestPacket::release_clientuuid() {
+  clear_has_clientuuid();
+  if (clientuuid_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = clientuuid_;
+    clientuuid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void RequestPacket::set_allocated_clientuuid(::std::string* clientuuid) {
+  if (clientuuid_ != &::google::protobuf::internal::kEmptyString) {
+    delete clientuuid_;
+  }
+  if (clientuuid) {
+    set_has_clientuuid();
+    clientuuid_ = clientuuid;
+  } else {
+    clear_has_clientuuid();
+    clientuuid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional .spider.RequestPacket.CmdPacket Command = 4;
+inline bool RequestPacket::has_command() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void RequestPacket::set_has_command() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void RequestPacket::clear_has_command() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void RequestPacket::clear_command() {
+  if (command_ != NULL) command_->::spider::RequestPacket_CmdPacket::Clear();
+  clear_has_command();
+}
+inline const ::spider::RequestPacket_CmdPacket& RequestPacket::command() const {
+  return command_ != NULL ? *command_ : *default_instance_->command_;
+}
+inline ::spider::RequestPacket_CmdPacket* RequestPacket::mutable_command() {
+  set_has_command();
+  if (command_ == NULL) command_ = new ::spider::RequestPacket_CmdPacket;
+  return command_;
+}
+inline ::spider::RequestPacket_CmdPacket* RequestPacket::release_command() {
+  clear_has_command();
+  ::spider::RequestPacket_CmdPacket* temp = command_;
+  command_ = NULL;
+  return temp;
+}
+inline void RequestPacket::set_allocated_command(::spider::RequestPacket_CmdPacket* command) {
+  delete command_;
+  command_ = command;
+  if (command) {
+    set_has_command();
+  } else {
+    clear_has_command();
+  }
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -378,6 +703,10 @@ inline void CmdPacket::set_allocated_argument(::std::string* argument) {
 namespace google {
 namespace protobuf {
 
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::spider::RequestPacket_MethodID>() {
+  return ::spider::RequestPacket_MethodID_descriptor();
+}
 
 }  // namespace google
 }  // namespace protobuf

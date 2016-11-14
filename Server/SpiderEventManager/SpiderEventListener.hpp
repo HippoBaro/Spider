@@ -6,7 +6,7 @@
 #define SPIDER_SERVER_SPIDEREVENTLISTENER_HPP
 
 #include <thread>
-#include "../Interfaces/ISpiderEventListener.hpp"
+#include "../Interfaces/Event/ISpiderEventListener.hpp"
 #include "../Interfaces/ISpiderServer.hpp"
 #include "../ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h"
 

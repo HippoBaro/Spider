@@ -8,7 +8,7 @@
 #include "Interfaces/ISpiderServer.hpp"
 #include "SpiderNetworkManager/SpiderNetworkManager.hpp"
 #include "BusinessManager/SpiderBusinessManager.hpp"
-#include "Interfaces/ISpiderEventManager.hpp"
+#include "Interfaces/Event/ISpiderEventManager.hpp"
 #include "SpiderEventManager/SpiderEventManager.hpp"
 
 class SpiderServer : public ISpiderServer {

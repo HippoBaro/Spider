@@ -8,7 +8,7 @@
 #include <bits/unique_ptr.h>
 #include <iostream>
 #include "../Interfaces/ISpiderBusinessModule.hpp"
-#include "../Interfaces/ISpiderEventListener.hpp"
+#include "../Interfaces/Event/ISpiderEventListener.hpp"
 #include "../SpiderEventManager/SpiderEventListener.hpp"
 #include "../SpiderEventManager/SpiderEventEmitter.hpp"
 #include "../ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.h"

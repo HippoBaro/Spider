@@ -8,15 +8,15 @@
 #include <string>
 #include <bits/unique_ptr.h>
 #include <vector>
-#include "../Interfaces/Database/ISpiderDatabaseDriver.hpp"
+#include "../Interfaces/Database/ISpiderKeyValueDatabaseDriver.hpp"
 
 template <class Type>
 class SpiderTypedRepositoryDriver {
 private:
-    std::unique_ptr<ISpiderDatabaseDriver> _driver;
+    std::unique_ptr<ISpiderKeyValueDatabaseDriver> _driver;
 
 public:
-    SpiderTypedRepositoryDriver(ISpiderDatabaseDriver *driver) : _driver(driver) {}
+    SpiderTypedRepositoryDriver(ISpiderKeyValueDatabaseDriver *driver) : _driver(driver) {}
 
     virtual std::vector<Type> GetSecondaryKeyElements(const std::string &key, const int64_t &start, const int64_t &len) {
         std::vector<Type> ret;

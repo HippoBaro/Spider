@@ -16,16 +16,23 @@
 #include "../Interfaces/ISpiderCryptographicAgent.hpp"
 #include "RSACryptographicAgent.hpp"
 #include "../SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp"
+#include "../Interfaces/ISpiderServer.hpp"
+#include "../SpiderSocket/ZeroMQ/ZeroMQEventMonitor.hpp"
 
 class SpiderNetworkManager : public ISpiderNetworkManager {
 private:
     std::unique_ptr<std::thread> _networkMenagerThread;
     std::unique_ptr<std::thread> _networkMenagerCommanderThread;
+    std::unique_ptr<std::thread> _networkMenagerMonitorThread;
 
     std::shared_ptr<ISpiderSocket> _socket;
+    std::unique_ptr<ZeroMQEventMonitor> _monitor;
+
+    std::shared_ptr<zmq::socket_t> _monitorSocket;
     std::shared_ptr<zmq::socket_t> _commanderSocket;
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
     std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
+
 
     std::map<std::string, std::unique_ptr<ISpiderSocket>> _socketPool;
 
@@ -62,6 +69,8 @@ private:
 public:
     SpiderNetworkManager() {
         _socket = std::shared_ptr<ISpiderSocket>(new ZeroMQSecureSocket<Server>("JTKVSB%%)wK0E.X)V>+}o?pNmC{O&4W4b!Ni{Lh6"));
+
+        _monitorSocket = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_PAIR));
         _commanderSocket = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_REP));
     }
 
@@ -75,11 +84,19 @@ public:
         _commanderSocket->bind("tcp://*:9876");
 
         _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
-        _eventListener->RegisterNoUnpack("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
+        _eventListener->Register("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
             std::string enveloppe_data;
             enveloppe.SerializeToString(&enveloppe_data);
             _socket->Send(enveloppe.clientid(), enveloppe_data);
         });
+
+        _networkMenagerMonitorThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::Monitor, this)));
+    }
+
+
+//todo inherit for monitor and set events.
+    void Monitor() {
+        _monitor = std::unique_ptr<ZeroMQEventMonitor>(new ZeroMQEventMonitor((zmq::socket_t *)_socket->GetNativeSocket(), "monitor-server"));
     }
 };
 

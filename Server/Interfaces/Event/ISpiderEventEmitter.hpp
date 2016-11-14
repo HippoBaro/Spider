@@ -10,8 +10,8 @@
 
 class ISpiderEventEmitter {
 public:
-    virtual void RouteToModules(SpiderEnveloppe &payload) = 0;
-    virtual void Emit(std::string destinator, SpiderEnveloppe &payload) = 0;
+    virtual void RouteToModules(SpiderEnveloppe const &payload) = 0;
+    virtual void Emit(std::string destinator, const SpiderEnveloppe &payload) = 0;
 };
 
 #endif //SPIDER_SERVER_ISPIDEREVENTEMITTER_HPP

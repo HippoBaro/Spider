@@ -2,19 +2,21 @@
 // Created by hippolyteb on 11/8/16.
 //
 
-#ifndef SPIDER_SERVER_ZEROMQSOCKET_HPP
-#define SPIDER_SERVER_ZEROMQSOCKET_HPP
+#ifndef SPIDER_SERVER_ZeroMQCommanderSocket_HPP
+#define SPIDER_SERVER_ZeroMQCommanderSocket_HPP
 
 #include "../../Includes/ZeroMQ/zmq.hpp"
+#include "../../Interfaces/Socket/ISpiderSocket.hpp"
+#include "../../Interfaces/ISpiderServer.hpp"
 #include <zmq.h>
+#include <iostream>
 
-class ZeroMQSocket : public ISpiderSocket {
+class ZeroMQCommanderSocket : public ISpiderSocket {
 public:
     std::unique_ptr<zmq::socket_t> _socket;
 
-    ZeroMQSocket() : ISpiderSocket() {
-        _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_ROUTER));
-        _socket->setsockopt(ZMQ_ROUTER_HANDOVER, 1); //configure handover. New connection will take precedence over old ones in case of collision.
+    ZeroMQCommanderSocket() : ISpiderSocket() {
+        _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_REP));
     }
 
     virtual std::string &GetSocketID() override {
@@ -30,11 +32,9 @@ public:
     }
 
     virtual void Send(const std::string &clientId, const std::string &payload) override final {
-        zmq::multipart_t rep;
-        rep.addstr(clientId);
-        rep.addstr(payload);
+        zmq::message_t rep(payload.c_str(), payload.size());
         try {
-            rep.send(*_socket, 0);
+            _socket->send(rep);
         }
         catch (std::exception ex) {
             std::cout << "ZeroMQ error :" << ex.what() << std::endl;
@@ -73,4 +73,4 @@ public:
     }
 };
 
-#endif //SPIDER_SERVER_ZEROMQSOCKET_HPP
+#endif //SPIDER_SERVER_ZeroMQCommanderSocket_HPP

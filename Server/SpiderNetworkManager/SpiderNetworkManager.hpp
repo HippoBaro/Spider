@@ -18,6 +18,7 @@
 #include "../SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp"
 #include "../Interfaces/ISpiderServer.hpp"
 #include "../SpiderSocket/ZeroMQ/ZeroMQEventMonitor.hpp"
+#include "../SpiderSocket/ZeroMQ/ZeroMQCommanderSocket.hpp"
 
 class SpiderNetworkManager : public ISpiderNetworkManager {
 private:
@@ -29,16 +30,16 @@ private:
     std::unique_ptr<ZeroMQEventMonitor> _monitor;
 
     std::shared_ptr<zmq::socket_t> _monitorSocket;
-    std::shared_ptr<zmq::socket_t> _commanderSocket;
+    std::shared_ptr<ISpiderSocket> _commanderSocket;
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
     std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
-
+    std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventCommanderListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
 
     std::map<std::string, std::unique_ptr<ISpiderSocket>> _socketPool;
 
 private:
 
-    void HandleMessage(std::string clientId, std::string message) {
+    void HandleMessage(std::string message) {
         SpiderEnveloppe envelope;
         try {
             envelope = SpiderDeserializer::GetEnvelopeFromMessage(message);
@@ -48,7 +49,6 @@ private:
             std::cout << "Error : " << e.what() << std::endl;
             return;
         }
-
     }
 
 #pragma clang diagnostic push
@@ -61,7 +61,15 @@ private:
             for(std::map<std::string, std::unique_ptr<ISpiderSocket>>::iterator it = _socketPool.begin(); it != _socketPool.end(); ++it )
                 sockets.push_back(it->second.get());
             auto msg = poller->ReceivePoller(_socket.get(), sockets);
-            HandleMessage(std::get<0>(msg), std::get<1>(msg));
+            HandleMessage(std::get<1>(msg));
+        }
+    }
+
+    void RunCommanderReceive() {
+        while (true) {
+
+            auto msg = _commanderSocket->Receive();
+            HandleMessage(msg);
         }
     }
 #pragma clang diagnostic pop
@@ -71,32 +79,30 @@ public:
         _socket = std::shared_ptr<ISpiderSocket>(new ZeroMQSecureSocket<Server>("JTKVSB%%)wK0E.X)V>+}o?pNmC{O&4W4b!Ni{Lh6"));
 
         _monitorSocket = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_PAIR));
-        _commanderSocket = std::shared_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_REP));
+        _commanderSocket = std::shared_ptr<ISpiderSocket>(new ZeroMQCommanderSocket());
     }
 
     virtual ~SpiderNetworkManager() {
         _socket->Disconnect();
-        _commanderSocket->close();
+        _commanderSocket->Disconnect();
     }
 
     void Run() override final {
         _socket->Bind("tcp://*:5432");
-        _commanderSocket->bind("tcp://*:9876");
+        _commanderSocket->Bind("tcp://*:9876");
 
         _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
+        _networkMenagerCommanderThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunCommanderReceive, this)));
         _eventListener->Register("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
             std::string enveloppe_data;
             enveloppe.SerializeToString(&enveloppe_data);
             _socket->Send(enveloppe.clientid(), enveloppe_data);
         });
-
-        _networkMenagerMonitorThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::Monitor, this)));
-    }
-
-
-//todo inherit for monitor and set events.
-    void Monitor() {
-        _monitor = std::unique_ptr<ZeroMQEventMonitor>(new ZeroMQEventMonitor((zmq::socket_t *)_socket->GetNativeSocket(), "monitor-server"));
+        _eventCommanderListener->Register("Commander:SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
+            std::string enveloppe_data;
+            enveloppe.SerializeToString(&enveloppe_data);
+            _commanderSocket->Send(enveloppe.clientid(), enveloppe_data);
+        });
     }
 };
 

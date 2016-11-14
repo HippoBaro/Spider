@@ -19,6 +19,10 @@ template <KeyType type>
 class RedisDriver : public ISpiderKeyValueDatabaseDriver {
 public:
 
+    RedisDriver() {
+        Connect("127.0.0.1", 6379, "", "");
+    }
+
     virtual void Connect(const std::string &endpoint, const uint16_t &port, const std::string &user,
                          const std::string &password) override {
         if (RedisClient == nullptr) {

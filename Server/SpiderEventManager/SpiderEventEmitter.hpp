@@ -20,7 +20,7 @@ public:
         _socketPUB->connect("inproc://EventListener");
     }
 
-    void Emit(std::string destinator, SpiderEnveloppe &payload) override final {
+    void Emit(std::string destinator, const SpiderEnveloppe &payload) override final {
         zmq::multipart_t msg;
         msg.addstr(destinator);
         std::string temp = payload.SerializeAsString();
@@ -28,7 +28,7 @@ public:
         msg.send(*_socketPUB);
     }
 
-    void RouteToModules(SpiderEnveloppe &payload) override final {
+    void RouteToModules(const SpiderEnveloppe &payload) override final {
         Emit(payload.payloadtype(), payload);
     }
 };

@@ -5,8 +5,8 @@
 #ifndef SPIDER_SERVER_ZEROMQSOCKETPOLLER_HPP
 #define SPIDER_SERVER_ZEROMQSOCKETPOLLER_HPP
 
-#include "../../Interfaces/External/ISpiderSocketPoller.hpp"
 #include "../../Includes/ZeroMQ/zmq_addon.hpp"
+#include "../../Interfaces/Socket/ISpiderSocketPoller.hpp"
 
 class ZeroMQSocketPoller : public ISpiderSocketPoller {
     virtual std::tuple<std::string, std::string> ReceivePoller(ISpiderSocket *master, std::vector<ISpiderSocket *> vector) override final {

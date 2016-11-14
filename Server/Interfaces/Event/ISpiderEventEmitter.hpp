@@ -6,7 +6,7 @@
 #define SPIDER_SERVER_ISPIDEREVENTEMITTER_HPP
 
 #include <google/protobuf/any.pb.h>
-#include "../ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h"
+#include "../../ProtoEnvelopes/Proto/SpiderEnveloppe.pb.h"
 
 class ISpiderEventEmitter {
 public:

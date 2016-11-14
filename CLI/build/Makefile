@@ -138,29 +138,29 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-userInput.o: userInput.cpp.o
-.PHONY : userInput.o
+protobufMessages/CmdPacket.pb.o: protobufMessages/CmdPacket.pb.cc.o
+.PHONY : protobufMessages/CmdPacket.pb.o
 
 # target to build an object file
-userInput.cpp.o:
-	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/userInput.cpp.o
-.PHONY : userInput.cpp.o
+protobufMessages/CmdPacket.pb.cc.o:
+	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o
+.PHONY : protobufMessages/CmdPacket.pb.cc.o
 
-userInput.i: userInput.cpp.i
-.PHONY : userInput.i
+protobufMessages/CmdPacket.pb.i: protobufMessages/CmdPacket.pb.cc.i
+.PHONY : protobufMessages/CmdPacket.pb.i
 
 # target to preprocess a source file
-userInput.cpp.i:
-	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/userInput.cpp.i
-.PHONY : userInput.cpp.i
+protobufMessages/CmdPacket.pb.cc.i:
+	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.i
+.PHONY : protobufMessages/CmdPacket.pb.cc.i
 
-userInput.s: userInput.cpp.s
-.PHONY : userInput.s
+protobufMessages/CmdPacket.pb.s: protobufMessages/CmdPacket.pb.cc.s
+.PHONY : protobufMessages/CmdPacket.pb.s
 
 # target to generate assembly for a file
-userInput.cpp.s:
-	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/userInput.cpp.s
-.PHONY : userInput.cpp.s
+protobufMessages/CmdPacket.pb.cc.s:
+	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.s
+.PHONY : protobufMessages/CmdPacket.pb.cc.s
 
 # Help Target
 help:
@@ -174,9 +174,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... userInput.o"
-	@echo "... userInput.i"
-	@echo "... userInput.s"
+	@echo "... protobufMessages/CmdPacket.pb.o"
+	@echo "... protobufMessages/CmdPacket.pb.i"
+	@echo "... protobufMessages/CmdPacket.pb.s"
 .PHONY : help
 
 

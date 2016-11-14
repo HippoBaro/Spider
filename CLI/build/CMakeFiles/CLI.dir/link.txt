@@ -1,1 +1,1 @@
-/usr/bin/c++    -std=c++11   CMakeFiles/CLI.dir/main.cpp.o CMakeFiles/CLI.dir/userInput.cpp.o  -o CLI -rdynamic -lpthread -lzmq -lreadline 
+/usr/bin/c++    -std=c++11   CMakeFiles/CLI.dir/main.cpp.o CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o  -o CLI -rdynamic -lpthread -lzmq -lreadline -lprotobuf 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CLI.dir/main.cpp.o"
-  "CMakeFiles/CLI.dir/userInput.cpp.o"
+  "CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o"
   "CLI.pdb"
   "CLI"
 )

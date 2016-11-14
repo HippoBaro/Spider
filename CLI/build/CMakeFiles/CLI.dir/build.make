@@ -72,39 +72,39 @@ CMakeFiles/CLI.dir/main.cpp.o.provides: CMakeFiles/CLI.dir/main.cpp.o.requires
 
 CMakeFiles/CLI.dir/main.cpp.o.provides.build: CMakeFiles/CLI.dir/main.cpp.o
 
-CMakeFiles/CLI.dir/userInput.cpp.o: CMakeFiles/CLI.dir/flags.make
-CMakeFiles/CLI.dir/userInput.cpp.o: ../userInput.cpp
+CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o: CMakeFiles/CLI.dir/flags.make
+CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o: ../protobufMessages/CmdPacket.pb.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/aguado_e/code/Spider/CLI/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CLI.dir/userInput.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CLI.dir/userInput.cpp.o -c /home/aguado_e/code/Spider/CLI/userInput.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o -c /home/aguado_e/code/Spider/CLI/protobufMessages/CmdPacket.pb.cc
 
-CMakeFiles/CLI.dir/userInput.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CLI.dir/userInput.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/aguado_e/code/Spider/CLI/userInput.cpp > CMakeFiles/CLI.dir/userInput.cpp.i
+CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/aguado_e/code/Spider/CLI/protobufMessages/CmdPacket.pb.cc > CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.i
 
-CMakeFiles/CLI.dir/userInput.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CLI.dir/userInput.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/aguado_e/code/Spider/CLI/userInput.cpp -o CMakeFiles/CLI.dir/userInput.cpp.s
+CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/aguado_e/code/Spider/CLI/protobufMessages/CmdPacket.pb.cc -o CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.s
 
-CMakeFiles/CLI.dir/userInput.cpp.o.requires:
-.PHONY : CMakeFiles/CLI.dir/userInput.cpp.o.requires
+CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.requires:
+.PHONY : CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.requires
 
-CMakeFiles/CLI.dir/userInput.cpp.o.provides: CMakeFiles/CLI.dir/userInput.cpp.o.requires
-	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/userInput.cpp.o.provides.build
-.PHONY : CMakeFiles/CLI.dir/userInput.cpp.o.provides
+CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.provides: CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.requires
+	$(MAKE) -f CMakeFiles/CLI.dir/build.make CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.provides.build
+.PHONY : CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.provides
 
-CMakeFiles/CLI.dir/userInput.cpp.o.provides.build: CMakeFiles/CLI.dir/userInput.cpp.o
+CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.provides.build: CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o
 
 # Object files for target CLI
 CLI_OBJECTS = \
 "CMakeFiles/CLI.dir/main.cpp.o" \
-"CMakeFiles/CLI.dir/userInput.cpp.o"
+"CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o"
 
 # External object files for target CLI
 CLI_EXTERNAL_OBJECTS =
 
 CLI: CMakeFiles/CLI.dir/main.cpp.o
-CLI: CMakeFiles/CLI.dir/userInput.cpp.o
+CLI: CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o
 CLI: CMakeFiles/CLI.dir/build.make
 CLI: CMakeFiles/CLI.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable CLI"
@@ -115,7 +115,7 @@ CMakeFiles/CLI.dir/build: CLI
 .PHONY : CMakeFiles/CLI.dir/build
 
 CMakeFiles/CLI.dir/requires: CMakeFiles/CLI.dir/main.cpp.o.requires
-CMakeFiles/CLI.dir/requires: CMakeFiles/CLI.dir/userInput.cpp.o.requires
+CMakeFiles/CLI.dir/requires: CMakeFiles/CLI.dir/protobufMessages/CmdPacket.pb.cc.o.requires
 .PHONY : CMakeFiles/CLI.dir/requires
 
 CMakeFiles/CLI.dir/clean:

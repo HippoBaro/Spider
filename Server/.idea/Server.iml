@@ -40,6 +40,7 @@
       <sourceFolder url="file://$MODULE_DIR$/SpiderEventManager/SpiderEventEmitter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderEventManager/SpiderEventListener.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BusinessModules/OutputSTDOUTModule.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BusinessModules/StoreToDBModule.hpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

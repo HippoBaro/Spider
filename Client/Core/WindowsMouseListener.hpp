@@ -31,7 +31,6 @@ public:
 		busy = true;
 		SpiderMouseEvent event;
 		SpiderMouseEvent::MouseEventType type;
-
 		switch (button)
 		{
 		case WM_LBUTTONDOWN:

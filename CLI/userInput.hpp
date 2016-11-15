@@ -13,21 +13,10 @@
 
 class InputCenter {
 public:
-  InputCenter() :
-    _context(1),
-    _socket(_context, ZMQ_REP)
-  {
-    //_socket.bind("tcp://*:9876");
-  }
 
-  ~InputCenter()
+  SpiderEnveloppe readUserInput(const std::string &endpoint)
   {
-
-  }
-
-  SpiderEnveloppe readUserInput()
-  {
-    char *input = readline("$> ");
+    char *input = readline(std::string(endpoint + "> ").c_str());
     if (!input)
       return SpiderEnveloppe();
     else if (*input)
@@ -38,8 +27,6 @@ public:
   }
 
 private:
-  zmq::context_t _context;
-  zmq::socket_t _socket;
 
   SpiderEnveloppe getEnveloppeFromInput(std::string command)
   {

@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <afx.h>
+#include <tchar.h>
 
 class SpiderSettings : public ISpiderSettings {
 private:

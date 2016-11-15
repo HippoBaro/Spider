@@ -80,6 +80,7 @@ private:
     void RunCommanderReceive() {
         while (true) {
             auto msg = _commanderSocket->Receive();
+            std::cout << "GOT MESSAGE FROM CLI" << std::endl;
             HandleCommandMessage(msg);
         }
     }

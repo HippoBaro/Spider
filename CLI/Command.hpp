@@ -10,9 +10,8 @@
 #include <sstream>
 #include <iostream>
 #include <iomanip>
-
-#include "SpiderEnvelop.pb.h"
-#include "Commands.pb.h"
+#include "protobufMessages/SpiderEnvelop.pb.h"
+#include "protobufMessages/Commands.pb.h"
 
 namespace Spider {
   class Command {

@@ -17,7 +17,7 @@ public:
     _context(1),
     _socket(_context, ZMQ_REP)
   {
-    _socket.bind("tcp://*:9876");
+    //_socket.bind("tcp://*:9876");
   }
 
   ~InputCenter()
@@ -25,46 +25,29 @@ public:
 
   }
 
-  void readUserInput()
+  SpiderEnveloppe readUserInput()
   {
-    while (true)
-    {
-      char *input = readline("$> ");
-      if (!input)
-        break;
-      else if (*input)
-        add_history(input);
-      this->_sendCommand(std::string(input));
-      free(input);
-      this->_waitResponse();
-    }
+    char *input = readline("$> ");
+    if (!input)
+      return SpiderEnveloppe();
+    else if (*input)
+      add_history(input);
+    auto ret = getEnveloppeFromInput(std::string(input));
+    free(input);
+    return ret;
   }
 
 private:
   zmq::context_t _context;
   zmq::socket_t _socket;
 
-  void _sendCommand(std::string command)
+  SpiderEnveloppe getEnveloppeFromInput(std::string command)
   {
     Spider::Command finalCommand(command);
     if (finalCommand.isValid())
-    {
-
-
-//      std::string content = finalCommand.getPacket().SerializeAsString();
-//      zmq::message_t message(content.length());
-//      memcpy(message.data(), content, content.length());
-//      _socket.send(message);
-    }
+      return finalCommand.getPacket();
+    return SpiderEnveloppe();
   }
-
-  void _waitResponse()
-  {
-//    zmq::message_t request;
-//    _socket.recv(&request);
-//    std::cout << request << std::endl;
-  }
-
 };
 
 

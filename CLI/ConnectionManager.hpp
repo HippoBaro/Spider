@@ -15,11 +15,11 @@ private:
     std::unique_ptr<zmq::context_t> _context;
 
 public:
-    ConnectionManager() {
+    ConnectionManager(const std::string &endpoint) {
         _context = std::unique_ptr<zmq::context_t>(new zmq::context_t());
         _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*_context, ZMQ_PAIR));
 
-        _socket->connect("tcp://spider.northeurope.cloudapp.azure.com:9876");
+        _socket->connect(endpoint);
     }
 
     SpiderEnveloppe SendRequest(SpiderEnveloppe &spiderEnveloppe) {

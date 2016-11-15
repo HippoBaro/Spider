@@ -25,14 +25,15 @@ int main(const int argc, const char **argv)
 
 //   Make sure that an IP is provided
   TCLAP::CmdLine cmd("Spider CLI", ' ', "v0.1");
-  TCLAP::UnlabeledValueArg<std::string> clientIp("server", "Server IP you want to connect to.", true, "", "server");
-    ConnectionManager connection;
+  TCLAP::UnlabeledValueArg<std::string> clientIp("server", "Endpoint you want to connect to.", true, "", "server");
+
   cmd.add(clientIp);
   cmd.parse(argc, argv);
+    ConnectionManager connection(clientIp.getValue());
 
   InputCenter input;
     while(true) {
-        auto enveloppe = input.readUserInput();
+        auto enveloppe = input.readUserInput(clientIp.getValue());
         auto response = connection.SendRequest(enveloppe);
         if (response.clientid().size() < 16)
             continue;

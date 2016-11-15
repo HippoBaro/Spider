@@ -52,5 +52,7 @@
     <ClInclude Include="zmq.hpp" />
     <ClInclude Include="zmq_addon.hpp" />
     <ClInclude Include="SpiderMouseEvent.pb.h" />
+    <ClInclude Include="ISpiderSettings.hpp" />
+    <ClInclude Include="SpiderSettings.hpp" />
   </ItemGroup>
 </Project>

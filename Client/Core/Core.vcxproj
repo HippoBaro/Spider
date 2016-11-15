@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\..\..\Program Files\ZeroMQ 4.0.4\include\zmq.h" />
     <ClInclude Include="CommandHandler.hpp" />
+    <ClInclude Include="ISpiderSettings.hpp" />
     <ClInclude Include="ICommandHandler.hpp" />
     <ClInclude Include="IKeyLogger.hpp" />
     <ClInclude Include="IMessageDeserializer.hpp" />
@@ -60,6 +61,7 @@
     <ClInclude Include="SpiderNetworkManager.hpp" />
     <ClInclude Include="SpiderResponse.pb.h" />
     <ClInclude Include="SpiderSerializer.hpp" />
+    <ClInclude Include="SpiderSettings.hpp" />
     <ClInclude Include="test.pb.h" />
     <ClInclude Include="WindowsContextAgent.hpp" />
     <ClInclude Include="WindowsKeyListener.hpp" />

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message CmdPacket {
+    string TargetUUID = 1;
+    string Name = 2;
+    bytes Argument = 3;
+}

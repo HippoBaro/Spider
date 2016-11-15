@@ -711,6 +711,7 @@ namespace zmq
                 zmq_msg_t eventMsg;
                 zmq_msg_init (&eventMsg);
                 rc = zmq_msg_recv (&eventMsg, s, 0);
+                const char *name = zmq_msg_gets (&eventMsg, "Identifier");
                 if (rc == -1 && zmq_errno() == ETERM)
                     break;
                 assert (rc != -1);

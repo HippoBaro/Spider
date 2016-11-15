@@ -5,50 +5,73 @@
 #ifndef SPIDER_SERVER_REDISDRIVER_HPP
 #define SPIDER_SERVER_REDISDRIVER_HPP
 
-#include <xredis/xRedisClient.h>
-#include "../../Interfaces/Database/ISpiderDatabaseDriver.hpp"
+#include <redox.hpp>
+#include "../../Interfaces/Database/ISpiderKeyValueDatabaseDriver.hpp"
 
-class RedisDriver : public ISpiderDatabaseDriver {
-private:
-    std::unique_ptr<xRedisClient> _client = nullptr;
-    std::unique_ptr<RedisDBIdx> _db = nullptr;
+enum KeyType {
+    List,
+    Sets
+};
+
+std::unique_ptr<redox::Redox> RedisClient;
+
+template <KeyType type>
+class RedisDriver : public ISpiderKeyValueDatabaseDriver {
 public:
+
+    RedisDriver() {
+        Connect("127.0.0.1", 6379, "", "");
+    }
 
     virtual void Connect(const std::string &endpoint, const uint16_t &port, const std::string &user,
                          const std::string &password) override {
-        _client = std::unique_ptr<xRedisClient>(new xRedisClient());
-        _client->Init(1);
+        if (RedisClient == nullptr) {
+            RedisClient = std::unique_ptr<redox::Redox>(new redox::Redox());
 
-        RedisNode RedisList1[1] = {
-                {0, endpoint.c_str(), port, password.c_str(), 2, 5, 0},
-        };
-
-        if (!_client->ConnectRedisCache(RedisList1, 1, 0))
-            throw std::runtime_error("Impossible de se connecter à la base de donnée.");
-
-        _db = std::unique_ptr<RedisDBIdx>(new RedisDBIdx(_client.get()));
+            if (!RedisClient->connect(endpoint, (int)port))
+                throw std::runtime_error("Impossible de se connecter à la base de donnée.");
+        }
     }
 
     virtual std::vector<std::string> GetSecondaryKeyElements(const std::string &key, const int64_t &start, const int64_t &len) override {
-        ArrayReply reply;
-        if (!_client->lrange(*_db, key, start, len, reply))
-            throw std::runtime_error(_db->GetErrInfo());
         std::vector<std::string> ret;
-        for(auto const& value: reply)
-            ret.push_back(value.str);
-        return ret;
+
+        std::stringstream ss;
+        std::vector<std::string> tokens;
+        ss << "LRANGE " << key << " " << start << " " << len;
+
+        return RedisClient->commandSync<std::vector<std::string>>(RedisClient->strToVec(ss.str())).reply();
     }
 
     virtual void PushElement(const std::string &key, const std::string &element) override {
-        int64_t count = 0;
-        VALUES vVal;
-        vVal.push_back(element);
-        if(!_client->lpush(*_db, key, vVal, count))
-            throw std::runtime_error(_db->GetErrInfo());
+        if (type == List) {
+            std::stringstream ss;
+            std::vector<std::string> tokens;
+            ss << "LPUSH " << key << " " << element;
+            std::vector<std::string> cmd;
+            cmd.push_back("LPUSH");
+            cmd.push_back(key);
+            cmd.push_back(element);
+
+            RedisClient->commandSync(cmd);
+        }
+        else if (type == Sets) {
+
+            std::stringstream ss;
+            std::vector<std::string> tokens;
+            ss << "LREM " << key << " " << 0 << " " << element;
+
+            RedisClient->commandSync(RedisClient->strToVec(ss.str()));
+            ss.str("");
+
+            ss << "LPUSH " << key << " " << element;
+
+            RedisClient->commandSync(RedisClient->strToVec(ss.str()));
+        }
     }
 
     virtual void Close() override {
-        _client->quit();
+        RedisClient->disconnect();
     }
 };
 

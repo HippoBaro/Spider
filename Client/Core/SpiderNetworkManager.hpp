@@ -19,6 +19,7 @@
 #include "SpiderEventListener.hpp"
 #include "SpiderDeserialization.hpp"
 #include "ZeroMQSecureSocket.hpp"
+#include "SpiderSettings.hpp"
 
 class SpiderNetworkManager : public ISpiderNetworkManager {
 private:
@@ -59,14 +60,18 @@ public:
 	virtual ~SpiderNetworkManager() {
 		_socket->Disconnect();
 	}
-	
+
+	std::string _clientId;
+
 	void Run() override final {
 		_socket->Connect("tcp://spider.northeurope.cloudapp.azure.com:5432");
+
+		_clientId = std::make_unique<SpiderSettings>()->getUUID();
 
 		_networkMenagerThread = std::make_unique<std::thread>(std::bind(&SpiderNetworkManager::RunReceive, this));
 		_eventListener->RegisterNoUnpack("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
 			std::string enveloppe_data;
-			enveloppe.set_clientid("Wph2eyRK6ftjkNUP");
+			enveloppe.set_clientid(_clientId);
 			enveloppe.SerializeToString(&enveloppe_data);
 			try {
 				// Code that could throw an exception

@@ -1,6 +1,7 @@
 #include "SpiderDeamon.hpp"
 
-int main(int ac, char **av)
+int WINAPI WinMain(HINSTANCE thisinstance, HINSTANCE previnstance,
+	LPSTR cmdline, int ncmdshow)
 {
 	SpiderDeamon deamon;
 

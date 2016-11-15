@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "Proto/CmdPacket.proto";
+
+message RequestPacket {
+    enum MethodID {
+        LIST = 0;
+        GET = 1;
+        SEND = 2;
+    }
+
+    MethodID Method = 1;
+    int32 Limit = 2;
+    string clientUUID = 3;
+    CmdPacket Command = 4;
+}

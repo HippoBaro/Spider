@@ -8,17 +8,25 @@
       <sourceFolder url="file://$MODULE_DIR$/Serialization/SpiderDeserializer.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Includes/ZeroMQ/zmq_addon.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Includes/ZeroMQ/zmq.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/GetKeylogCommandResponse.pb.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/CmdPacket.pb.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/RequestPacket.pb.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderMouseEvent.pb.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderResponse.pb.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/ListUUIDSCommandResponse.pb.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/test.pb.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderEnveloppe.pb.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SpiderNetworkManager/RSACryptographicAgent.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderCommandResponse.pb.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProtoEnvelopes/Proto/SpiderKeyloggingPayload.pb.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderNetworkManager/AESCryptographicAgent.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpiderNetworkManager/SpiderNetworkManager.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpiderNetworkManager/RSACryptographicAgent.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderDatabaseDriver/SpiderTypedRepositoryDriver.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpiderSocket/ZeroMQ/ZeroMQCommanderSocket.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocketPoller.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpiderSocket/ZeroMQ/ZeroMQEventMonitor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderSocket/ZeroMQ/ZeroMQSocket.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BusinessManager/SpiderBusinessManager.hpp" isTestSource="false" />
@@ -29,10 +37,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderCryptographicAgent.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/Socket/ISpiderSocket.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/Socket/ISpiderSocketPoller.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interfaces/Event/ISpiderEventEmitter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/Event/ISpiderEventListener.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interfaces/Event/ISpiderEventEmitter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/Event/ISpiderEventManager.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Interfaces/Database/ISpiderDatabaseDriver.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interfaces/Database/ISpiderKeyValueDatabaseDriver.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces/ISpiderServer.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
@@ -41,6 +49,7 @@
       <sourceFolder url="file://$MODULE_DIR$/SpiderEventManager/SpiderEventListener.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BusinessModules/OutputSTDOUTModule.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BusinessModules/StoreToDBModule.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BusinessModules/CommanderModule.hpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

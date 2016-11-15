@@ -4,6 +4,7 @@ project(Spider_Server)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 file(GLOB proto_SRC "./ProtoEnvelopes/Proto/*.pb.cc")
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 set(SOURCE_FILES
         main.cpp
@@ -35,9 +36,9 @@ set(SOURCE_FILES
 
         BusinessModules/OutputSTDOUTModule.hpp
 
-        ${proto_SRC} Serialization/SpiderDeserializer.hpp Serialization/SpiderSerializer.hpp Interfaces/ISpiderCryptographicAgent.hpp Enums/Cryptography.hpp SpiderNetworkManager/RSACryptographicAgent.hpp SpiderNetworkManager/AESCryptographicAgent.hpp SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp Enums/SecureSocketType.hpp Interfaces/Database/ISpiderDatabaseDriver.hpp SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp SpiderDatabaseDriver/SpiderTypedRepositoryDriver.hpp BusinessModules/StoreToDBModule.hpp)
+        ${proto_SRC} Serialization/SpiderDeserializer.hpp Serialization/SpiderSerializer.hpp Interfaces/ISpiderCryptographicAgent.hpp Enums/Cryptography.hpp SpiderNetworkManager/RSACryptographicAgent.hpp SpiderNetworkManager/AESCryptographicAgent.hpp SpiderSocket/ZeroMQ/ZeroMQSecureSocket.hpp Enums/SecureSocketType.hpp Interfaces/Database/ISpiderKeyValueDatabaseDriver.hpp SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp SpiderDatabaseDriver/SpiderTypedRepositoryDriver.hpp BusinessModules/StoreToDBModule.hpp SpiderSocket/ZeroMQ/ZeroMQEventMonitor.hpp SpiderSocket/ZeroMQ/ZeroMQCommanderSocket.hpp BusinessModules/CommanderModule.hpp)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/ProtoEnvelopes)
 
 add_executable(Spider_Server ${SOURCE_FILES})
-target_link_libraries(Spider_Server pthread zmq protobuf xredis hiredis)
+target_link_libraries(Spider_Server pthread zmq protobuf redox ev hiredis)

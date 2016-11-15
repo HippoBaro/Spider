@@ -26,6 +26,11 @@ public:
             ListUUIDSCommandResponse response;
             enveloppe.payload().UnpackTo(&response);
             PrintUUIDS(response);
+        }
+        else if (type == "GetMouselogCommandResponse"){
+            GetMouselogCommandResponse response;
+            enveloppe.payload().UnpackTo(&response);
+            PrintMouselog(enveloppe.clientid(), response);
         } else {
             std::cout << "Server responded with an unknown message type \"" << type << "\"" << std::endl;
         }

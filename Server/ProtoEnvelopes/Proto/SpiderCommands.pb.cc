@@ -2,7 +2,7 @@
 // source: Proto/SpiderCommands.proto
 
 #define INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION
-#include "Proto/SpiderCommands.pb.h"
+#include "SpiderCommands.pb.h"
 
 #include <algorithm>
 

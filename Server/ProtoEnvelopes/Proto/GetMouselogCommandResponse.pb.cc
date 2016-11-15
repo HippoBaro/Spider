@@ -2,7 +2,7 @@
 // source: Proto/GetMouselogCommandResponse.proto
 
 #define INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION
-#include "Proto/GetMouselogCommandResponse.pb.h"
+#include "GetMouselogCommandResponse.pb.h"
 
 #include <algorithm>
 

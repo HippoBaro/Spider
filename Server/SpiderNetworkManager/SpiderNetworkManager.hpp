@@ -32,6 +32,7 @@ private:
     std::shared_ptr<zmq::socket_t> _monitorSocket;
     std::shared_ptr<ISpiderSocket> _commanderSocket;
     std::unique_ptr<ISpiderEventEmitter> _eventEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
+    std::unique_ptr<ISpiderEventEmitter> _commandEmitter = std::unique_ptr<ISpiderEventEmitter>(new SpiderEventEmitter());
     std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
     std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>> _eventCommanderListener = std::unique_ptr<ISpiderEventListener<SpiderEnveloppe>>(new SpiderEventListener<SpiderEnveloppe>());
 
@@ -44,6 +45,17 @@ private:
         try {
             envelope = SpiderDeserializer::GetEnvelopeFromMessage(message);
             _eventEmitter->RouteToModules(envelope); //Dispatch message to inner communication service.
+        }
+        catch (const std::runtime_error& e) {
+            std::cout << "Error : " << e.what() << std::endl;
+            return;
+        }
+    }
+    void HandleCommandMessage(std::string message) {
+        SpiderEnveloppe envelope;
+        try {
+            envelope = SpiderDeserializer::GetEnvelopeFromMessage(message);
+            _commandEmitter->RouteToModules(envelope); //Dispatch message to inner communication service.
         }
         catch (const std::runtime_error& e) {
             std::cout << "Error : " << e.what() << std::endl;
@@ -67,9 +79,8 @@ private:
 
     void RunCommanderReceive() {
         while (true) {
-
             auto msg = _commanderSocket->Receive();
-            HandleMessage(msg);
+            HandleCommandMessage(msg);
         }
     }
 #pragma clang diagnostic pop
@@ -91,7 +102,7 @@ public:
         _socket->Bind("tcp://*:5432");
         _commanderSocket->Bind("tcp://*:9876");
 
-        _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
+        //_networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
         _networkMenagerCommanderThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunCommanderReceive, this)));
         _eventListener->Register("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
             std::string enveloppe_data;

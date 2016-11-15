@@ -7,6 +7,7 @@
 
 #include <memory>
 #include "zmq.hpp"
+#include "protobufMessages/SpiderEnvelop.pb.h"
 
 class ConnectionManager {
 private:
@@ -16,8 +17,28 @@ private:
 public:
     ConnectionManager() {
         _context = std::unique_ptr<zmq::context_t>(new zmq::context_t());
-        _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*_context, ZMQ_REQ));
-        
+        _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*_context, ZMQ_PAIR));
+
+        _socket->connect("tcp://localhost:9876");
+    }
+
+    SpiderEnveloppe SendRequest(SpiderEnveloppe &spiderEnveloppe) {
+        if (spiderEnveloppe.clientid().size() < 16)
+            return SpiderEnveloppe();
+        std::string payload = spiderEnveloppe.SerializeAsString();
+
+        zmq::message_t request(payload.c_str(), payload.size());
+
+        _socket->send(request);
+
+        zmq::message_t response;
+
+        _socket->recv(&response);
+        std::string msg = std::string(static_cast<char*>(response.data()), response.size());
+
+        SpiderEnveloppe ret;
+        ret.ParseFromString(msg);
+        return ret;
     }
 };
 

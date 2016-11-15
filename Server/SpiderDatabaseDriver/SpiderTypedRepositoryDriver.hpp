@@ -31,7 +31,7 @@ public:
     }
 
     virtual void PushElement(const std::string &key, const Type &element) {
-        _driver->PushElement(key, element.SerializeAsString());
+        _driver->PushElement(key, "\"" + element.SerializeAsString() + "\"");
     }
 };
 

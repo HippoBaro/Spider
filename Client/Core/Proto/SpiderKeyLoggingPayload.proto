@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message SpiderKeyLoggingPayload {
+    message SpiderKeyLoggingContextPayload {
+        bytes ProcessName = 1;
+        bytes WindowsName = 2;
+    }
+    bytes PlaintextKeylog = 1;
+    SpiderKeyLoggingContextPayload Context = 2;
+}

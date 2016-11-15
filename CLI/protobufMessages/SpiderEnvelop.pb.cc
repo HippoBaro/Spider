@@ -42,20 +42,19 @@ void protobuf_AssignDesc_SpiderEnvelop_2eproto() {
   SpiderEnveloppe_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       SpiderEnveloppe_descriptor_,
-      SpiderEnveloppe::default_instance_,
+      SpiderEnveloppe::internal_default_instance(),
       SpiderEnveloppe_offsets_,
       -1,
       -1,
       -1,
       sizeof(SpiderEnveloppe),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SpiderEnveloppe, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SpiderEnveloppe, _is_default_instance_));
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SpiderEnveloppe, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_SpiderEnvelop_2eproto);
 }
@@ -64,24 +63,34 @@ void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      SpiderEnveloppe_descriptor_, &SpiderEnveloppe::default_instance());
+      SpiderEnveloppe_descriptor_, SpiderEnveloppe::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_SpiderEnvelop_2eproto() {
-  delete SpiderEnveloppe::default_instance_;
+  SpiderEnveloppe_default_instance_.Shutdown();
   delete SpiderEnveloppe_reflection_;
 }
 
-void protobuf_AddDesc_SpiderEnvelop_2eproto() GOOGLE_ATTRIBUTE_COLD;
-void protobuf_AddDesc_SpiderEnvelop_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_SpiderEnvelop_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fany_2eproto();
+  ::google::protobuf::protobuf_InitDefaults_google_2fprotobuf_2fany_2eproto();
+  ::google::protobuf::internal::GetEmptyString();
+  SpiderEnveloppe_default_instance_.DefaultConstruct();
+  SpiderEnveloppe_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_SpiderEnvelop_2eproto_once_);
+void protobuf_InitDefaults_SpiderEnvelop_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_SpiderEnvelop_2eproto_once_,
+                 &protobuf_InitDefaults_SpiderEnvelop_2eproto_impl);
+}
+void protobuf_AddDesc_SpiderEnvelop_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_SpiderEnvelop_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\023SpiderEnvelop.proto\032\031google/protobuf/a"
     "ny.proto\"_\n\017SpiderEnveloppe\022\020\n\010ClientID\030"
@@ -89,17 +98,31 @@ void protobuf_AddDesc_SpiderEnvelop_2eproto() {
     "\001(\0132\024.google.protobuf.Anyb\006proto3", 153);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "SpiderEnvelop.proto", &protobuf_RegisterTypes);
-  SpiderEnveloppe::default_instance_ = new SpiderEnveloppe();
-  SpiderEnveloppe::default_instance_->InitAsDefaultInstance();
+  ::google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fany_2eproto();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_SpiderEnvelop_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_SpiderEnvelop_2eproto_once_);
+void protobuf_AddDesc_SpiderEnvelop_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_SpiderEnvelop_2eproto_once_,
+                 &protobuf_AddDesc_SpiderEnvelop_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_SpiderEnvelop_2eproto {
   StaticDescriptorInitializer_SpiderEnvelop_2eproto() {
     protobuf_AddDesc_SpiderEnvelop_2eproto();
   }
 } static_descriptor_initializer_SpiderEnvelop_2eproto_;
+
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
+static void MergeFromFail(int line) {
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
+}
+
+}  // namespace
+
 
 // ===================================================================
 
@@ -111,30 +134,29 @@ const int SpiderEnveloppe::kPayloadFieldNumber;
 
 SpiderEnveloppe::SpiderEnveloppe()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_SpiderEnvelop_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:SpiderEnveloppe)
 }
 
 void SpiderEnveloppe::InitAsDefaultInstance() {
-  _is_default_instance_ = true;
-  payload_ = const_cast< ::google::protobuf::Any*>(&::google::protobuf::Any::default_instance());
+  payload_ = const_cast< ::google::protobuf::Any*>(
+      ::google::protobuf::Any::internal_default_instance());
 }
 
 SpiderEnveloppe::SpiderEnveloppe(const SpiderEnveloppe& from)
   : ::google::protobuf::Message(),
     _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:SpiderEnveloppe)
 }
 
 void SpiderEnveloppe::SharedCtor() {
-    _is_default_instance_ = false;
-  ::google::protobuf::internal::GetEmptyString();
-  _cached_size_ = 0;
   clientid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   payloadtype_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   payload_ = NULL;
+  _cached_size_ = 0;
 }
 
 SpiderEnveloppe::~SpiderEnveloppe() {
@@ -145,7 +167,7 @@ SpiderEnveloppe::~SpiderEnveloppe() {
 void SpiderEnveloppe::SharedDtor() {
   clientid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   payloadtype_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != default_instance_) {
+  if (this != &SpiderEnveloppe_default_instance_.get()) {
     delete payload_;
   }
 }
@@ -161,11 +183,11 @@ const ::google::protobuf::Descriptor* SpiderEnveloppe::descriptor() {
 }
 
 const SpiderEnveloppe& SpiderEnveloppe::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_SpiderEnvelop_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_SpiderEnvelop_2eproto();
+  return *internal_default_instance();
 }
 
-SpiderEnveloppe* SpiderEnveloppe::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<SpiderEnveloppe> SpiderEnveloppe_default_instance_;
 
 SpiderEnveloppe* SpiderEnveloppe::New(::google::protobuf::Arena* arena) const {
   SpiderEnveloppe* n = new SpiderEnveloppe;
@@ -294,6 +316,7 @@ void SpiderEnveloppe::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* SpiderEnveloppe::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:SpiderEnveloppe)
   // optional string ClientID = 1;
   if (this->clientid().size() > 0) {
@@ -328,9 +351,9 @@ void SpiderEnveloppe::SerializeWithCachedSizes(
   return target;
 }
 
-int SpiderEnveloppe::ByteSize() const {
+size_t SpiderEnveloppe::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:SpiderEnveloppe)
-  int total_size = 0;
+  size_t total_size = 0;
 
   // optional string ClientID = 1;
   if (this->clientid().size() > 0) {
@@ -353,18 +376,17 @@ int SpiderEnveloppe::ByteSize() const {
         *this->payload_);
   }
 
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void SpiderEnveloppe::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:SpiderEnveloppe)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const SpiderEnveloppe* source = 
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const SpiderEnveloppe* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const SpiderEnveloppe>(
           &from);
   if (source == NULL) {
@@ -372,15 +394,21 @@ void SpiderEnveloppe::MergeFrom(const ::google::protobuf::Message& from) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:SpiderEnveloppe)
-    MergeFrom(*source);
+    UnsafeMergeFrom(*source);
   }
 }
 
 void SpiderEnveloppe::MergeFrom(const SpiderEnveloppe& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:SpiderEnveloppe)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
   }
+}
+
+void SpiderEnveloppe::UnsafeMergeFrom(const SpiderEnveloppe& from) {
+  GOOGLE_DCHECK(&from != this);
   if (from.clientid().size() > 0) {
 
     clientid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.clientid_);
@@ -405,7 +433,7 @@ void SpiderEnveloppe::CopyFrom(const SpiderEnveloppe& from) {
 // @@protoc_insertion_point(class_specific_copy_from_start:SpiderEnveloppe)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool SpiderEnveloppe::IsInitialized() const {
@@ -440,37 +468,37 @@ void SpiderEnveloppe::InternalSwap(SpiderEnveloppe* other) {
 void SpiderEnveloppe::clear_clientid() {
   clientid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- const ::std::string& SpiderEnveloppe::clientid() const {
+const ::std::string& SpiderEnveloppe::clientid() const {
   // @@protoc_insertion_point(field_get:SpiderEnveloppe.ClientID)
   return clientid_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void SpiderEnveloppe::set_clientid(const ::std::string& value) {
+void SpiderEnveloppe::set_clientid(const ::std::string& value) {
   
   clientid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:SpiderEnveloppe.ClientID)
 }
- void SpiderEnveloppe::set_clientid(const char* value) {
+void SpiderEnveloppe::set_clientid(const char* value) {
   
   clientid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderEnveloppe.ClientID)
 }
- void SpiderEnveloppe::set_clientid(const char* value, size_t size) {
+void SpiderEnveloppe::set_clientid(const char* value, size_t size) {
   
   clientid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:SpiderEnveloppe.ClientID)
 }
- ::std::string* SpiderEnveloppe::mutable_clientid() {
+::std::string* SpiderEnveloppe::mutable_clientid() {
   
   // @@protoc_insertion_point(field_mutable:SpiderEnveloppe.ClientID)
   return clientid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* SpiderEnveloppe::release_clientid() {
+::std::string* SpiderEnveloppe::release_clientid() {
   // @@protoc_insertion_point(field_release:SpiderEnveloppe.ClientID)
   
   return clientid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void SpiderEnveloppe::set_allocated_clientid(::std::string* clientid) {
+void SpiderEnveloppe::set_allocated_clientid(::std::string* clientid) {
   if (clientid != NULL) {
     
   } else {
@@ -484,37 +512,37 @@ void SpiderEnveloppe::clear_clientid() {
 void SpiderEnveloppe::clear_payloadtype() {
   payloadtype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- const ::std::string& SpiderEnveloppe::payloadtype() const {
+const ::std::string& SpiderEnveloppe::payloadtype() const {
   // @@protoc_insertion_point(field_get:SpiderEnveloppe.PayloadType)
   return payloadtype_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void SpiderEnveloppe::set_payloadtype(const ::std::string& value) {
+void SpiderEnveloppe::set_payloadtype(const ::std::string& value) {
   
   payloadtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:SpiderEnveloppe.PayloadType)
 }
- void SpiderEnveloppe::set_payloadtype(const char* value) {
+void SpiderEnveloppe::set_payloadtype(const char* value) {
   
   payloadtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:SpiderEnveloppe.PayloadType)
 }
- void SpiderEnveloppe::set_payloadtype(const char* value, size_t size) {
+void SpiderEnveloppe::set_payloadtype(const char* value, size_t size) {
   
   payloadtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:SpiderEnveloppe.PayloadType)
 }
- ::std::string* SpiderEnveloppe::mutable_payloadtype() {
+::std::string* SpiderEnveloppe::mutable_payloadtype() {
   
   // @@protoc_insertion_point(field_mutable:SpiderEnveloppe.PayloadType)
   return payloadtype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* SpiderEnveloppe::release_payloadtype() {
+::std::string* SpiderEnveloppe::release_payloadtype() {
   // @@protoc_insertion_point(field_release:SpiderEnveloppe.PayloadType)
   
   return payloadtype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void SpiderEnveloppe::set_allocated_payloadtype(::std::string* payloadtype) {
+void SpiderEnveloppe::set_allocated_payloadtype(::std::string* payloadtype) {
   if (payloadtype != NULL) {
     
   } else {
@@ -526,7 +554,7 @@ void SpiderEnveloppe::clear_payloadtype() {
 
 // optional .google.protobuf.Any Payload = 3;
 bool SpiderEnveloppe::has_payload() const {
-  return !_is_default_instance_ && payload_ != NULL;
+  return this != internal_default_instance() && payload_ != NULL;
 }
 void SpiderEnveloppe::clear_payload() {
   if (GetArenaNoVirtual() == NULL && payload_ != NULL) delete payload_;
@@ -534,7 +562,8 @@ void SpiderEnveloppe::clear_payload() {
 }
 const ::google::protobuf::Any& SpiderEnveloppe::payload() const {
   // @@protoc_insertion_point(field_get:SpiderEnveloppe.Payload)
-  return payload_ != NULL ? *payload_ : *default_instance_->payload_;
+  return payload_ != NULL ? *payload_
+                         : *::google::protobuf::Any::internal_default_instance();
 }
 ::google::protobuf::Any* SpiderEnveloppe::mutable_payload() {
   
@@ -562,6 +591,9 @@ void SpiderEnveloppe::set_allocated_payload(::google::protobuf::Any* payload) {
   // @@protoc_insertion_point(field_set_allocated:SpiderEnveloppe.Payload)
 }
 
+inline const SpiderEnveloppe* SpiderEnveloppe::internal_default_instance() {
+  return &SpiderEnveloppe_default_instance_.get();
+}
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)

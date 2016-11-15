@@ -48,8 +48,12 @@ public:
             std::stringstream ss;
             std::vector<std::string> tokens;
             ss << "LPUSH " << key << " " << element;
+            std::vector<std::string> cmd;
+            cmd.push_back("LPUSH");
+            cmd.push_back(key);
+            cmd.push_back(element);
 
-            RedisClient->commandSync(RedisClient->strToVec(ss.str()));
+            RedisClient->commandSync(cmd);
         }
         else if (type == Sets) {
 

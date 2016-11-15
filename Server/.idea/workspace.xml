@@ -13,19 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c748ba33-2dc5-445a-a344-9ccbfe3f96b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/Command.hpp" afterPath="$PROJECT_DIR$/../CLI/Command.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/MessageDeserializer.hpp" afterPath="$PROJECT_DIR$/../CLI/MessageDeserializer.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/Commands.proto" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/Commands.proto" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.cc" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.h" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.cc" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.h" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderMouseEvent.pb.cc" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderMouseEvent.pb.cc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BusinessModules/CommanderModule.hpp" afterPath="$PROJECT_DIR$/BusinessModules/CommanderModule.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proto/SpiderCommands.proto.ok" afterPath="$PROJECT_DIR$/Proto/SpiderCommands.proto.ok" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.h" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.h" />
     </list>
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +37,8 @@
       <file leaf-file-name="CommanderModule.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BusinessModules/CommanderModule.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+            <state relative-caret-position="317">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="e#130#180#0" expanded="true" />
               </folding>
@@ -60,8 +49,8 @@
       <file leaf-file-name="StoreToDBModule.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            <state relative-caret-position="288">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,8 +69,8 @@
       <file leaf-file-name="SpiderCommands.pb.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="180">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -204,11 +193,11 @@
         <option value="$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp" />
         <option value="$PROJECT_DIR$/Proto/SpiderMouseEvent.proto" />
         <option value="$PROJECT_DIR$/Proto/GetMouseLogCommandResponse.proto" />
-        <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.h" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderMouseEvent.pb.cc" />
         <option value="$PROJECT_DIR$/Proto/SpiderCommands.proto.ok" />
+        <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" />
         <option value="$PROJECT_DIR$/BusinessModules/CommanderModule.hpp" />
       </list>
     </option>
@@ -620,7 +609,7 @@
       <workItem from="1478629322051" duration="55450000" />
       <workItem from="1478969510205" duration="88000" />
       <workItem from="1478969725254" duration="73913000" />
-      <workItem from="1479151568166" duration="12307000" />
+      <workItem from="1479151568166" duration="12779000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1478540508771</created>
@@ -860,11 +849,25 @@
       <option name="project" value="LOCAL" />
       <updated>1479193530162</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added mouse event support on CLI">
+      <created>1479194207237</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1479194207237</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Added mouse event support on CLI">
+      <created>1479194380703</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1479194380703</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168265000" />
+    <option name="totallyTimeSpent" value="168737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1176" extended-state="6" />
@@ -1324,14 +1327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1340,18 +1335,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state relative-caret-position="288">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BusinessModules/CommanderModule.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+        <state relative-caret-position="317">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="e#130#180#0" expanded="true" />
           </folding>

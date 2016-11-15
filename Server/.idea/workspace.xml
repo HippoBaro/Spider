@@ -37,8 +37,8 @@
       <file leaf-file-name="CommanderModule.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BusinessModules/CommanderModule.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+            <state relative-caret-position="335">
+              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -612,7 +612,7 @@
       <workItem from="1478629322051" duration="55450000" />
       <workItem from="1478969510205" duration="88000" />
       <workItem from="1478969725254" duration="73913000" />
-      <workItem from="1479151568166" duration="7709000" />
+      <workItem from="1479151568166" duration="7824000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1478540508771</created>
@@ -810,11 +810,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479189229066</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added static redox lib for easier deployment on Azure">
+      <created>1479189480902</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1479189480902</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163667000" />
+    <option name="totallyTimeSpent" value="163782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1176" extended-state="6" />
@@ -1286,8 +1293,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BusinessModules/CommanderModule.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        <state relative-caret-position="335">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
           <folding />
         </state>
       </provider>

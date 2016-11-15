@@ -31,6 +31,7 @@ private:
 public:
     CommanderModule() {
         _commandListClientListener->Register("ClientList", [&](std::string clientId, ClientList &payload) {
+            std::cout << "LOOKING FOR UUIDS AT USER " << clientId << std::endl;
             auto vec = _uuidRepository->GetSecondaryKeyElements("uuids", 0, 1000);
             ListUUIDSCommandResponse res;
             for(auto const& value: vec)

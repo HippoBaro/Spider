@@ -2,7 +2,7 @@
 // source: Proto/SpiderMouseEvent.proto
 
 #define INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION
-#include "SpiderMouseEvent.pb.h"
+#include "Proto/SpiderMouseEvent.pb.h"
 
 #include <algorithm>
 

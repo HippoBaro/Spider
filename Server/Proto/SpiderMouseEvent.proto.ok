@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-message SpiderMouseEvent{
+message SpiderMouseEvent {
     enum MouseEventType {
         RBUTTON_CLICK = 0;
         LBUTTON_CLICK = 1;

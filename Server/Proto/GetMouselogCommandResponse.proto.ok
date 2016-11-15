@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Proto/SpiderMouseEvent.proto";
+
+message GetMouselogCommandResponse {
+    repeated SpiderMouseEvent keylog = 1;
+}

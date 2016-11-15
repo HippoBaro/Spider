@@ -4,6 +4,10 @@ message GetClientLog {
     int32 limit = 1;
 }
 
+message GetClientMouseLog {
+    int32 limit = 1;
+}
+
 message ClientList {}
 
 message GetClientStatus {}

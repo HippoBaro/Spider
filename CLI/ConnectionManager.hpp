@@ -19,7 +19,7 @@ public:
         _context = std::unique_ptr<zmq::context_t>(new zmq::context_t());
         _socket = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(*_context, ZMQ_PAIR));
 
-        _socket->connect("tcp://localhost:9876");
+        _socket->connect("tcp://spider.northeurope.cloudapp.azure.com:9876");
     }
 
     SpiderEnveloppe SendRequest(SpiderEnveloppe &spiderEnveloppe) {

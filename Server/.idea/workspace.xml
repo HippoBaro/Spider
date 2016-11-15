@@ -13,15 +13,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c748ba33-2dc5-445a-a344-9ccbfe3f96b3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/Commands.pb.cc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/Commands.pb.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proto/SpiderCommands.proto" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/Command.hpp" afterPath="$PROJECT_DIR$/../CLI/Command.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/MessageDeserializer.hpp" afterPath="$PROJECT_DIR$/../CLI/MessageDeserializer.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/Commands.proto" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/Commands.proto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.cc" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.cc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.h" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/GetMouselogCommandResponse.pb.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.cc" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.cc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.h" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderCommands.pb.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderMouseEvent.pb.cc" afterPath="$PROJECT_DIR$/../CLI/protobufMessages/SpiderMouseEvent.pb.cc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.cc" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.h" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BusinessModules/CommanderModule.hpp" afterPath="$PROJECT_DIR$/BusinessModules/CommanderModule.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proto/SpiderCommands.proto.ok" afterPath="$PROJECT_DIR$/Proto/SpiderCommands.proto.ok" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderMouseEvent.pb.cc" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderMouseEvent.pb.cc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.h" afterPath="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.h" />
     </list>
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,16 +45,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CommanderModule.hpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommanderModule.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BusinessModules/CommanderModule.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="52" column="64" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="64" />
+            <state relative-caret-position="475">
+              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding>
                 <element signature="e#130#180#0" expanded="true" />
-                <marker date="1479192515551" expanded="true" signature="965:3523" ph="{...}" />
-                <marker date="1479192515551" expanded="true" signature="2065:3521" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoreToDBModule.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutputSTDOUTModule.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,36 +119,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpiderMouseEvent.proto.ok" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proto/SpiderMouseEvent.proto.ok">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RedisDriver.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetMouselogCommandResponse.proto.ok" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proto/GetMouselogCommandResponse.proto.ok">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GetMouselogCommandResponse.pb.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.cc">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,11 +129,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpiderMouseEvent.pb.cc" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpiderMouseEvent.pb.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderMouseEvent.pb.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+            <state relative-caret-position="486">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="e#154#186#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpiderCommands.proto.ok" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proto/SpiderCommands.proto.ok">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -198,14 +202,14 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/SpiderDatabaseDriver/SpiderTypedRepositoryDriver.hpp" />
         <option value="$PROJECT_DIR$/SpiderDatabaseDriver/RedisDriver/RedisDriver.hpp" />
-        <option value="$PROJECT_DIR$/Proto/SpiderCommands.proto.ok" />
         <option value="$PROJECT_DIR$/Proto/SpiderMouseEvent.proto" />
         <option value="$PROJECT_DIR$/Proto/GetMouseLogCommandResponse.proto" />
-        <option value="$PROJECT_DIR$/BusinessModules/CommanderModule.hpp" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.h" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/GetMouselogCommandResponse.pb.cc" />
         <option value="$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderMouseEvent.pb.cc" />
+        <option value="$PROJECT_DIR$/Proto/SpiderCommands.proto.ok" />
+        <option value="$PROJECT_DIR$/BusinessModules/CommanderModule.hpp" />
       </list>
     </option>
   </component>
@@ -251,50 +255,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="redox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -660,7 +620,7 @@
       <workItem from="1478629322051" duration="55450000" />
       <workItem from="1478969510205" duration="88000" />
       <workItem from="1478969725254" duration="73913000" />
-      <workItem from="1479151568166" duration="11627000" />
+      <workItem from="1479151568166" duration="12307000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1478540508771</created>
@@ -893,11 +853,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479193133086</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Added mouse event support on CLI">
+      <created>1479193530162</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1479193530162</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167585000" />
+    <option name="totallyTimeSpent" value="168265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1176" extended-state="6" />
@@ -909,7 +876,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32152587" sideWeight="0.5018868" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31244323" sideWeight="0.49811321" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31244323" sideWeight="0.49811321" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -936,7 +903,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Internal socket kinda sorted out" />
     <MESSAGE value="Socket abstraction implemented" />
     <MESSAGE value="Internal communication working via EventListener and EventEmitter" />
     <MESSAGE value="Server ready to rock" />
@@ -961,7 +927,8 @@
     <MESSAGE value="Added static redox lib for easier deployment on Azure" />
     <MESSAGE value="Fixed a serialization bug when storing protobuf into database" />
     <MESSAGE value="Added mouse event support on server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mouse event support on server" />
+    <MESSAGE value="Added mouse event support on CLI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added mouse event support on CLI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1145,22 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/redox/client.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -1221,14 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proto/SpiderCommands.proto.ok">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1329,26 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessModules/CommanderModule.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="52" column="64" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="64" />
-          <folding>
-            <element signature="e#130#180#0" expanded="true" />
-            <marker date="1479192515551" expanded="true" signature="965:3523" ph="{...}" />
-            <marker date="1479192515551" expanded="true" signature="2065:3521" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommandResponse.pb.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1385,9 +1308,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderMouseEvent.pb.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        <state relative-caret-position="486">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#154#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proto/SpiderCommands.proto.ok">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProtoEnvelopes/Proto/SpiderCommands.pb.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessModules/OutputSTDOUTModule.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessModules/StoreToDBModule.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessModules/CommanderModule.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding>
+            <element signature="e#130#180#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

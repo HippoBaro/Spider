@@ -32,24 +32,23 @@ public:
     }
 
 private:
+    static std::string getEventName(int event){
+        if (event == SpiderMouseEvent_MouseEventType_RBUTTON_CLICK)
+            return "RIGHT BUTTON CLICK";
+        else if (event == SpiderMouseEvent_MouseEventType_LBUTTON_CLICK)
+            return "LEFT BUTTON CLICK";
+        else if (event == SpiderMouseEvent_MouseEventType_MBUTTON_CLICK)
+            return "MIDDLE BUTTON CLICK";
+        else if (event == SpiderMouseEvent_MouseEventType_MBUTTON_UP)
+            return "MIDDLE BUTTON UP";
+        else if (event == SpiderMouseEvent_MouseEventType_MBUTTON_DOWN)
+            return "MIDDLE BUTTON DOWN";
+        else
+            return "UNKNOWN";
+    }
+
     static void PrintMouselog(const std::string &clientId, GetMouselogCommandResponse &response) {
         std::cout << "Mouselog for client with ID [" << clientId << "] : " << std::endl;
-
-        std::string getEventName(int event){
-            if (event == SpiderMouseEvent_MouseEventType_RBUTTON_CLICK)
-                return "RIGHT BUTTON CLICK";
-            else if (event == SpiderMouseEvent_MouseEventType_LBUTTON_CLICK)
-                return "LEFT BUTTON CLICK";
-            else if (event == SpiderMouseEvent_MouseEventType_MBUTTON_CLICK)
-                return "MIDDLE BUTTON CLICK";
-            else if (event == SpiderMouseEvent_MouseEventType_MBUTTON_UP)
-                return "MIDDLE BUTTON UP";
-            else if (event == SpiderMouseEvent_MouseEventType_MBUTTON_DOWN)
-                return "MIDDLE BUTTON DOWN";
-            else
-                return "UNKNOWN";
-        }
-
         for (int i = 0; i < response.keylog_size(); ++i) {
             SpiderMouseEvent payload;
             payload = response.keylog(i);

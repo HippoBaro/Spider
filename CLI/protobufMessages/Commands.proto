@@ -12,15 +12,15 @@ message ClientStatus {
 
 }
 
+message KillClient {
+
+}
+
 message StartKeylogging {
 
 }
 
 message StopKeylogging {
-
-}
-
-message KillClient {
 
 }
 

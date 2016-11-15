@@ -19,3 +19,9 @@ message StopKeylogging {}
 message SetClientDelay {
     int32 delay = 1;
 }
+
+message ClientStatus {
+}
+
+message KillClient {
+}

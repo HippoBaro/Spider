@@ -36,9 +36,11 @@ void protobuf_AssignDesc_Proto_2fSpiderCommands_2eproto();
 void protobuf_ShutdownFile_Proto_2fSpiderCommands_2eproto();
 
 class ClientList;
+class ClientStatus;
 class GetClientLog;
 class GetClientMouseLog;
 class GetClientStatus;
+class KillClient;
 class SetClientDelay;
 class StartKeylogging;
 class StopKeylogging;
@@ -617,6 +619,164 @@ class SetClientDelay : public ::google::protobuf::Message /* @@protoc_insertion_
 };
 extern ::google::protobuf::internal::ExplicitlyConstructed<SetClientDelay> SetClientDelay_default_instance_;
 
+// -------------------------------------------------------------------
+
+class ClientStatus : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ClientStatus) */ {
+ public:
+  ClientStatus();
+  virtual ~ClientStatus();
+
+  ClientStatus(const ClientStatus& from);
+
+  inline ClientStatus& operator=(const ClientStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ClientStatus& default_instance();
+
+  static const ClientStatus* internal_default_instance();
+
+  void Swap(ClientStatus* other);
+
+  // implements Message ----------------------------------------------
+
+  inline ClientStatus* New() const { return New(NULL); }
+
+  ClientStatus* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ClientStatus& from);
+  void MergeFrom(const ClientStatus& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(ClientStatus* other);
+  void UnsafeMergeFrom(const ClientStatus& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:ClientStatus)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable int _cached_size_;
+  friend void  protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto_impl();
+  friend void  protobuf_AddDesc_Proto_2fSpiderCommands_2eproto_impl();
+  friend void protobuf_AssignDesc_Proto_2fSpiderCommands_2eproto();
+  friend void protobuf_ShutdownFile_Proto_2fSpiderCommands_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<ClientStatus> ClientStatus_default_instance_;
+
+// -------------------------------------------------------------------
+
+class KillClient : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:KillClient) */ {
+ public:
+  KillClient();
+  virtual ~KillClient();
+
+  KillClient(const KillClient& from);
+
+  inline KillClient& operator=(const KillClient& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const KillClient& default_instance();
+
+  static const KillClient* internal_default_instance();
+
+  void Swap(KillClient* other);
+
+  // implements Message ----------------------------------------------
+
+  inline KillClient* New() const { return New(NULL); }
+
+  KillClient* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const KillClient& from);
+  void MergeFrom(const KillClient& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(KillClient* other);
+  void UnsafeMergeFrom(const KillClient& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:KillClient)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable int _cached_size_;
+  friend void  protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto_impl();
+  friend void  protobuf_AddDesc_Proto_2fSpiderCommands_2eproto_impl();
+  friend void protobuf_AssignDesc_Proto_2fSpiderCommands_2eproto();
+  friend void protobuf_ShutdownFile_Proto_2fSpiderCommands_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<KillClient> KillClient_default_instance_;
+
 // ===================================================================
 
 
@@ -712,7 +872,25 @@ inline void SetClientDelay::set_delay(::google::protobuf::int32 value) {
 inline const SetClientDelay* SetClientDelay::internal_default_instance() {
   return &SetClientDelay_default_instance_.get();
 }
+// -------------------------------------------------------------------
+
+// ClientStatus
+
+inline const ClientStatus* ClientStatus::internal_default_instance() {
+  return &ClientStatus_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// KillClient
+
+inline const KillClient* KillClient::internal_default_instance() {
+  return &KillClient_default_instance_.get();
+}
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

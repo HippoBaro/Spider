@@ -51,6 +51,7 @@ public:
         });
 
         _commandGetMouseLogListener->Register("GetClientMouseLog", [&](std::string clientId, GetClientMouseLog &payload) {
+            std::cout << "MOUSZ" << std::endl;
             auto vec = _keylogRepository->GetSecondaryKeyElements("mouselog" + clientId, 0, payload.limit());
             GetMouselogCommandResponse res;
             for(auto const& value: vec)

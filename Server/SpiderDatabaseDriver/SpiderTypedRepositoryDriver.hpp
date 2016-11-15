@@ -24,8 +24,8 @@ public:
         for(auto const& value: _driver->GetSecondaryKeyElements(key, start, len))
         {
             Type temp;
-            temp.ParseFromString(value);
-            ret.push_back(temp);
+            if (temp.ParseFromString(value))
+                ret.push_back(temp);
         }
         return ret;
     }

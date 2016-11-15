@@ -1,5 +1,6 @@
 #include "userInput.hpp"
 #include "ConnectionManager.hpp"
+#include "MessageDeserializer.hpp"
 #include <signal.h>
 #include <tclap/CmdLine.h>
 
@@ -35,7 +36,7 @@ int main(const int argc, const char **argv)
         auto response = connection.SendRequest(enveloppe);
         if (response.clientid().size() < 16)
             continue;
-        std::cout << "Got response ! Payload is" << response.SerializeAsString() << std::endl;
+        MessageDeserializer::PrintResponse(response);
     }
 
   google::protobuf::ShutdownProtobufLibrary();

@@ -102,7 +102,7 @@ public:
         _socket->Bind("tcp://*:5432");
         _commanderSocket->Bind("tcp://*:9876");
 
-        //_networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
+        _networkMenagerThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunReceive, this)));
         _networkMenagerCommanderThread = std::unique_ptr<std::thread>(new std::thread(std::bind(&SpiderNetworkManager::RunCommanderReceive, this)));
         _eventListener->Register("SpiderNetworkManager", [&](std::string clientId, SpiderEnveloppe &enveloppe) {
             std::string enveloppe_data;

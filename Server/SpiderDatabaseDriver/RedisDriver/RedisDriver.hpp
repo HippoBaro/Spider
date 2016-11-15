@@ -47,9 +47,9 @@ public:
         if (type == List) {
             std::stringstream ss;
             std::vector<std::string> tokens;
-            ss << "LPUSH " << key << " " << element << " ";
+            ss << "LPUSH " << key << " " << element;
 
-            RedisClient->commandSync<redisReply*>(RedisClient->strToVec(ss.str())).reply();
+            RedisClient->commandSync(RedisClient->strToVec(ss.str()));
         }
         else if (type == Sets) {
 
@@ -57,12 +57,12 @@ public:
             std::vector<std::string> tokens;
             ss << "LREM " << key << " " << 0 << " " << element;
 
-            RedisClient->commandSync<redisReply*>(RedisClient->strToVec(ss.str())).reply();
+            RedisClient->commandSync(RedisClient->strToVec(ss.str()));
             ss.str("");
 
-            ss << "LPUSH " << key << " " << element << " ";
+            ss << "LPUSH " << key << " " << element;
 
-            RedisClient->commandSync<redisReply*>(RedisClient->strToVec(ss.str())).reply();
+            RedisClient->commandSync(RedisClient->strToVec(ss.str()));
         }
     }
 

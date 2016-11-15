@@ -9,7 +9,7 @@ set(SOURCE_FILES
         zmq.hpp
         userInput.hpp
         Command.hpp
-        ${proto_SRC} ConnectionManager.hpp)
+        ${proto_SRC} ConnectionManager.hpp MessageDeserializer.hpp)
 
 add_executable(CLI ${SOURCE_FILES})
 target_link_libraries(CLI pthread zmq readline protobuf)

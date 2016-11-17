@@ -7,11 +7,13 @@ Le principe du **`Spider`** est de créer un système de *keylogging* distribué
 
 ###Terminologie
 
-Terme		|  Définition | Unité Protobuf
-------------|--------------
-Message     | Un `Message` correspond à l'unité envoyé sur le réseau. | Non
-Enveloppe   | Une `Enveloppe` est le contenu d'un `Message`. Elle contient aussi l'identité de l'expéditeur du message ou de sa destination. | Oui
-Payload		| Un `Payload` correspond à la charge utile d'une `Enveloppe`. Il contient l'information  que le `Client`/`Serveur` souhaite transmettre. | Oui
+*Terme*		| *Définition*                                                         | *Unité Protobuf*
+Message         | Un `Message` correspond à l'unité envoyé sur le réseau.             | Non
+Enveloppe       | Une `Enveloppe` est le contenu d'un `Message`. Elle contient aussi  |
+                | l'identité de l'expéditeur du message ou de sa destination.         | Oui
+Payload		| Un `Payload` correspond à la charge utile d'une `Enveloppe`.        |
+                | Il contient l'information  que le `Client`/`Serveur` souhaite       |
+		| transmettre.                                                        | Oui
 
 ###Protocol Buffer
 
@@ -53,11 +55,15 @@ message SpiderEnveloppe {
 }
 ```
 
-Element		|  Type  | Requis | Commentaire
-------------|--------------
-ClientID    | `string` | Oui | Si le `Message` est envoyé par le `Serveur`, alors `ClientID` contient l'ID du `Client` destinataire. Sinon `ClientID` contient l'ID du `Client` émetteur.
-PayloadType | `string` | Oui | Content une string représentant le type final du `Payload` contenu par l'enveloppe. `C++` n'ayant pas de réflexion, ceci est nécessaire pour dé-sérialiser le payload dans le bon format.
-Payload		| `Any`    | Oui | La charge utile de l'enveloppe, contenant la donnée que le `Client`/`Serveur` souhaite partager avec le `Serveur`/`Client`. 
+Element		|  Type     | Requis | Commentaire
+ClientID        | `string`  | Oui    | Si le `Message` est envoyé par le `Serveur`, alors 
+                |           |        | `ClientID` contient l'ID du `Client` destinataire. Sinon 
+		|	    |	     | `ClientID` contient l'ID du `Client` émetteur.
+PayloadType     | `string`  | Oui    | Content une string représentant le type final du `Payload`
+		|	    |	     | contenu par l'enveloppe. `C++` n'ayant pas de réflexion,
+		|           |        | ceci est nécessaire pour dé-sérialiser le payload dans le bon format.
+Payload		| `Any`     | Oui    | La charge utile de l'enveloppe, contenant la donnée que le 
+		|	    |	     | `Client`/`Serveur` souhaite partager avec le `Serveur`/`Client`. 
 
 ##Payloads
 
@@ -77,16 +83,17 @@ message SpiderKeyLoggingPayload {
 ```
 
 `SpiderKeyLoggingPayload` :
-Element		|  Type  | Requis | Commentaire
-------------|--------------
-PlaintextKeylog    | `string` | Oui | Représente le keylog de l'utilisateur. La longueur de la string est arbitraire. Les touches spéciales sont formaté via la forme "[KEY]". Exemple : `"Hippolyte est le meilleur [CRTL] C"`.
-Context | `SpiderKeyLoggingContextPayload` | Non | Représente se contexte dans lequel le keylog a été capturé.
+*Element*		   |  *Type*                            | *Requis* | *Commentaire*
+PlaintextKeylog    | `string`                         | Oui    | Représente le keylog de l'utilisateur. La longueur de
+		   |				      |	       | la string est arbitraire. Les touches spéciales sont
+		   |				      |        | formaté via la forme "[KEY]". Exemple : 
+		   |   				      |	       | `"Hippolyte est le meilleur [CRTL] C"`.
+Context            | `SpiderKeyLoggingContextPayload` | Non    | Représente se contexte dans lequel le keylog a été capturé.
 
 `SpiderKeyLoggingContextPayload`:
-Element		|  Type  | Requis | Commentaire
-------------|--------------
-ProcessName | `string` | Oui | Contient le nom du processus courant dans lequel l'input à été capturé.
-WindowsName | `string` | Oui | Contient le nom de la fenêtre du processus dans lequel le keylog à été capturé.
+*Element*	|  *Type*    | *Requis* | *Commentaire*
+ProcessName     | `string` | Oui    | Contient le nom du processus courant dans lequel l'input à été capturé.
+WindowsName     | `string` | Oui    | Contient le nom de la fenêtre du processus dans lequel le keylog à été capturé.
 
 ####`SpiderMouseEvent`
 
@@ -104,11 +111,10 @@ message SpiderMouseEvent {
     uint32 Y = 3;
 }
 ```
-Element		|  Type  | Requis | Commentaire
-------------|--------------
-type | `MouseEventType` | Oui | Contient l'événement de la souris qui à été capturé.
-X | `string` | Oui | Coordonnées X de la souris
-Y | `string` | Oui | Coordonnées Y de la souris
+*Element*	|  *Type*          | *Requis* | *Commentaire*
+type            | `MouseEventType` | Oui      | Contient l'événement de la souris qui à été capturé.
+X               | `string`         | Oui      | Coordonnées X de la souris
+Y               | `string`         | Oui      | Coordonnées Y de la souris
 
 ### Payloads envoyé par le `Serveur`
 
